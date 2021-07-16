@@ -2,113 +2,113 @@
   {
     "name": "about-us",
     "path": "/about-us",
-    "component": "/home/fujif/Re-brand-project/front-end/pages/about-us.vue",
+    "component": "C:\\\\Users\\\\Lenovo\\\\Documents\\\\GitHub\\\\Re-brand-project\\\\front-end\\\\pages\\\\about-us.vue",
     "chunkName": "pages/about-us",
-    "_name": "_27a8a5fe"
+    "_name": "_bf2c582e"
   },
   {
     "name": "faq",
     "path": "/faq",
-    "component": "/home/fujif/Re-brand-project/front-end/pages/faq.vue",
+    "component": "C:\\\\Users\\\\Lenovo\\\\Documents\\\\GitHub\\\\Re-brand-project\\\\front-end\\\\pages\\\\faq.vue",
     "chunkName": "pages/faq",
-    "_name": "_6a7be97a"
+    "_name": "_c29d994a"
   },
   {
     "name": "my-account",
     "path": "/my-account",
-    "component": "/home/fujif/Re-brand-project/front-end/pages/my-account/index.vue",
+    "component": "C:\\\\Users\\\\Lenovo\\\\Documents\\\\GitHub\\\\Re-brand-project\\\\front-end\\\\pages\\\\my-account\\\\index.vue",
     "chunkName": "pages/my-account/index",
-    "_name": "_db8aae9c"
+    "_name": "_66f8d36a"
   },
   {
     "name": "privacy-policy",
     "path": "/privacy-policy",
-    "component": "/home/fujif/Re-brand-project/front-end/pages/privacy-policy.vue",
+    "component": "C:\\\\Users\\\\Lenovo\\\\Documents\\\\GitHub\\\\Re-brand-project\\\\front-end\\\\pages\\\\privacy-policy.vue",
     "chunkName": "pages/privacy-policy",
-    "_name": "_084faa7a"
+    "_name": "_337f0362"
   },
   {
     "name": "shop",
     "path": "/shop",
-    "component": "/home/fujif/Re-brand-project/front-end/pages/shop/index.vue",
+    "component": "C:\\\\Users\\\\Lenovo\\\\Documents\\\\GitHub\\\\Re-brand-project\\\\front-end\\\\pages\\\\shop\\\\index.vue",
     "chunkName": "pages/shop/index",
-    "_name": "_7596dc5c"
+    "_name": "_32f76c3e"
   },
   {
     "name": "cart-cart",
     "path": "/cart/cart",
-    "component": "/home/fujif/Re-brand-project/front-end/pages/cart/cart.vue",
+    "component": "C:\\\\Users\\\\Lenovo\\\\Documents\\\\GitHub\\\\Re-brand-project\\\\front-end\\\\pages\\\\cart\\\\cart.vue",
     "chunkName": "pages/cart/cart",
-    "_name": "_0c18cc9c"
+    "_name": "_44231f0b"
   },
   {
     "name": "cart-empty-cart",
     "path": "/cart/empty-cart",
-    "component": "/home/fujif/Re-brand-project/front-end/pages/cart/empty-cart.vue",
+    "component": "C:\\\\Users\\\\Lenovo\\\\Documents\\\\GitHub\\\\Re-brand-project\\\\front-end\\\\pages\\\\cart\\\\empty-cart.vue",
     "chunkName": "pages/cart/empty-cart",
-    "_name": "_21acb61c"
+    "_name": "_5905394b"
   },
   {
     "name": "my-account-addresses",
     "path": "/my-account/addresses",
-    "component": "/home/fujif/Re-brand-project/front-end/pages/my-account/addresses.vue",
+    "component": "C:\\\\Users\\\\Lenovo\\\\Documents\\\\GitHub\\\\Re-brand-project\\\\front-end\\\\pages\\\\my-account\\\\addresses.vue",
     "chunkName": "pages/my-account/addresses",
-    "_name": "_1a9daf82"
+    "_name": "_0514289b"
   },
   {
     "name": "my-account-checkout",
     "path": "/my-account/checkout",
-    "component": "/home/fujif/Re-brand-project/front-end/pages/my-account/checkout.vue",
+    "component": "C:\\\\Users\\\\Lenovo\\\\Documents\\\\GitHub\\\\Re-brand-project\\\\front-end\\\\pages\\\\my-account\\\\checkout.vue",
     "chunkName": "pages/my-account/checkout",
-    "_name": "_1e9b6196"
+    "_name": "_69563d46"
   },
   {
     "name": "my-account-downloads",
     "path": "/my-account/downloads",
-    "component": "/home/fujif/Re-brand-project/front-end/pages/my-account/downloads.vue",
+    "component": "C:\\\\Users\\\\Lenovo\\\\Documents\\\\GitHub\\\\Re-brand-project\\\\front-end\\\\pages\\\\my-account\\\\downloads.vue",
     "chunkName": "pages/my-account/downloads",
-    "_name": "_2b11b04b"
+    "_name": "_15882964"
   },
   {
     "name": "my-account-orders",
     "path": "/my-account/orders",
-    "component": "/home/fujif/Re-brand-project/front-end/pages/my-account/orders.vue",
+    "component": "C:\\\\Users\\\\Lenovo\\\\Documents\\\\GitHub\\\\Re-brand-project\\\\front-end\\\\pages\\\\my-account\\\\orders.vue",
     "chunkName": "pages/my-account/orders",
-    "_name": "_8d594496"
+    "_name": "_6fafb988"
   },
   {
     "name": "my-account-wishlist",
     "path": "/my-account/wishlist",
-    "component": "/home/fujif/Re-brand-project/front-end/pages/my-account/wishlist.vue",
+    "component": "C:\\\\Users\\\\Lenovo\\\\Documents\\\\GitHub\\\\Re-brand-project\\\\front-end\\\\pages\\\\my-account\\\\wishlist.vue",
     "chunkName": "pages/my-account/wishlist",
-    "_name": "_94651ad6"
+    "_name": "_6286f25c"
   },
   {
     "name": "shop-shopfilter",
     "path": "/shop/shopfilter",
-    "component": "/home/fujif/Re-brand-project/front-end/pages/shop/shopfilter.vue",
+    "component": "C:\\\\Users\\\\Lenovo\\\\Documents\\\\GitHub\\\\Re-brand-project\\\\front-end\\\\pages\\\\shop\\\\shopfilter.vue",
     "chunkName": "pages/shop/shopfilter",
-    "_name": "_56a4ced4"
+    "_name": "_55080c6f"
   },
   {
     "name": "shop-shoplist",
     "path": "/shop/shoplist",
-    "component": "/home/fujif/Re-brand-project/front-end/pages/shop/shoplist.vue",
+    "component": "C:\\\\Users\\\\Lenovo\\\\Documents\\\\GitHub\\\\Re-brand-project\\\\front-end\\\\pages\\\\shop\\\\shoplist.vue",
     "chunkName": "pages/shop/shoplist",
-    "_name": "_0c7fdc0c"
+    "_name": "_777bfa55"
   },
   {
     "name": "product-slug",
     "path": "/product/:slug?",
-    "component": "/home/fujif/Re-brand-project/front-end/pages/product/_slug.vue",
+    "component": "C:\\\\Users\\\\Lenovo\\\\Documents\\\\GitHub\\\\Re-brand-project\\\\front-end\\\\pages\\\\product\\\\_slug.vue",
     "chunkName": "pages/product/_slug",
-    "_name": "_f3b17352"
+    "_name": "_39e5ce86"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/home/fujif/Re-brand-project/front-end/pages/index.vue",
+    "component": "C:\\\\Users\\\\Lenovo\\\\Documents\\\\GitHub\\\\Re-brand-project\\\\front-end\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
-    "_name": "_5862cc82"
+    "_name": "_68941bd7"
   }
 ]

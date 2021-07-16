@@ -5,16 +5,16 @@ import ClientOnly from 'vue-client-only'
 import NoSsr from 'vue-no-ssr'
 import { createRouter } from './router.js'
 import NuxtChild from './components/nuxt-child.js'
-import NuxtError from '../layouts/error.vue'
+import NuxtError from '..\\layouts\\error.vue'
 import Nuxt from './components/nuxt.js'
 import App from './App.js'
 import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_4673152e from 'nuxt_plugin_plugin_4673152e' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_bootstrapvue_3f65252e from 'nuxt_plugin_bootstrapvue_3f65252e' // Source: ./bootstrap-vue.js (mode: 'all')
-import nuxt_plugin_plugin_03b7832e from 'nuxt_plugin_plugin_03b7832e' // Source: ../plugins/plugin.js (mode: 'client')
+import nuxt_plugin_plugin_0fa53ffc from 'nuxt_plugin_plugin_0fa53ffc' // Source: .\\components\\plugin.js (mode: 'all')
+import nuxt_plugin_bootstrapvue_1ec93054 from 'nuxt_plugin_bootstrapvue_1ec93054' // Source: .\\bootstrap-vue.js (mode: 'all')
+import nuxt_plugin_plugin_03b7832e from 'nuxt_plugin_plugin_03b7832e' // Source: ..\\plugins\\plugin.js (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -178,12 +178,12 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_4673152e === 'function') {
-    await nuxt_plugin_plugin_4673152e(app.context, inject)
+  if (typeof nuxt_plugin_plugin_0fa53ffc === 'function') {
+    await nuxt_plugin_plugin_0fa53ffc(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_bootstrapvue_3f65252e === 'function') {
-    await nuxt_plugin_bootstrapvue_3f65252e(app.context, inject)
+  if (typeof nuxt_plugin_bootstrapvue_1ec93054 === 'function') {
+    await nuxt_plugin_bootstrapvue_1ec93054(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_plugin_03b7832e === 'function') {
