@@ -4,22 +4,22 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _6e4149b0 = () => interopDefault(import('..\\pages\\about-us.vue' /* webpackChunkName: "pages/about-us" */))
-const _aab43e88 = () => interopDefault(import('..\\pages\\faq.vue' /* webpackChunkName: "pages/faq" */))
-const _3068c5ec = () => interopDefault(import('..\\pages\\my-account\\index.vue' /* webpackChunkName: "pages/my-account/index" */))
-const _43c8413e = () => interopDefault(import('..\\pages\\privacy-policy.vue' /* webpackChunkName: "pages/privacy-policy" */))
-const _2b6a0642 = () => interopDefault(import('..\\pages\\shop\\index.vue' /* webpackChunkName: "pages/shop/index" */))
-const _2553d28a = () => interopDefault(import('..\\pages\\cart\\cart.vue' /* webpackChunkName: "pages/cart/cart" */))
-const _6049dcec = () => interopDefault(import('..\\pages\\cart\\empty-cart.vue' /* webpackChunkName: "pages/cart/empty-cart" */))
-const _e4b2c088 = () => interopDefault(import('..\\pages\\my-account\\addresses.vue' /* webpackChunkName: "pages/my-account/addresses" */))
-const _9212fbc8 = () => interopDefault(import('..\\pages\\my-account\\checkout.vue' /* webpackChunkName: "pages/my-account/checkout" */))
-const _c3cabef6 = () => interopDefault(import('..\\pages\\my-account\\downloads.vue' /* webpackChunkName: "pages/my-account/downloads" */))
-const _3e2e308a = () => interopDefault(import('..\\pages\\my-account\\orders.vue' /* webpackChunkName: "pages/my-account/orders" */))
-const _4e28931b = () => interopDefault(import('..\\pages\\my-account\\wishlist.vue' /* webpackChunkName: "pages/my-account/wishlist" */))
-const _684436a4 = () => interopDefault(import('..\\pages\\shop\\shopfilter.vue' /* webpackChunkName: "pages/shop/shopfilter" */))
-const _2218d654 = () => interopDefault(import('..\\pages\\shop\\shoplist.vue' /* webpackChunkName: "pages/shop/shoplist" */))
-const _36faaaf6 = () => interopDefault(import('..\\pages\\product\\_slug.vue' /* webpackChunkName: "pages/product/_slug" */))
-const _4a12f4f8 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _27a8a5fe = () => interopDefault(import('../pages/about-us.vue' /* webpackChunkName: "pages/about-us" */))
+const _6a7be97a = () => interopDefault(import('../pages/faq.vue' /* webpackChunkName: "pages/faq" */))
+const _db8aae9c = () => interopDefault(import('../pages/my-account/index.vue' /* webpackChunkName: "pages/my-account/index" */))
+const _084faa7a = () => interopDefault(import('../pages/privacy-policy.vue' /* webpackChunkName: "pages/privacy-policy" */))
+const _7596dc5c = () => interopDefault(import('../pages/shop/index.vue' /* webpackChunkName: "pages/shop/index" */))
+const _0c18cc9c = () => interopDefault(import('../pages/cart/cart.vue' /* webpackChunkName: "pages/cart/cart" */))
+const _21acb61c = () => interopDefault(import('../pages/cart/empty-cart.vue' /* webpackChunkName: "pages/cart/empty-cart" */))
+const _1a9daf82 = () => interopDefault(import('../pages/my-account/addresses.vue' /* webpackChunkName: "pages/my-account/addresses" */))
+const _1e9b6196 = () => interopDefault(import('../pages/my-account/checkout.vue' /* webpackChunkName: "pages/my-account/checkout" */))
+const _2b11b04b = () => interopDefault(import('../pages/my-account/downloads.vue' /* webpackChunkName: "pages/my-account/downloads" */))
+const _8d594496 = () => interopDefault(import('../pages/my-account/orders.vue' /* webpackChunkName: "pages/my-account/orders" */))
+const _94651ad6 = () => interopDefault(import('../pages/my-account/wishlist.vue' /* webpackChunkName: "pages/my-account/wishlist" */))
+const _56a4ced4 = () => interopDefault(import('../pages/shop/shopfilter.vue' /* webpackChunkName: "pages/shop/shopfilter" */))
+const _0c7fdc0c = () => interopDefault(import('../pages/shop/shoplist.vue' /* webpackChunkName: "pages/shop/shoplist" */))
+const _f3b17352 = () => interopDefault(import('../pages/product/_slug.vue' /* webpackChunkName: "pages/product/_slug" */))
+const _5862cc82 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -34,67 +34,67 @@ export const routerOptions = {
 
   routes: [{
     path: "/about-us",
-    component: _6e4149b0,
+    component: _27a8a5fe,
     name: "about-us"
   }, {
     path: "/faq",
-    component: _aab43e88,
+    component: _6a7be97a,
     name: "faq"
   }, {
     path: "/my-account",
-    component: _3068c5ec,
+    component: _db8aae9c,
     name: "my-account"
   }, {
     path: "/privacy-policy",
-    component: _43c8413e,
+    component: _084faa7a,
     name: "privacy-policy"
   }, {
     path: "/shop",
-    component: _2b6a0642,
+    component: _7596dc5c,
     name: "shop"
   }, {
     path: "/cart/cart",
-    component: _2553d28a,
+    component: _0c18cc9c,
     name: "cart-cart"
   }, {
     path: "/cart/empty-cart",
-    component: _6049dcec,
+    component: _21acb61c,
     name: "cart-empty-cart"
   }, {
     path: "/my-account/addresses",
-    component: _e4b2c088,
+    component: _1a9daf82,
     name: "my-account-addresses"
   }, {
     path: "/my-account/checkout",
-    component: _9212fbc8,
+    component: _1e9b6196,
     name: "my-account-checkout"
   }, {
     path: "/my-account/downloads",
-    component: _c3cabef6,
+    component: _2b11b04b,
     name: "my-account-downloads"
   }, {
     path: "/my-account/orders",
-    component: _3e2e308a,
+    component: _8d594496,
     name: "my-account-orders"
   }, {
     path: "/my-account/wishlist",
-    component: _4e28931b,
+    component: _94651ad6,
     name: "my-account-wishlist"
   }, {
     path: "/shop/shopfilter",
-    component: _684436a4,
+    component: _56a4ced4,
     name: "shop-shopfilter"
   }, {
     path: "/shop/shoplist",
-    component: _2218d654,
+    component: _0c7fdc0c,
     name: "shop-shoplist"
   }, {
     path: "/product/:slug?",
-    component: _36faaaf6,
+    component: _f3b17352,
     name: "product-slug"
   }, {
     path: "/",
-    component: _4a12f4f8,
+    component: _5862cc82,
     name: "index"
   }],
 

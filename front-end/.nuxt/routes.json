@@ -2,97 +2,113 @@
   {
     "name": "about-us",
     "path": "/about-us",
-    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\about-us.vue",
-    "chunkName": "pages/about-us"
+    "component": "/home/fujif/Re-brand-project/front-end/pages/about-us.vue",
+    "chunkName": "pages/about-us",
+    "_name": "_27a8a5fe"
   },
   {
     "name": "faq",
     "path": "/faq",
-    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\faq.vue",
-    "chunkName": "pages/faq"
+    "component": "/home/fujif/Re-brand-project/front-end/pages/faq.vue",
+    "chunkName": "pages/faq",
+    "_name": "_6a7be97a"
   },
   {
     "name": "my-account",
     "path": "/my-account",
-    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\my-account\\\\index.vue",
-    "chunkName": "pages/my-account/index"
+    "component": "/home/fujif/Re-brand-project/front-end/pages/my-account/index.vue",
+    "chunkName": "pages/my-account/index",
+    "_name": "_db8aae9c"
   },
   {
     "name": "privacy-policy",
     "path": "/privacy-policy",
-    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\privacy-policy.vue",
-    "chunkName": "pages/privacy-policy"
+    "component": "/home/fujif/Re-brand-project/front-end/pages/privacy-policy.vue",
+    "chunkName": "pages/privacy-policy",
+    "_name": "_084faa7a"
   },
   {
     "name": "shop",
     "path": "/shop",
-    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\shop\\\\index.vue",
-    "chunkName": "pages/shop/index"
+    "component": "/home/fujif/Re-brand-project/front-end/pages/shop/index.vue",
+    "chunkName": "pages/shop/index",
+    "_name": "_7596dc5c"
   },
   {
     "name": "cart-cart",
     "path": "/cart/cart",
-    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\cart\\\\cart.vue",
-    "chunkName": "pages/cart/cart"
+    "component": "/home/fujif/Re-brand-project/front-end/pages/cart/cart.vue",
+    "chunkName": "pages/cart/cart",
+    "_name": "_0c18cc9c"
   },
   {
     "name": "cart-empty-cart",
     "path": "/cart/empty-cart",
-    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\cart\\\\empty-cart.vue",
-    "chunkName": "pages/cart/empty-cart"
+    "component": "/home/fujif/Re-brand-project/front-end/pages/cart/empty-cart.vue",
+    "chunkName": "pages/cart/empty-cart",
+    "_name": "_21acb61c"
   },
   {
     "name": "my-account-addresses",
     "path": "/my-account/addresses",
-    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\my-account\\\\addresses.vue",
-    "chunkName": "pages/my-account/addresses"
+    "component": "/home/fujif/Re-brand-project/front-end/pages/my-account/addresses.vue",
+    "chunkName": "pages/my-account/addresses",
+    "_name": "_1a9daf82"
   },
   {
     "name": "my-account-checkout",
     "path": "/my-account/checkout",
-    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\my-account\\\\checkout.vue",
-    "chunkName": "pages/my-account/checkout"
+    "component": "/home/fujif/Re-brand-project/front-end/pages/my-account/checkout.vue",
+    "chunkName": "pages/my-account/checkout",
+    "_name": "_1e9b6196"
   },
   {
     "name": "my-account-downloads",
     "path": "/my-account/downloads",
-    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\my-account\\\\downloads.vue",
-    "chunkName": "pages/my-account/downloads"
+    "component": "/home/fujif/Re-brand-project/front-end/pages/my-account/downloads.vue",
+    "chunkName": "pages/my-account/downloads",
+    "_name": "_2b11b04b"
   },
   {
     "name": "my-account-orders",
     "path": "/my-account/orders",
-    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\my-account\\\\orders.vue",
-    "chunkName": "pages/my-account/orders"
+    "component": "/home/fujif/Re-brand-project/front-end/pages/my-account/orders.vue",
+    "chunkName": "pages/my-account/orders",
+    "_name": "_8d594496"
   },
   {
     "name": "my-account-wishlist",
     "path": "/my-account/wishlist",
-    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\my-account\\\\wishlist.vue",
-    "chunkName": "pages/my-account/wishlist"
+    "component": "/home/fujif/Re-brand-project/front-end/pages/my-account/wishlist.vue",
+    "chunkName": "pages/my-account/wishlist",
+    "_name": "_94651ad6"
   },
   {
     "name": "shop-shopfilter",
     "path": "/shop/shopfilter",
-    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\shop\\\\shopfilter.vue",
-    "chunkName": "pages/shop/shopfilter"
+    "component": "/home/fujif/Re-brand-project/front-end/pages/shop/shopfilter.vue",
+    "chunkName": "pages/shop/shopfilter",
+    "_name": "_56a4ced4"
   },
   {
     "name": "shop-shoplist",
     "path": "/shop/shoplist",
-    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\shop\\\\shoplist.vue",
-    "chunkName": "pages/shop/shoplist"
+    "component": "/home/fujif/Re-brand-project/front-end/pages/shop/shoplist.vue",
+    "chunkName": "pages/shop/shoplist",
+    "_name": "_0c7fdc0c"
   },
   {
     "name": "product-slug",
     "path": "/product/:slug?",
-    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\product\\\\_slug.vue",
-    "chunkName": "pages/product/_slug"
+    "component": "/home/fujif/Re-brand-project/front-end/pages/product/_slug.vue",
+    "chunkName": "pages/product/_slug",
+    "_name": "_f3b17352"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "component": "/home/fujif/Re-brand-project/front-end/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_5862cc82"
   }
 ]
