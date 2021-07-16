@@ -1,0 +1,98 @@
+[
+  {
+    "name": "about-us",
+    "path": "/about-us",
+    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\about-us.vue",
+    "chunkName": "pages/about-us"
+  },
+  {
+    "name": "faq",
+    "path": "/faq",
+    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\faq.vue",
+    "chunkName": "pages/faq"
+  },
+  {
+    "name": "my-account",
+    "path": "/my-account",
+    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\my-account\\\\index.vue",
+    "chunkName": "pages/my-account/index"
+  },
+  {
+    "name": "privacy-policy",
+    "path": "/privacy-policy",
+    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\privacy-policy.vue",
+    "chunkName": "pages/privacy-policy"
+  },
+  {
+    "name": "shop",
+    "path": "/shop",
+    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\shop\\\\index.vue",
+    "chunkName": "pages/shop/index"
+  },
+  {
+    "name": "cart-cart",
+    "path": "/cart/cart",
+    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\cart\\\\cart.vue",
+    "chunkName": "pages/cart/cart"
+  },
+  {
+    "name": "cart-empty-cart",
+    "path": "/cart/empty-cart",
+    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\cart\\\\empty-cart.vue",
+    "chunkName": "pages/cart/empty-cart"
+  },
+  {
+    "name": "my-account-addresses",
+    "path": "/my-account/addresses",
+    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\my-account\\\\addresses.vue",
+    "chunkName": "pages/my-account/addresses"
+  },
+  {
+    "name": "my-account-checkout",
+    "path": "/my-account/checkout",
+    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\my-account\\\\checkout.vue",
+    "chunkName": "pages/my-account/checkout"
+  },
+  {
+    "name": "my-account-downloads",
+    "path": "/my-account/downloads",
+    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\my-account\\\\downloads.vue",
+    "chunkName": "pages/my-account/downloads"
+  },
+  {
+    "name": "my-account-orders",
+    "path": "/my-account/orders",
+    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\my-account\\\\orders.vue",
+    "chunkName": "pages/my-account/orders"
+  },
+  {
+    "name": "my-account-wishlist",
+    "path": "/my-account/wishlist",
+    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\my-account\\\\wishlist.vue",
+    "chunkName": "pages/my-account/wishlist"
+  },
+  {
+    "name": "shop-shopfilter",
+    "path": "/shop/shopfilter",
+    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\shop\\\\shopfilter.vue",
+    "chunkName": "pages/shop/shopfilter"
+  },
+  {
+    "name": "shop-shoplist",
+    "path": "/shop/shoplist",
+    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\shop\\\\shoplist.vue",
+    "chunkName": "pages/shop/shoplist"
+  },
+  {
+    "name": "product-slug",
+    "path": "/product/:slug?",
+    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\product\\\\_slug.vue",
+    "chunkName": "pages/product/_slug"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\aviat\\\\OneDrive\\\\Desktop\\\\Re-brand-project\\\\front-end\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
+  }
+]
