@@ -1,0 +1,25 @@
+{
+  "name": "andshop-vue",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "bootstrap-vue": "^2.21.2",
+    "core-js": "^3.9.1",
+    "nuxt": "^2.15.3",
+    "swiper": "^5.4.5",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-inner-image-zoom": "^1.1.0",
+    "vue-owl-carousel": "^2.0.3",
+    "vue-progressbar-component": "^1.1.0",
+    "vue-sidebar-menu": "^4.7.4",
+    "vue-simple-range-slider": "^0.1.10"
+  },
+  "devDependencies": {}
+}
