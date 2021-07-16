@@ -27,8 +27,8 @@
             <div class="product_variation_one_boxed img-zoom-hover">
               <img :src="require('@/assets/img/offer/woman.png')" alt="img" />
               <div class="product_var_one_text">
-                <h4 class="color_one">Outerwear</h4>
-                <h2>New</h2>
+                <h4 class="color_one">Vacance</h4>
+                <h2>Hot</h2>
                 <h4>Collection</h4>
                 <nuxt-link
                   to="/shop/shoplist"
@@ -67,7 +67,7 @@
             <div class="product_variation_one_boxed img-zoom-hover">
               <img :src="require('@/assets/img/offer/woman4.png')" alt="img" />
               <div class="product_var_one_text">
-                <h2>New</h2>
+                <h2>Cool</h2>
                 <h4 class="color_one">Arrivals</h4>
                 <nuxt-link
                   to="/shop/shoplist"
@@ -79,8 +79,8 @@
             <div class="product_variation_one_boxed img-zoom-hover">
               <img :src="require('@/assets/img/offer/kids.png')" alt="img" />
               <div class="product_var_one_text">
-                <h2>Hot</h2>
-                <h4 class="color_one">Offer</h4>
+                <h2>Cool</h2>
+                <h4 class="color_one">Sale</h4>
                 <nuxt-link to="/shop" class="theme-btn-one bg-black btn_sm"
                   >Shop Now</nuxt-link
                 >
@@ -97,8 +97,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="center_heading">
-              <h2>Hot Product</h2>
-              <p>Mauris luctus nisi sapien tristique dignissim ornare</p>
+              <h2>The Best Product</h2>
             </div>
           </div>
         </div>
@@ -107,7 +106,7 @@
           <b-tab title="New Arrival" class="row">
             <div
               class="col-lg-3 col-md-4 col-sm-6 col-12"
-              v-for="productItem in productItems.slice(0, 8)"
+              v-for="productItem in productItems.slice(0, 4)"
               :key="productItem.id"
             >
               <ProductBox
@@ -122,28 +121,10 @@
             </div>
           </b-tab>
 
-          <b-tab title="Trending" class="row">
+          <b-tab title="Weekly Best" class="row">
             <div
               class="col-lg-3 col-md-4 col-sm-6 col-12"
               v-for="productItem in productItems.slice(0, 3)"
-              :key="productItem.id"
-            >
-              <ProductBox
-                :productImg1="productItem.productImg1"
-                :productImg2="productItem.productImg2"
-                :productTagClass="productItem.productTagClass"
-                :productTag="productItem.productTag"
-                :productTitle="productItem.productTitle"
-                :productPrice="productItem.productPrice"
-                :productDescription="productItem.productDescription"
-              />
-            </div>
-          </b-tab>
-
-          <b-tab title="Best Sellers" class="row">
-            <div
-              class="col-lg-3 col-md-4 col-sm-6 col-12"
-              v-for="productItem in productItems.slice(0, 6)"
               :key="productItem.id"
             >
               <ProductBox
