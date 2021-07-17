@@ -31,9 +31,9 @@
                       <th class="product_thumb">제품</th>
                       <th class="product_name">제품명</th>
                       <th class="product-price">가격</th>
-                      <th class="product_quantity">OPtion</th>
-                      <th class="product_total">Total</th>
-                      <th class="product_remove">Remove</th>
+                      <th class="product_quantity">옵션</th>
+                      <th class="product_total">합계</th>
+                      <th class="product_remove">제거</th>
                     </tr>
                   </thead>
                   <!-- End Cart Table Head -->
@@ -124,23 +124,27 @@
               data-aos="fade-up"
               data-aos-delay="400"
             >
-              <h3>Cart Total</h3>
+              <h3>Cart Price</h3>
               <div class="coupon_inner">
                 <div class="cart_subtotal">
-                  <p>Subtotal</p>
+                  <p>합계</p>
                   <p class="cart_amount">$215.00</p>
                 </div>
                 <div class="cart_subtotal ">
-                  <p>Shipping</p>
-                  <p class="cart_amount"><span>Flat Rate:</span> $255.00</p>
+                  <p>배송비</p>
+                  <p class="cart_amount"><span>무료:</span> Free</p>
                 </div>
-                <a href="#">Calculate shipping</a>
 
                 <div class="cart_subtotal">
-                  <p>Total</p>
+                  <p>총계</p>
                   <p class="cart_amount">$215.00</p>
                 </div>
                 <div class="checkout_btn">
+                  <nuxt-link
+                    to="/"
+                    class="theme-btn-one btn-black-overlay btn_sm"
+                    >Back to Main</nuxt-link
+                  >
                   <nuxt-link
                     to="/my-account/checkout"
                     class="theme-btn-one btn-black-overlay btn_sm"
