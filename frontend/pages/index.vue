@@ -8,11 +8,6 @@
             <div class="banner_text_one">
               <h1>Live For <span>Fashion</span></h1>
               <h3>Save Up To 50%</h3>
-              <nuxt-link
-                to="/shop/shoplist"
-                class="theme-btn-one bg-black btn_md"
-                >Shop Now</nuxt-link
-              >
             </div>
           </div>
         </div>
