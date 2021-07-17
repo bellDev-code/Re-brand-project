@@ -21,22 +21,6 @@
     <section id="shop_main_area" class="ptb-100">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 col-md-12">
-            <div class="product_filter">
-              <div class="customs_selects">
-                <select name="product" class="customs_sel_box">
-                  <option value="Filter">Filter</option>
-                  <option value="most_popular">Most Popular</option>
-                  <option value="best_seller">Best Seller</option>
-                  <option value="tranding">Tranding</option>
-                  <option value="featured">Featured</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
           <ShopSidebar />
 
           <div class="col-lg-9">
