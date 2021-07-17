@@ -54,8 +54,8 @@
                             >
                           </li>
                           <li>
-                            <nuxt-link to="/my-account/orders"
-                              >주문확인</nuxt-link
+                            <nuxt-link to="/blockchain/record"
+                              >대여 기록</nuxt-link
                             >
                           </li>
                         </ul>
