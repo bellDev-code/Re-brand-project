@@ -116,7 +116,7 @@
                           required=""
                           type="text"
                           id="email"
-                          placeholder="info@gmail.com"
+                          placeholder="example@email.com"
                         />
                       </div>
                     </div>
@@ -216,9 +216,9 @@
                 <table class="table">
                   <thead>
                     <tr>
-                      <th>Product</th>
-                      <th class="w-auto p-3">Option</th>
-                      <th>Total</th>
+                      <th>제품</th>
+                      <th class="w-auto p-3">옵션</th>
+                      <th>합계</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -248,7 +248,7 @@
                   </tbody>
                   <tfoot>
                     <tr>
-                      <th>SubTotal</th>
+                      <th>합계</th>
                       <td></td>
                       <td class="product-subtotal">$349.00</td>
                     </tr>
@@ -263,7 +263,7 @@
                       <td>(Subtotal * Coupon_rate)</td>
                     </tr>
                     <tr>
-                      <th>Total</th>
+                      <th>결제 금액</th>
                       <td></td>
                       <td class="product-subtotal">$349.00</td>
                     </tr>
