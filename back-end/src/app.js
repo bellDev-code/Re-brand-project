@@ -1,13 +1,13 @@
 const express = require("express");
-const app = express();
 const fs = require("fs");
 const dotenv = require("dotenv");
-const path = require("path");
 const cors = require("cors");
 
 dotenv.config();
 
 require("./seeder");
+
+const app = express();
 
 app.use(
   cors({
@@ -35,21 +35,6 @@ fs.watchFile(__dirname + "/sql.js", (curr, prev) => {
 // 모든 api로 시작하는 요청은 apiRouter로 간다.
 const apiRouter = require("./routers/api");
 app.use("/api", apiRouter);
-
-// const sys = {
-//   async db(alias, param = [], where = "") {
-//     return new Promise((resolve, reject) =>
-//       dbPool.query(sql[alias].query + where, param, (error, rows) => {
-//         if (error) {
-//           if (error.code != "ER_DUP_ENTRY") console.log(error);
-//           resolve({
-//             error,
-//           });
-//         } else resolve(rows);
-//       })
-//     );
-//   },
-// };
 
 app.listen(3000, () => {
   var dir = __dirname + "/uploads";
