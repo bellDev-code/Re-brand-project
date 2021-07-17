@@ -35,9 +35,7 @@
                       </li>
 
                       <li class="has-dropdown">
-                        <a href="#!"
-                          >마이메뉴 <i class="fa fa-angle-down"></i
-                        ></a>
+                        <a href="#!">상품 <i class="fa fa-angle-down"></i></a>
                         <!-- Sub Menu -->
                         <ul class="sub-menu">
                           <li>
