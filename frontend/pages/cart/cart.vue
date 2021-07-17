@@ -28,10 +28,10 @@
                   <!-- Start Cart Table Head -->
                   <thead>
                     <tr>
-                      <th class="product_thumb">Image</th>
-                      <th class="product_name">Product</th>
-                      <th class="product-price">Price</th>
-                      <th class="product_quantity">Quantity</th>
+                      <th class="product_thumb">제품</th>
+                      <th class="product_name">제품명</th>
+                      <th class="product-price">가격</th>
+                      <th class="product_quantity">OPtion</th>
                       <th class="product_total">Total</th>
                       <th class="product_remove">Remove</th>
                     </tr>
@@ -65,6 +65,17 @@
                             class="border-0"
                           ></b-form-spinbutton>
                         </div>
+                        <div>
+                          <select
+                            class="form-select form-select-sm mt-2"
+                            aria-label=".form-select-sm example"
+                          >
+                            <option selected>색상을 선택하세요</option>
+                            <option value="1">White</option>
+                            <option value="2">Beige</option>
+                            <option value="3">Black</option>
+                          </select>
+                        </div>
                       </td>
                       <td class="product_total">
                         ${{ productItem.totalPrice }}
@@ -88,16 +99,16 @@
                   </tbody>
                 </table>
               </div>
-              <div class="cart_submit">
+              <!-- <div class="cart_submit">
                 <button
                   class="theme-btn-one btn-black-overlay btn_sm"
                   type="submit"
                 >
                   update cart
                 </button>
-              </div>
+              </div> -->
             </div>
-            <div class="coupon_inner_two">
+            <!-- <div class="coupon_inner_two">
               <input class="mb-2" placeholder="Coupon code" type="text" />
               <button
                 type="submit"
@@ -105,7 +116,7 @@
               >
                 Apply coupon
               </button>
-            </div>
+            </div> -->
           </div>
           <div class="col-lg-12 col-md-12">
             <div

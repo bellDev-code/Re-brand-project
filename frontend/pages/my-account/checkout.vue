@@ -55,14 +55,26 @@
           <div class="col-lg-6 col-md-12 col-sm-12 col-12">
             <div class="checkout-area-bg bg-white">
               <div class="check-heading">
-                <h3>Billing Information</h3>
+                <h3>주문 고객정보</h3>
               </div>
+
+              <div class="row align-items-center mt-3">
+                <div class="col">
+                  <span class="mr-3">From</span>
+                  <input type="date" name="" id="" />
+                </div>
+                <div class="col">
+                  <span class="mr-3">To</span>
+                  <input type="date" name="" id="" />
+                </div>
+              </div>
+
               <div class="check-out-form">
                 <form>
                   <div class="row">
                     <div class="col-lg-6 col-md-12 col-sm-=12 col-12">
                       <div class="form-group">
-                        <label for="fname">First name</label>
+                        <label for="fname">이름</label>
                         <input
                           type="text"
                           required=""
@@ -74,7 +86,7 @@
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-=12 col-12">
                       <div class="form-group">
-                        <label for="lname">Last name</label>
+                        <label for="lname">성</label>
                         <input
                           type="text"
                           required=""
@@ -97,8 +109,8 @@
                       </div>
                     </div> -->
                     <div class="col-lg-12 col-md-12 col-sm-=12 col-12">
-                      <div class="form-group">
-                        <label for="email">Email Addresse</label>
+                      <div class="form-group mt-3">
+                        <label for="email">Email</label>
                         <input
                           class="form-control"
                           required=""
@@ -108,58 +120,58 @@
                         />
                       </div>
                     </div>
-                    <div class="col-lg-12 col-md-12 col-sm-=12 col-12">
+                    <!-- <div class="col-lg-12 col-md-12 col-sm-=12 col-12">
                       <div class="form-group">
                         <label for="country">Country</label>
                         <select class="form-control first_null" id="country">
-                          <option value="">Select an option...</option>
+                          <option value=""s>Select an option...</option>
                           <option value="AX">usa</option>
                           <option value="AF">Afghanistan</option>
                         </select>
                       </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-sm-=12 col-12">
+                    </div> -->
+                    <div class="col-lg-6 col-md-12 col-sm-=12 col-12 mt-3">
                       <div class="form-group">
-                        <label for="city">State/City</label>
+                        <label for="city">시/도</label>
                         <select class="form-control first_null" id="city">
-                          <option value="">Select an option...</option>
-                          <option value="AX">Aland Islands</option>
-                          <option value="AF">Afghanistan</option>
+                          <option value="">시/도를 선택해주세요.</option>
+                          <option value="AX">Seoul</option>
+                          <option value="AF">Gyeonggi-do</option>
                         </select>
                       </div>
                     </div>
-                    <div class="col-lg-6 col-md-12 col-sm-=12 col-12">
+                    <div class="col-lg-6 col-md-12 col-sm-=12 col-12 mt-3">
                       <div class="form-group">
-                        <label for="zip">State/City</label>
+                        <label for="zip">동/읍/면/리</label>
                         <input
                           type="text"
                           class="form-control"
                           id="zip"
                           required=""
-                          placeholder="Enter Your zipcode"
+                          placeholder="동/읍/면/리"
                         />
                       </div>
                     </div>
-                    <div class="col-lg-12 col-md-12 col-sm-=12 col-12">
+                    <div class="col-lg-12 col-md-12 col-sm-=12 col-12 mt-3">
                       <div class="form-group">
-                        <label for="faddress">Full Address</label>
+                        <label for="faddress">상세주소</label>
                         <input
                           type="text"
                           class="form-control"
                           id="faddress"
                           required=""
-                          placeholder="Enter your address here.."
+                          placeholder="상세주소를 기입해주세요."
                         />
                       </div>
                     </div>
-                    <div class="col-lg-12 col-md-12 col-sm-=12 col-12">
+                    <div class="col-lg-12 col-md-12 col-sm-=12 col-12 mt-3">
                       <div class="form-group">
-                        <label for="messages">Additional Notes</label>
+                        <label for="messages">추가 요청사항</label>
                         <textarea
                           rows="5"
                           class="form-control"
                           id="messages"
-                          placeholder="Order notes"
+                          placeholder="안전한 배송 부탁드립니다."
                         ></textarea>
                       </div>
                     </div>
@@ -183,13 +195,29 @@
           <div class="col-lg-6 col-md-12 col-sm-12 col-12">
             <div class="order_review  box-shadow bg-white">
               <div class="check-heading">
-                <h3>Your Orders</h3>
+                <h3>주문상세</h3>
               </div>
-              <div class="table-responsive order_table">
+              <h4 class="mt-3 order_review  box-shadow bg-white">이용 기간</h4>
+              <div class="container">
+                <div class="row">
+                  <div class="col text-center">
+                    Date_Start
+                  </div>
+                  <div class="col text-center">
+                    ~
+                  </div>
+
+                  <div class="col text-center">
+                    Date_End
+                  </div>
+                </div>
+              </div>
+              <div class="table-responsive order_table mt-3">
                 <table class="table">
                   <thead>
                     <tr>
                       <th>Product</th>
+                      <th class="w-auto p-3">Option</th>
                       <th>Total</th>
                     </tr>
                   </thead>
@@ -199,12 +227,14 @@
                         Blue Dress For Woman
                         <span class="product-qty">x 2</span>
                       </td>
+                      <td>Option_color</td>
                       <td>$90.00</td>
                     </tr>
                     <tr>
                       <td>
                         Lether Gray Tuxedo <span class="product-qty">x 1</span>
                       </td>
+                      <td>Option_color</td>
                       <td>$55.00</td>
                     </tr>
                     <tr>
@@ -212,33 +242,54 @@
                         Woman Full Sliv Dresss
                         <span class="product-qty">x 3</span>
                       </td>
+                      <td>Option_color</td>
                       <td>$204.00</td>
                     </tr>
                   </tbody>
                   <tfoot>
                     <tr>
                       <th>SubTotal</th>
+                      <td></td>
                       <td class="product-subtotal">$349.00</td>
                     </tr>
                     <tr>
-                      <th>Shipping</th>
-                      <td>Free Shipping</td>
+                      <th>배송비</th>
+                      <td></td>
+                      <td>Free</td>
+                    </tr>
+                    <tr>
+                      <th>쿠폰 할인</th>
+                      <td></td>
+                      <td>(Subtotal * Coupon_rate)</td>
                     </tr>
                     <tr>
                       <th>Total</th>
+                      <td></td>
                       <td class="product-subtotal">$349.00</td>
                     </tr>
                   </tfoot>
                 </table>
+                <div
+                  class="col-lg-6 col-md-12 col-sm-=12 col-12 border border-warning border-5 mt-3"
+                >
+                  <div class="form-group">
+                    <label for="coupon">Use Coupon</label>
+                    <select class="form-control first_null" id="city">
+                      <option value="">Select your coupon</option>
+                      <option value="AX">New customer 10% off</option>
+                      <option value="AF">VIP 30% off</option>
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="order_review bg-white">
               <div class="check-heading">
-                <h3>Payment</h3>
+                <h3>결제수단</h3>
               </div>
               <div class="payment_method">
                 <div class="payment_option">
-                  <div class="custome-radio">
+                  <!-- <div class="custome-radio">
                     <input
                       class="form-check-input"
                       required=""
@@ -255,7 +306,7 @@
                       There are many variations of passages of Lorem Ipsum
                       available, but the majority have suffered alteration.
                     </p>
-                  </div>
+                  </div> -->
                   <div class="custome-radio">
                     <input
                       class="form-check-input"
@@ -265,11 +316,10 @@
                       value="option4"
                     />
                     <label class="form-check-label" for="exampleRadios4"
-                      >Check Payment</label
+                      >Credit cards</label
                     >
                     <p data-method="option4" class="payment-text">
-                      Please send your cheque to Store Name, Store Street, Store
-                      Town, Store State / County, Store Postcode.
+                      Use your credit cards
                     </p>
                   </div>
                   <div class="custome-radio">
@@ -281,18 +331,24 @@
                       value="option5"
                     />
                     <label class="form-check-label" for="exampleRadios5"
-                      >Paypal</label
+                      >Check-Card</label
                     >
                     <p data-method="option5" class="payment-text">
-                      Pay via PayPal; you can pay with your credit card if you
-                      don't have a PayPal account.
+                      Use your check cards
                     </p>
                   </div>
                 </div>
               </div>
-              <a href="#!" class="theme-btn-one btn-black-overlay btn_sm"
-                >Place Order</a
+              <nuxt-link to="/" class="theme-btn-one btn-black-overlay btn_sm">
+                > Back to Main</nuxt-link
               >
+
+              <button
+                v-b-toggle.search_sidebar
+                class="theme-btn-one btn-black-overlay btn_sm search_width offcanvas-toggle"
+              >
+                > Place Order
+              </button>
             </div>
           </div>
         </div>
