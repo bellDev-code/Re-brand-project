@@ -17,6 +17,13 @@
       </div>
     </section>
 
+    <!-- <table class="numberOfRent">
+      <tr>
+        <th>대여 횟수</th>
+        <td></td>
+      </tr>
+    </table> -->
+
     <!-- Record Area -->
     <section id="Record_area" class="ptb-100">
       <div class="container">

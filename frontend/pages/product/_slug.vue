@@ -57,18 +57,7 @@
                     alt="img"
                   />
                 </swiper-slide>
-                <swiper-slide>
-                  <img
-                    :src="require('@/assets/img/product-image/product6.png')"
-                    alt="img"
-                  />
-                </swiper-slide>
-                <swiper-slide>
-                  <img
-                    :src="require('@/assets/img/product-image/product7.png')"
-                    alt="img"
-                  />
-                </swiper-slide>
+              
 
                 <div
                   class="swiper-button-prev swiper-button-white"
@@ -88,6 +77,14 @@
                   {{ this.$route.params.slug }}
                 </h3>
                 <h3 v-else>Black fashion handbag JI9023</h3>
+ <!-- <b-container fluid>
+  <b-row>
+    <b-col placement="string, left" md="4" class="py-4">
+      <b-button id="button-1" variant="outline-warning">현재재고 확인</b-button>
+    </b-col>
+    </b-row>
+    </b-container>
+      <b-tooltip target="button-1" title="Online!"></b-tooltip> -->
 
                 <div class="reviews_rating">
                   <i class="fas fa-star"></i>
@@ -119,14 +116,20 @@
                         to="/my-account/wishlist"
                         class="action wishlist"
                         title="Wishlist"
-                        ><i class="far fa-heart"></i>Add To Wishlist</nuxt-link
+                        ><i class="far fa-heart"></i>위시리스트</nuxt-link
                       >
                     </li>
                   </ul>
-                  <nuxt-link
+                   <nuxt-link
+                    to="/my-account/checkout"
+                    class="theme-btn-one btn-orange-overlay btn_sm"
+                    >구매하기</nuxt-link
+                  >
+                   <br>
+                    <nuxt-link
                     to="/cart/cart"
                     class="theme-btn-one btn-black-overlay btn_sm"
-                    >Add To Cart</nuxt-link
+                    >장바구니</nuxt-link
                   >
                 </div>
               </div>
@@ -169,6 +172,14 @@
                       sem. Quisque velit nisi, pretium ut lacinia in, elementum
                       id enim.
                     </p>
+                    <div class="differences"> 
+                      <strong>Re:brand만의 차별점!</strong>
+                    블록체인 NFT를 통해 정품 인증과 대여 기록을 
+                    한 번에 확인할 수 있습니다.
+                    
+                    <b-button variant="outline-success">정품 인증서 보기</b-button>
+                    <b-button variant="outline-success http://localhost:3000/blockchain/record">대여기록</b-button>
+                    </div>
                   </div>
                 </b-tab>
 
@@ -188,12 +199,12 @@
                    <td></td>
                  </tr>
                    <tr>
-                   <th>제조사</th>
+                   <th>모델명</th>
                    <td></td>
                    <td></td>
                  </tr>
                    <tr>
-                   <th>모델명</th>
+                   <th>제조사</th>
                    <td></td>
                    <td></td>
                  </tr>
@@ -257,7 +268,7 @@
                               <p>5 days ago</p>
                             </div>
                             <div class="post-share">
-                              <a href="#!" class="replay">답변</a>
+                              <a href="#!" class="replay">댓글</a>
                               
                             </div>
                           </div>
@@ -299,7 +310,7 @@
                               <p>5 days ago</p>
                             </div>
                             <div class="post-share">
-                              <a href="#!" class="replay">답변</a>
+                              <a href="#!" class="replay">댓글</a>
                               
                             </div>
                           </div>
@@ -340,7 +351,7 @@
                               <p>5 days ago</p>
                             </div>
                             <div class="post-share">
-                              <a href="#!" class="replay">답변</a>
+                              <a href="#!" class="replay">댓글</a>
                               
                             </div>
                           </div>
@@ -389,8 +400,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="center_heading">
-              <h2>You Might Also Like</h2>
-              <p>Mauris luctus nisi sapien tristique dignissim ornare</p>
+              <h2>Recommended products</h2>
             </div>
           </div>
         </div>
@@ -507,6 +517,7 @@ export default {
       ],
       // Product Quanity Increment/ Decrement Data
       value: 1,
+     
     };
   },
   // Page head() Title, description for SEO

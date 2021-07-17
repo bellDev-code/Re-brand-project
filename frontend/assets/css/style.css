@@ -202,6 +202,11 @@ ul li {
   color: #fff;
 }
 
+.btn-orange-overlay {
+    background-color: orange;
+    color: #fff;
+  }
+
 .btn-black-overlay:hover {
   background-color: #262626;
   color: #fff;
@@ -3169,6 +3174,21 @@ th {
 }
 
 #review .product_reviews ul .media {
+  box-shadow: 0px 0px 15px 6px #96969614;
+  padding: 44px 50px;
+  margin-top: 30px;
+}
+
+.differences {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.differences {
   box-shadow: 0px 0px 15px 6px #96969614;
   padding: 44px 50px;
   margin-top: 30px;
