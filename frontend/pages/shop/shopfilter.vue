@@ -23,7 +23,12 @@
         <div class="row">
           <ShopSidebar />
 
-          <div class="col-lg-9">
+          <div class="col-lg-9 text-center">
+            <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="btn btn-light">All</button>
+              <button type="button" class="btn btn-light">Bag</button>
+              <button type="button" class="btn btn-light">Shoes</button>
+            </div>
             <div class="row">
               <div
                 class="col-lg-4 col-md-4 col-sm-6 col-12"

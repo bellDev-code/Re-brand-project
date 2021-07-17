@@ -26,10 +26,10 @@
               <div class="customs_selects">
                 <select name="product" class="customs_sel_box">
                   <option value="Filter">Filter</option>
-                  <option value="most_popular">New Arrival</option>
-                  <option value="best_seller">Best Seller</option>
-                  <option value="tranding">Tranding</option>
-                  <option value="featured">Featured</option>
+                  <option value="most_popular">Vacance</option>
+                  <option value="best_seller">Summer</option>
+                  <option value="tranding">Arrivals</option>
+                  <option value="featured">Sale</option>
                 </select>
               </div>
             </div>
