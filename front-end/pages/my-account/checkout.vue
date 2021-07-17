@@ -84,7 +84,7 @@
                         />
                       </div>
                     </div>
-                    <div class="col-lg-12 col-md-12 col-sm-=12 col-12">
+                    <!-- <div class="col-lg-12 col-md-12 col-sm-=12 col-12">
                       <div class="form-group">
                         <label for="cname">Company Name</label>
                         <input
@@ -95,7 +95,7 @@
                           placeholder="Company Name"
                         />
                       </div>
-                    </div>
+                    </div> -->
                     <div class="col-lg-12 col-md-12 col-sm-=12 col-12">
                       <div class="form-group">
                         <label for="email">Email Addresse</label>
