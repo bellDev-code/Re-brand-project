@@ -61,11 +61,21 @@
               <div class="row align-items-center mt-3">
                 <div class="col">
                   <span class="mr-3">From</span>
-                  <input type="date" name="" id="" />
+                  <input
+                    type="date"
+                    name=""
+                    v-model="period_start"
+                    @change="startDate"
+                  />
                 </div>
                 <div class="col">
                   <span class="mr-3">To</span>
-                  <input type="date" name="" id="" />
+                  <input
+                    type="date"
+                    name=""
+                    v-model="period_end"
+                    @change="endDate"
+                  />
                 </div>
               </div>
 
@@ -214,16 +224,13 @@
               <h4 class="mt-3 order_review  box-shadow bg-white">이용 기간</h4>
               <div class="container">
                 <div class="row">
-                  <div class="col text-center">
-                    Date_Start
-                  </div>
+                  <input type="text" class="col text-center" v-model="startD" />
+
                   <div class="col text-center">
                     ~
                   </div>
 
-                  <div class="col text-center">
-                    Date_End
-                  </div>
+                  <input type="text" class="col text-center" v-model="endD" />
                 </div>
               </div>
               <div class="table-responsive order_table mt-3">
@@ -288,7 +295,7 @@
                 >
                   <div class="form-group">
                     <label for="coupon">Use Coupon</label>
-                    <select class="form-control first_null" id="city">
+                    <select class="form-control first_null" id="discount">
                       <option value="">Select your coupon</option>
                       <option value="AX">New customer 10% off</option>
                       <option value="AF">VIP 30% off</option>
@@ -420,6 +427,8 @@ export default {
           to: "/my-account/checkout",
         },
       ],
+      startD: "시작일",
+      endD: "반납일",
     };
   },
 
@@ -435,6 +444,15 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    // 날짜 업데이트
+    startDate() {
+      this.startD = this.period_start;
+    },
+    endDate() {
+      this.endD = this.period_end;
+    },
   },
 };
 </script>
