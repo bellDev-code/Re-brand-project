@@ -189,6 +189,16 @@ ul li {
   border-radius: 0;
 }
 
+.theme-btn-two {
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-style: normal;
+  letter-spacing: 2px;
+  display: inline-block;
+  border-radius: 4px;
+}
+
 .btn_md {
   padding: 16px 35px;
 }
@@ -200,6 +210,12 @@ ul li {
 .btn-black-overlay {
   background-color: #000;
   color: #fff;
+}
+
+.btn-green-overlay {
+  background-color: white;
+  /* color: #fff; */
+  border: 2px solid green;
 }
 
 .btn-orange-overlay {
@@ -408,9 +424,9 @@ button {
   tr,
   th,
   td {
-    border-bottom: 1px solid black;
-    text-align: center;
-    width: 10%;
+    border: 1px solid black;
+    text-align: right;
+    padding: 5px;
   }
 }
 

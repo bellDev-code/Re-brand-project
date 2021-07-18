@@ -77,14 +77,15 @@
                   {{ this.$route.params.slug }}
                 </h3>
                 <h3 v-else>Black fashion handbag JI9023</h3>
- <b-container fluid>
-  <b-row>
-    <b-col placement="string, left" md="4" class="py-4">
-      <b-button id="button-1" variant="outline-warning">현재재고 확인</b-button>
-    </b-col>
-    </b-row>
-    </b-container>
-      <b-tooltip target="button-1" title="재고가 보여집니다"></b-tooltip>
+
+ <div>
+  <b-button size="sm" v-b-modal.modal-sm variant="primary">현재 재고 확인</b-button>
+
+  <b-modal id="modal-sm" size="sm" title="현재 재고">
+    <p class="my-4">대여 가능한 상품:</p>
+    <p class="my-4">대여 중인 상품:</p>
+  </b-modal>
+</div>
 
                 <div class="reviews_rating">
                   <i class="fas fa-star"></i>
@@ -178,8 +179,9 @@
                     블록체인 NFT를 통해 정품 인증과 대여 기록을 
                     한 번에 확인할 수 있습니다.
                     
-                    <b-button variant="outline-success">정품 인증서 보기</b-button>
-                    <b-button variant="outline-success http://localhost:3000/blockchain/record">대여기록</b-button>
+                    <nuxt-link to="/blockchain/guarantee" class="theme-btn-two btn-green-overlay btn_sm">정품 인증서 보기</nuxt-link>
+                    <nuxt-link to="/blockchain/record" class="theme-btn-two btn-green-overlay btn_sm">대여기록</nuxt-link>
+      
                     </div>
                   </div>
                 </b-tab>

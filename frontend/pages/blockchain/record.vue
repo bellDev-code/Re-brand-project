@@ -17,18 +17,21 @@
       </div>
     </section>
 
-    <table class="numberOfRent">
-      <tr>
-        <th>대여 횟수</th>
-        <td></td>
-      </tr>
-    </table>
-
     <!-- Record Area -->
     <section id="Record_area" class="ptb-100">
       <div class="container">
         <div class="row">
           <div class="col-12">
+            <div class="row">
+              <div class="col-10"></div>
+              <table class="numberOfRent col-2">
+                <tr>
+                  <th class="numberOfRent-th">대여 횟수</th>
+                  <td class="numberOfRent-td"></td>
+                </tr>
+              </table>
+            </div>
+
             <!-- Accordion card -->
             <div class="faqs_area_wrapper">
               <div class="card_items_area">
@@ -152,5 +155,12 @@ th td {
 .record_text {
   margin-top: 1.5rem;
   text-align: right;
+}
+.numberOfRent-th {
+  width: 60px;
+  font-size: 1rem;
+}
+.numberOfRent-td {
+  width: 40px;
 }
 </style>
