@@ -1,4 +1,5 @@
 <template>
+
   <div>
     <!-- Banner Area -->
     <section id="common_banner_one">
@@ -142,6 +143,15 @@
             <div class="product_details_tabs">
               <b-tabs>
                 <b-tab title="Detail" active id="description">
+                   <div class="differences"> 
+                      <strong>Re:brand만의 차별점!</strong>
+                    블록체인 NFT를 통해 정품 인증과 대여 기록을 
+                    한 번에 확인할 수 있습니다.
+                    
+                    <nuxt-link to="/blockchain/guarantee" class="theme-btn-two btn-green-overlay btn_sm">정품 인증서 보기</nuxt-link>
+                    <nuxt-link to="/blockchain/record" class="theme-btn-two btn-green-overlay btn_sm">대여기록</nuxt-link>
+      
+                    </div>
                   <div class="product_description">
                    
                     <p>
@@ -174,7 +184,7 @@
                       sem. Quisque velit nisi, pretium ut lacinia in, elementum
                       id enim.
                     </p>
-                    <div class="differences"> 
+                    <!-- <div class="differences"> 
                       <strong>Re:brand만의 차별점!</strong>
                     블록체인 NFT를 통해 정품 인증과 대여 기록을 
                     한 번에 확인할 수 있습니다.
@@ -182,7 +192,7 @@
                     <nuxt-link to="/blockchain/guarantee" class="theme-btn-two btn-green-overlay btn_sm">정품 인증서 보기</nuxt-link>
                     <nuxt-link to="/blockchain/record" class="theme-btn-two btn-green-overlay btn_sm">대여기록</nuxt-link>
       
-                    </div>
+                    </div> -->
                   </div>
                 </b-tab>
 
