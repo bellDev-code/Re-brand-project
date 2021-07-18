@@ -77,14 +77,14 @@
                   {{ this.$route.params.slug }}
                 </h3>
                 <h3 v-else>Black fashion handbag JI9023</h3>
- <!-- <b-container fluid>
+ <b-container fluid>
   <b-row>
     <b-col placement="string, left" md="4" class="py-4">
       <b-button id="button-1" variant="outline-warning">현재재고 확인</b-button>
     </b-col>
     </b-row>
     </b-container>
-      <b-tooltip target="button-1" title="Online!"></b-tooltip> -->
+      <b-tooltip target="button-1" title="재고가 보여집니다"></b-tooltip>
 
                 <div class="reviews_rating">
                   <i class="fas fa-star"></i>
@@ -142,6 +142,7 @@
               <b-tabs>
                 <b-tab title="Detail" active id="description">
                   <div class="product_description">
+                   
                     <p>
                       Curabitur arcu erat, accumsan id imperdiet et, porttitor
                       at sem. Vestibulum ac diam sit amet quam vehicula

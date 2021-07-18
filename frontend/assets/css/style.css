@@ -203,9 +203,9 @@ ul li {
 }
 
 .btn-orange-overlay {
-    background-color: orange;
-    color: #fff;
-  }
+  background-color: orange;
+  color: #fff;
+}
 
 .btn-black-overlay:hover {
   background-color: #262626;
@@ -401,6 +401,17 @@ button {
 
 .search_width img {
   width: 20px;
+}
+
+/* Record Table Style */
+.numberOfRent {
+  tr,
+  th,
+  td {
+    border-bottom: 1px solid black;
+    text-align: center;
+    width: 10%;
+  }
 }
 
 /*Main Menu Style*/
