@@ -157,6 +157,37 @@
         </div>
       </div>
     </section>
+
+    <!-- Related Product -->
+    <section id="related_product" class="pb-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="center_heading">
+              <h2>Recommended products</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="col-lg-3 col-md-4 col-sm-6 col-12"
+            v-for="productItem in relatedItems"
+            :key="productItem.id"
+          >
+            <ProductBox
+              :productImg1="productItem.productImg1"
+              :productImg2="productItem.productImg2"
+              :productTagClass="productItem.productTagClass"
+              :productTag="productItem.productTag"
+              :productTitle="productItem.productTitle"
+              :productPrice="productItem.productPrice"
+              :productDescription="productItem.productDescription"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- related Product end -->
   </div>
 </template>
 
@@ -220,6 +251,61 @@ export default {
         {
           text: "Cart",
           to: "/cart",
+        },
+      ],
+
+      relatedItems: [
+        {
+          id: 1,
+          productImg1: require("assets/img/product-image/product1.png"),
+          productImg2: require("assets/img/product-image/product2.png"),
+          productTagClass: "",
+          productTag: "",
+          productTitle: "Black T-Shirt For Woman",
+          productDescription:
+            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
+          productPrice: 38.5,
+          totalPrice: 180.0,
+          quantity: 1,
+        },
+        {
+          id: 2,
+          productImg1: require("assets/img/product-image/product2.png"),
+          productImg2: require("assets/img/product-image/product4.png"),
+          productTagClass: "new",
+          productTag: "new",
+          productTitle: "T-Shirt Form Girls",
+          productDescription:
+            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
+          productPrice: 738.5,
+          totalPrice: 130.0,
+          quantity: 1,
+        },
+        {
+          id: 3,
+          productImg1: require("assets/img/product-image/product4.png"),
+          productImg2: require("assets/img/product-image/product6.png"),
+          productTagClass: "hot",
+          productTag: "hot",
+          productTitle: "White Black Line Dress",
+          productDescription:
+            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
+          productPrice: 50.5,
+          totalPrice: 160.0,
+          quantity: 1,
+        },
+        {
+          id: 4,
+          productImg1: require("assets/img/product-image/product1.png"),
+          productImg2: require("assets/img/product-image/product2.png"),
+          productTagClass: "",
+          productTag: "",
+          productTitle: "Blue Dress For Woman",
+          productDescription:
+            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
+          productPrice: 317.76,
+          totalPrice: 180.0,
+          quantity: 1,
         },
       ],
 

@@ -120,6 +120,20 @@
                         />
                       </div>
                     </div>
+                    <div class="col-lg-12 col-md-12 col-sm-=12 col-12">
+                      <div class="form-group mt-3">
+                        <label for="email">연락처</label>
+                        <input
+                          class="form-control"
+                          required=""
+                          type="tel"
+                          id="phone"
+                          placeholder="000-0000-0000 형식으로 입력"
+                          pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{3,4}"
+                          maxlength="13"
+                        />
+                      </div>
+                    </div>
                     <!-- <div class="col-lg-12 col-md-12 col-sm-=12 col-12">
                       <div class="form-group">
                         <label for="country">Country</label>
@@ -342,13 +356,44 @@
               <nuxt-link to="/" class="theme-btn-one btn-black-overlay btn_sm">
                 > Back to Main</nuxt-link
               >
+              <!-- modal test -->
 
-              <button
-                v-b-toggle.search_sidebar
-                class="theme-btn-one btn-black-overlay btn_sm search_width offcanvas-toggle"
+              <b-button
+                id="show-btn"
+                @click="$bvModal.show('bv-modal-example')"
+                class="theme-btn-one btn btn-warning btn_sm"
               >
-                > Place Order
-              </button>
+                > Place Order</b-button
+              >
+
+              <b-modal id="bv-modal-example" hide-footer>
+                <template #modal-title>
+                  Re:brand Payment Process
+                </template>
+                <div class="d-block text-center">
+                  <h2 class="mt-5 mb-5">결제가 진행중입니다.</h2>
+                  <input
+                    type="image"
+                    src="https://media.tenor.com/images/a742721ea2075bc3956a2ff62c9bfeef/tenor.gif"
+                    class="mb-5"
+                  />
+                </div>
+                <b-button
+                  class="mt-5 btn-lg"
+                  block
+                  @click="$bvModal.hide('bv-modal-example')"
+                  >닫기</b-button
+                >
+                <b-button
+                  to="/payment_complete"
+                  class="mt-5 btn-lg btn btn-success"
+                  block
+                >
+                  > 결제완료</b-button
+                >
+              </b-modal>
+
+              <!-- modal test -->
             </div>
           </div>
         </div>
