@@ -385,7 +385,7 @@
                   >닫기</b-button
                 >
                 <b-button
-                  to="/payment_complete"
+                  to="/my-account/payment_complete"
                   class="mt-5 btn-lg btn btn-success"
                   block
                 >
