@@ -386,7 +386,7 @@
                 >
                 <b-button
                   to="/my-account/payment_complete"
-                  class="mt-5 btn-lg btn btn-success"
+                  class="mt-5 btn-lg btn btn-warning"
                   block
                 >
                   > 결제완료</b-button
