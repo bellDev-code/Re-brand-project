@@ -29,10 +29,6 @@
                 <b-nav-item to="/my-account/orders">Orders</b-nav-item>
                 <b-nav-item to="/my-account/downloads">Downloads</b-nav-item>
                 <b-nav-item to="/my-account/addresses">Addresses</b-nav-item>
-                <b-nav-item to="/my-account/account-details"
-                  >Account details</b-nav-item
-                >
-                <b-nav-item to="/login">Logout</b-nav-item>
               </b-navbar-nav>
             </div>
           </div>
