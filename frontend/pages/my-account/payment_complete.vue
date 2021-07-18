@@ -32,7 +32,7 @@
               />
               <h2>결제가 완료되었습니다!</h2>
               <h3>정성을 다해 상품을 준비하겠습니다</h3>
-              <nuxt-link to="/shop" class="btn btn-black-overlay btn_md"
+              <nuxt-link to="/" class="btn btn-black-overlay btn_md"
                 >Continue Shopping</nuxt-link
               >
             </div>
