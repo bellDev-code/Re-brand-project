@@ -5,10 +5,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <div class="banner_text_one">
-              <h1>Live For <span>Fashion</span></h1>
-              <h3>Save Up To 50%</h3>
-            </div>
+            <div class="banner_text_one"></div>
           </div>
         </div>
       </div>
@@ -20,7 +17,10 @@
         <div class="row">
           <div class="col-lg-4 col-md-6">
             <div class="product_variation_one_boxed img-zoom-hover">
-              <img :src="require('@/assets/img/offer/woman.png')" alt="img" />
+              <img
+                :src="require('@/assets/img/exhibition/vacance.png')"
+                alt="img"
+              />
               <div class="product_var_one_text">
                 <h4 class="color_one">Vacance</h4>
                 <h2>Hot</h2>
@@ -33,8 +33,11 @@
               </div>
             </div>
             <div class="product_variation_one_boxed img-zoom-hover">
-              <img :src="require('@/assets/img/offer/woman1.png')" alt="img" />
-              <div class="product_var_one_text">
+              <img
+                :src="require('@/assets/img/exhibition/summer.png')"
+                alt="img"
+              />
+              <div class="product_var_one_text_left">
                 <h4 class="color_one">Summer</h4>
                 <h2>Hot</h2>
                 <h4>Collection</h4>
@@ -46,10 +49,12 @@
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="product_variation_one_boxed img-zoom-hover">
-              <img :src="require('@/assets/img/offer/bag.png')" alt="img" />
+              <img
+                :src="require('@/assets/img/exhibition/offer.png')"
+                alt="img"
+              />
               <div class="product_var_one_text_center">
                 <h2 class="color_one">10% Offer</h2>
-                <h4>No Selected Models</h4>
                 <nuxt-link
                   to="/shop/shoplist"
                   class="theme-btn-one bg-black btn_sm"
@@ -60,8 +65,11 @@
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="product_variation_one_boxed img-zoom-hover">
-              <img :src="require('@/assets/img/offer/woman4.png')" alt="img" />
-              <div class="product_var_one_text">
+              <img
+                :src="require('@/assets/img/exhibition/arrivals.png')"
+                alt="img"
+              />
+              <div class="product_var_one_text_right">
                 <h2>Cool</h2>
                 <h4 class="color_one">Arrivals</h4>
                 <nuxt-link
@@ -72,8 +80,11 @@
               </div>
             </div>
             <div class="product_variation_one_boxed img-zoom-hover">
-              <img :src="require('@/assets/img/offer/kids.png')" alt="img" />
-              <div class="product_var_one_text">
+              <img
+                :src="require('@/assets/img/exhibition/sale.png')"
+                alt="img"
+              />
+              <div class="product_var_one_text_right">
                 <h2>Cool</h2>
                 <h4 class="color_one">Sale</h4>
                 <nuxt-link to="/shop" class="theme-btn-one bg-black btn_sm"

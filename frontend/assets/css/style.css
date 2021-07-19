@@ -1938,6 +1938,17 @@ button {
 
 .product_var_one_text {
   position: absolute;
+  right: 0px;
+  top: 50%;
+  padding: 20px;
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 50%;
+}
+
+.product_var_one_text_left {
+  position: absolute;
   left: 40px;
   top: 50%;
   padding: 20px;
@@ -1945,6 +1956,17 @@ button {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   width: 50%;
+}
+
+.product_var_one_text_right {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  padding: 20px;
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 30%;
 }
 
 .product_var_one_text h2,
