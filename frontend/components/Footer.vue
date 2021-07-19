@@ -7,7 +7,7 @@
           <div class="col-lg-4 col-md-12 col-sm-12 col-12">
             <div class="footer_left_side">
               <nuxt-link to="/"
-                ><img :src="require('@/assets/img/logo.png')" alt="logo"
+                ><img :src="require('@/assets/img/logoRe.png')" alt="logo"
               /></nuxt-link>
               <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.

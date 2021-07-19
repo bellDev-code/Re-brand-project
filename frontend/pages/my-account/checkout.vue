@@ -244,40 +244,34 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <tr
+                      :key="productItem.id"
+                      v-for="productItem in productItems"
+                    >
                       <td>
-                        Blue Dress For Woman
-                        <span class="product-qty">x 2</span>
+                        {{ productItem.productTitle }}
                       </td>
-                      <td>Option_color</td>
-                      <td>$90.00</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        Lether Gray Tuxedo <span class="product-qty">x 1</span>
-                      </td>
-                      <td>Option_color</td>
-                      <td>$55.00</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        Woman Full Sliv Dresss
-                        <span class="product-qty">x 3</span>
-                      </td>
-                      <td>Option_color</td>
-                      <td>$204.00</td>
+                      <td>{{ productItem.productColor }}</td>
+                      <td>${{ productItem.productPrice }}</td>
                     </tr>
                   </tbody>
                   <tfoot>
                     <tr>
                       <th>합계</th>
                       <td></td>
-                      <td class="product-subtotal">$349.00</td>
+                      <td class="product-subtotal">${{ sumTotalPrice }}</td>
                     </tr>
                     <tr>
                       <th>대여기간</th>
                       <td></td>
                       <td>{{ dateDiff }}일</td>
+                    </tr>
+                    <tr>
+                      <th>총 금액</th>
+                      <td></td>
+                      <td class="product-subtotal">
+                        ${{ sumTotalPrice * dateDiff }}
+                      </td>
                     </tr>
                     <tr>
                       <th>배송비</th>
@@ -287,12 +281,14 @@
                     <tr>
                       <th>쿠폰 할인</th>
                       <td></td>
-                      <td>(Subtotal * Coupon_rate)</td>
+                      <td>{{ 100 - Coupon_rate * 100 }}%</td>
                     </tr>
                     <tr>
                       <th>결제 금액</th>
                       <td></td>
-                      <td class="product-subtotal">$349.00</td>
+                      <td class="product-subtotal">
+                        ${{ parseInt(sumTotalPrice * dateDiff * Coupon_rate) }}
+                      </td>
                     </tr>
                   </tfoot>
                 </table>
@@ -301,10 +297,15 @@
                 >
                   <div class="form-group">
                     <label for="coupon">Use Coupon</label>
-                    <select class="form-control first_null" id="discount">
-                      <option value="">Select your coupon</option>
-                      <option value="AX">New customer 10% off</option>
-                      <option value="AF">VIP 30% off</option>
+                    <select
+                      class="form-control first_null"
+                      id="discount"
+                      v-model="Coupon_rate"
+                      @change="applyCoupon"
+                    >
+                      <option value="1" selected>Select your coupon</option>
+                      <option value="0.9">New customer 10% off</option>
+                      <option value="0.7">VIP 30% off</option>
                     </select>
                   </div>
                 </div>
@@ -421,10 +422,15 @@ export default {
 
   data() {
     return {
+      i: 0,
+      sumtotal: 0,
       sdt: 0,
       edt: 0,
-      dateDiff: 0,
+      dateDiff: "",
       title: "Checkout",
+      startD: "시작일",
+      endD: "반납일",
+      Coupon_rate: 1,
       // Breadcrumb Items Data
       breadcrumbItems: [
         {
@@ -436,14 +442,44 @@ export default {
           to: "/my-account/checkout",
         },
       ],
-      startD: "시작일",
-      endD: "반납일",
+      productItems: [
+        {
+          id: 1,
+          productImg1: require("assets/img/product-image/product1.png"),
+          productImg2: require("assets/img/product-image/product2.png"),
+          productTagClass: "",
+          productTag: "",
+          productTitle: "Black T-Shirt For Woman",
+          productColor: "Black",
+          productDescription:
+            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
+          productPrice: 38.5,
+          totalPrice: 180.0,
+          quantity: 1,
+        },
+        {
+          id: 2,
+          productImg1: require("assets/img/product-image/product2.png"),
+          productImg2: require("assets/img/product-image/product4.png"),
+          productTagClass: "new",
+          productTag: "new",
+          productTitle: "T-Shirt Form Girls",
+          productColor: "White",
+          productDescription:
+            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
+          productPrice: 738.5,
+          totalPrice: 130.0,
+          quantity: 1,
+        },
+      ],
     };
   },
 
   // Page head() Title, description for SEO
   head() {
     return {
+      period_start: "",
+      period_end: "",
       title: this.title,
       meta: [
         {
@@ -454,7 +490,16 @@ export default {
       ],
     };
   },
+  computed: {
+    sumTotalPrice() {
+      this.sumtotal =
+        parseFloat(this.productItems[0].productPrice) +
+        parseFloat(this.productItems[1].productPrice);
+      console.log(this.sumtotal);
 
+      return this.sumtotal;
+    },
+  },
   methods: {
     // 날짜 업데이트
     startDate() {
@@ -470,6 +515,9 @@ export default {
       console.log(dateDiff);
       this.dateDiff = dateDiff;
       return this.dateDiff;
+    },
+    applyCoupon() {
+      return this.Coupon_rate;
     },
   },
 };

@@ -57,10 +57,12 @@
                         ${{ productItem.productPrice }}
                       </td> -->
                       <td class="product_quantity">
-                        <div>{{ productItem.productColor }}색 표시부분</div>
+                        <div>
+                          {{ productItem.productColor }}
+                        </div>
                       </td>
                       <td class="product_total">
-                        ${{ productItem.totalPrice }}
+                        ${{ productItem.productPrice }}
                       </td>
 
                       <td class="product_remove">
@@ -107,10 +109,11 @@
               data-aos-delay="400"
             >
               <h3>Cart Price</h3>
+
               <div class="coupon_inner">
                 <div class="cart_subtotal">
                   <p>합계</p>
-                  <p class="cart_amount">$215.00</p>
+                  <p class="cart_amount">${{ sumTotalPrice }}</p>
                 </div>
                 <div class="cart_subtotal ">
                   <p>배송비</p>
@@ -119,7 +122,7 @@
 
                 <div class="cart_subtotal">
                   <p>총계</p>
-                  <p class="cart_amount">$215.00</p>
+                  <p class="cart_amount">${{ sumTotalPrice }}</p>
                 </div>
                 <div class="checkout_btn">
                   <nuxt-link
@@ -180,7 +183,7 @@ export default {
   data() {
     return {
       title: "Cart",
-      i: 1,
+      i: 0,
       sumtotal: 0,
 
       // Product Items Data
@@ -192,6 +195,7 @@ export default {
           productTagClass: "",
           productTag: "",
           productTitle: "Black T-Shirt For Woman",
+          productColor: "Black",
           productDescription:
             "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
           productPrice: 38.5,
@@ -205,23 +209,11 @@ export default {
           productTagClass: "new",
           productTag: "new",
           productTitle: "T-Shirt Form Girls",
+          productColor: "White",
           productDescription:
             "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
           productPrice: 738.5,
           totalPrice: 130.0,
-          quantity: 1,
-        },
-        {
-          id: 3,
-          productImg1: require("assets/img/product-image/product4.png"),
-          productImg2: require("assets/img/product-image/product6.png"),
-          productTagClass: "hot",
-          productTag: "hot",
-          productTitle: "White Black Line Dress",
-          productDescription:
-            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
-          productPrice: 50.5,
-          totalPrice: 160.0,
           quantity: 1,
         },
       ],
@@ -302,8 +294,15 @@ export default {
     removeProductItem: function(index) {
       this.productItems.splice(index, 1);
     },
-    sumtotalPrice() {
-      // for( this.productItems)
+  },
+  computed: {
+    sumTotalPrice() {
+      this.sumtotal =
+        parseFloat(this.productItems[0].productPrice) +
+        parseFloat(this.productItems[1].productPrice);
+      console.log(this.sumtotal);
+
+      return this.sumtotal;
     },
   },
 
