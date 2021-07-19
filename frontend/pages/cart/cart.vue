@@ -30,9 +30,9 @@
                     <tr>
                       <th class="product_thumb">제품</th>
                       <th class="product_name">제품명</th>
-                      <th class="product-price">가격</th>
-                      <th class="product_quantity">옵션</th>
-                      <th class="product_total">합계</th>
+                      <!-- <th class="product-price">가격</th> -->
+                      <th class="product_quantity">색상</th>
+                      <th class="product_total">가격</th>
                       <th class="product_remove">제거</th>
                     </tr>
                   </thead>
@@ -53,29 +53,11 @@
                           productItem.productTitle
                         }}</nuxt-link>
                       </td>
-                      <td class="product-price">
+                      <!-- <td class="product-price">
                         ${{ productItem.productPrice }}
-                      </td>
+                      </td> -->
                       <td class="product_quantity">
-                        <div class="product_count_one">
-                          <b-form-spinbutton
-                            id="sb-inline"
-                            v-model="productItem.quantity"
-                            inline
-                            class="border-0"
-                          ></b-form-spinbutton>
-                        </div>
-                        <div>
-                          <select
-                            class="form-select form-select-sm mt-2"
-                            aria-label=".form-select-sm example"
-                          >
-                            <option selected>색상을 선택하세요</option>
-                            <option value="1">White</option>
-                            <option value="2">Beige</option>
-                            <option value="3">Black</option>
-                          </select>
-                        </div>
+                        <div>{{ productItem.productColor }}색 표시부분</div>
                       </td>
                       <td class="product_total">
                         ${{ productItem.totalPrice }}
@@ -132,7 +114,7 @@
                 </div>
                 <div class="cart_subtotal ">
                   <p>배송비</p>
-                  <p class="cart_amount"><span>무료:</span> Free</p>
+                  <p class="cart_amount">Free</p>
                 </div>
 
                 <div class="cart_subtotal">
@@ -198,6 +180,8 @@ export default {
   data() {
     return {
       title: "Cart",
+      i: 1,
+      sumtotal: 0,
 
       // Product Items Data
       productItems: [
@@ -317,6 +301,9 @@ export default {
   methods: {
     removeProductItem: function(index) {
       this.productItems.splice(index, 1);
+    },
+    sumtotalPrice() {
+      // for( this.productItems)
     },
   },
 

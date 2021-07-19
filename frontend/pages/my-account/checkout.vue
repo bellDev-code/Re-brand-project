@@ -222,6 +222,7 @@
                 <h3>주문상세</h3>
               </div>
               <h4 class="mt-3 order_review  box-shadow bg-white">이용 기간</h4>
+
               <div class="container">
                 <div class="row">
                   <input type="text" class="col text-center" v-model="startD" />
@@ -272,6 +273,11 @@
                       <th>합계</th>
                       <td></td>
                       <td class="product-subtotal">$349.00</td>
+                    </tr>
+                    <tr>
+                      <th>대여기간</th>
+                      <td></td>
+                      <td>{{ dateDiff }}일</td>
                     </tr>
                     <tr>
                       <th>배송비</th>
@@ -415,6 +421,9 @@ export default {
 
   data() {
     return {
+      sdt: 0,
+      edt: 0,
+      dateDiff: 0,
       title: "Checkout",
       // Breadcrumb Items Data
       breadcrumbItems: [
@@ -445,6 +454,7 @@ export default {
       ],
     };
   },
+
   methods: {
     // 날짜 업데이트
     startDate() {
@@ -452,6 +462,14 @@ export default {
     },
     endDate() {
       this.endD = this.period_end;
+      var sdt = new Date(this.startD);
+      var edt = new Date(this.endD);
+      var dateDiff = Math.ceil(
+        (edt.getTime() - sdt.getTime()) / (1000 * 3600 * 24)
+      );
+      console.log(dateDiff);
+      this.dateDiff = dateDiff;
+      return this.dateDiff;
     },
   },
 };

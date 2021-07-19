@@ -1,5 +1,4 @@
 <template>
-
   <div>
     <!-- Banner Area -->
     <section id="common_banner_one">
@@ -58,7 +57,6 @@
                     alt="img"
                   />
                 </swiper-slide>
-              
 
                 <div
                   class="swiper-button-prev swiper-button-white"
@@ -74,19 +72,24 @@
           <div class="col-lg-8">
             <div class="product_details_right_one">
               <div class="modal_product_content_one">
-                <h3 v-if="this.$route.params.slug">
-                  {{ this.$route.params.slug }}
+                <h3 v-if="product.id">
+                  {{ product.productTitle }}
                 </h3>
-                <h3 v-else>Black fashion handbag JI9023</h3>
 
- <div>
-  <b-button size="sm" v-b-modal.modal-sm variant="primary">현재 재고 확인</b-button>
+                <div>
+                  <b-button
+                    class="stock"
+                    size="sm"
+                    v-b-modal.modal-sm
+                    variant="primary"
+                    >현재 재고 확인</b-button
+                  >
 
-  <b-modal id="modal-sm" size="sm" title="현재 재고">
-    <p class="my-4">대여 가능한 상품:</p>
-    <p class="my-4">대여 중인 상품:</p>
-  </b-modal>
-</div>
+                  <b-modal id="modal-sm" size="sm" title="현재 재고">
+                    <p class="my-4">대여 가능한 상품:</p>
+                    <p class="my-4">대여 중인 상품:</p>
+                  </b-modal>
+                </div>
 
                 <div class="reviews_rating">
                   <i class="fas fa-star"></i>
@@ -96,13 +99,11 @@
                   <i class="fas fa-star"></i>
                   <span>(2 Customer Review)</span>
                 </div>
-                <h4>$317.76 <del>$456.43</del></h4>
+                <h4>${{ product.productPrice }}</h4>
                 <p>
-                  Standard dummy text ever since the 1500s, standard dummy text
-                  ever since the 1500s, when an unknown printer took a galley of
-                  type and scrambled it to make a type specimen.
+                  {{ product.productDescription }}
                 </p>
-                   <div class="customs_selects">
+                <div class="customs_selects">
                   <select name="product" class="customs_sel_box">
                     <option value="color">Colors</option>
                     <option value="white">White</option>
@@ -110,7 +111,7 @@
                     <option value="black">Black</option>
                   </select>
                 </div>
-                </form>
+
                 <div class="links_Product_areas">
                   <ul>
                     <li>
@@ -122,13 +123,13 @@
                       >
                     </li>
                   </ul>
-                   <nuxt-link
+                  <nuxt-link
                     to="/my-account/checkout"
                     class="theme-btn-one btn-orange-overlay btn_sm"
                     >구매하기</nuxt-link
                   >
-                   <br>
-                    <nuxt-link
+                  <br />
+                  <nuxt-link
                     to="/cart/cart"
                     class="theme-btn-one btn-black-overlay btn_sm"
                     >장바구니</nuxt-link
@@ -143,17 +144,23 @@
             <div class="product_details_tabs">
               <b-tabs>
                 <b-tab title="Detail" active id="description">
-                   <div class="differences"> 
-                      <strong>Re:brand만의 차별점!</strong>
-                    블록체인 NFT를 통해 정품 인증과 대여 기록을 
-                    한 번에 확인할 수 있습니다.
-                    
-                    <nuxt-link to="/blockchain/guarantee" class="theme-btn-two btn-green-overlay btn_sm">정품 인증서 보기</nuxt-link>
-                    <nuxt-link to="/blockchain/record" class="theme-btn-two btn-green-overlay btn_sm">대여기록</nuxt-link>
-      
-                    </div>
+                  <div class="differences">
+                    <strong>Re:brand만의 차별점!</strong>
+                    블록체인 NFT를 통해 정품 인증과 대여 기록을 한 번에 확인할
+                    수 있습니다.
+
+                    <nuxt-link
+                      to="/blockchain/guarantee"
+                      class="theme-btn-two btn-green-overlay btn_sm"
+                      >정품 인증서 보기</nuxt-link
+                    >
+                    <nuxt-link
+                      to="/blockchain/record"
+                      class="theme-btn-two btn-green-overlay btn_sm"
+                      >대여기록</nuxt-link
+                    >
+                  </div>
                   <div class="product_description">
-                   
                     <p>
                       Curabitur arcu erat, accumsan id imperdiet et, porttitor
                       at sem. Vestibulum ac diam sit amet quam vehicula
@@ -198,71 +205,80 @@
 
                 <b-tab title="Additional Information" id="additional">
                   <div class="product_additional">
+                    <div>
+                      <h5>제품 정보 및 설명</h5>
+                      <table class="info_table">
+                        <tr>
+                          <th>상품번호</th>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <th>브랜드</th>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <th>모델명</th>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <th>제조사</th>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <th>성별</th>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <th>소재</th>
+                          <td></td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <br /><br /><br /><br />
                   <div>
-                    <h5>제품 정보 및 설명</h5>
-                    <table class="info_table">
-                 <tr>
-                   <th>상품번호</th>
-                   <td></td>
-                   <td></td>
-                 </tr>
-                 <tr>
-                   <th>브랜드</th>
-                   <td></td>
-                   <td></td>
-                 </tr>
-                   <tr>
-                   <th>모델명</th>
-                   <td></td>
-                   <td></td>
-                 </tr>
-                   <tr>
-                   <th>제조사</th>
-                   <td></td>
-                   <td></td>
-                 </tr>
-                   <tr>
-                   <th>성별</th>
-                   <td></td>
-                   <td></td>
-                 </tr>
-                    <tr>
-                   <th>소재</th>
-                   <td></td>
-                   <td></td>
-                 </tr>
-                 </table>
+                    <h5>이용 및 배송안내</h5>
+                    <b-card no-body>
+                      <b-tabs pills card vertical>
+                        <b-tab title="이용안내" active>
+                          <b-card-text>
+                            <ul>
+                              <li>상품 사용기간은 최소 7일~최대 14일입니다.</li>
+                              <li>
+                                상품이 출고된 이후에는 상품 추가 및 변경이
+                                불가합니다.
+                              </li>
+                            </ul>
+                          </b-card-text></b-tab
+                        >
+                        <b-tab title="배송안내">
+                          <b-card-text>
+                            <ul>
+                              <li>
+                                평균 배송기간은 1~2일이며, 택배사 사정으로
+                                인하여 지연될 수 있습니다.
+                              </li>
+                              <li>
+                                배송 기간은 영업일(주말,공휴일 제외한
+                                평일)입니다.
+                              </li>
+                              <li>
+                                평일 오후 12시 이전 입금 시 당일 출고됩니다. 그
+                                이후에는 익일 출고됩니다.
+                              </li>
+                              <li>
+                                택배사 사정으로 인한 환불은 불가하오니 이점 양해
+                                부탁드립니다.
+                              </li>
+                              <li>배송 지역 : 서울 및 경기 지역</li>
+                              <li>배송비 : 무료</li>
+                            </ul>
+                          </b-card-text></b-tab
+                        >
+                      </b-tabs>
+                    </b-card>
                   </div>
-                  </div>
-                 <br><br><br><br>
-                 <div>
-                   <h5>이용 및 배송안내</h5>
-  <b-card no-body>
-    <b-tabs pills card vertical>
-      <b-tab title="이용안내" active>
-        <b-card-text>
-           <ul>
-                      <li>상품 사용기간은 최소 7일~최대 14일입니다.</li>
-                      <li>상품이 출고된 이후에는 상품 추가 및 변경이 불가합니다.</li>
-                      
-                    </ul>
-        </b-card-text></b-tab>
-      <b-tab title="배송안내">
-        <b-card-text>
-           <ul>
-                       <li>평균 배송기간은 1~2일이며, 택배사 사정으로 인하여 지연될 수 있습니다. </li>
-                      <li>배송 기간은 영업일(주말,공휴일 제외한 평일)입니다.</li>
-                      <li>평일 오후 12시 이전 입금 시 당일 출고됩니다. 그 이후에는 익일 출고됩니다.</li>
-                      <li>택배사 사정으로 인한 환불은 불가하오니 이점 양해 부탁드립니다.</li>
-                      <li>배송 지역 : 서울 및 경기 지역</li>
-                      <li>배송비 : 무료</li>
-                    </ul>
-        </b-card-text></b-tab>
-    </b-tabs>
-  </b-card>
-</div>
                 </b-tab>
-            
 
                 <b-tab title="Reviews" id="review">
                   <div class="product_reviews">
@@ -282,49 +298,6 @@
                             </div>
                             <div class="post-share">
                               <a href="#!" class="replay">댓글</a>
-                              
-                            </div>
-                          </div>
-                          <div class="media-pragraph">
-                            <div class="product_review_strat">
-                              <span
-                                ><a href="#!"><i class="fas fa-star"></i></a
-                              ></span>
-                              <span
-                                ><a href="#!"><i class="fas fa-star"></i></a
-                              ></span>
-                              <span
-                                ><a href="#!"><i class="fas fa-star"></i></a
-                              ></span>
-                              <span
-                                ><a href="#!"><i class="fas fa-star"></i></a
-                              ></span>
-                              <span
-                                ><a href="#!"><i class="fas fa-star"></i></a
-                              ></span>
-                            </div>
-                            <p>
-                              Cras sit amet nibh libero, in gravida nulla. Nulla
-                              vel metus scelerisque Praesent sapien massa,
-                              convallis a pellentesque nec, egestas non nisi.
-                              Cras ultricies ligula sed magna dictum porta.
-                              Vestibulum ac diam sit amet quam vehicula
-                              elementum sed sit amet dui. Vivamus magna justo.
-                            </p>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="media">
-                      
-                        <div class="media-body">
-                          <div class="media-header">
-                            <div class="media-name">
-                              <h4>Sara Anela</h4>
-                              <p>5 days ago</p>
-                            </div>
-                            <div class="post-share">
-                              <a href="#!" class="replay">댓글</a>
-                              
                             </div>
                           </div>
                           <div class="media-pragraph">
@@ -365,7 +338,46 @@
                             </div>
                             <div class="post-share">
                               <a href="#!" class="replay">댓글</a>
-                              
+                            </div>
+                          </div>
+                          <div class="media-pragraph">
+                            <div class="product_review_strat">
+                              <span
+                                ><a href="#!"><i class="fas fa-star"></i></a
+                              ></span>
+                              <span
+                                ><a href="#!"><i class="fas fa-star"></i></a
+                              ></span>
+                              <span
+                                ><a href="#!"><i class="fas fa-star"></i></a
+                              ></span>
+                              <span
+                                ><a href="#!"><i class="fas fa-star"></i></a
+                              ></span>
+                              <span
+                                ><a href="#!"><i class="fas fa-star"></i></a
+                              ></span>
+                            </div>
+                            <p>
+                              Cras sit amet nibh libero, in gravida nulla. Nulla
+                              vel metus scelerisque Praesent sapien massa,
+                              convallis a pellentesque nec, egestas non nisi.
+                              Cras ultricies ligula sed magna dictum porta.
+                              Vestibulum ac diam sit amet quam vehicula
+                              elementum sed sit amet dui. Vivamus magna justo.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-body">
+                          <div class="media-header">
+                            <div class="media-name">
+                              <h4>Sara Anela</h4>
+                              <p>5 days ago</p>
+                            </div>
+                            <div class="post-share">
+                              <a href="#!" class="replay">댓글</a>
                             </div>
                           </div>
                           <div class="media-pragraph">
@@ -452,8 +464,8 @@ export default {
     InstagramArea,
   },
   data() {
-    return  {
-      title: this.$route.params.slug,
+    return {
+      productId: 0,
       // Product details Popup slider
       swiperOption: {
         slidesPerView: 1,
@@ -530,8 +542,23 @@ export default {
       ],
       // Product Quanity Increment/ Decrement Data
       value: 1,
-     
+      product: {},
     };
+  },
+  created() {
+    this.productId = this.$route.params.slug;
+    console.log(this.productId);
+    this.product = this.productItems.filter((p) => p.id == this.productId)[0];
+
+    console.log(this.product);
+
+    //this.getDetail()
+  },
+  methods: {
+    async getDetail() {
+      //axios.
+      //this.product = (await $api('/api/productDetail', 'post', {param: [this.productId]}))[0];
+    },
   },
   // Page head() Title, description for SEO
   head() {
@@ -550,5 +577,18 @@ export default {
 </script>
 
 <style>
+th {
+  width: 300px;
+}
 
+th,
+td {
+  text-align: center;
+}
+
+.stock {
+  background-color: rgb(28, 112, 25);
+  border: none;
+  border-radius: 1px;
+}
 </style>
