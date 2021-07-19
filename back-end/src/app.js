@@ -11,7 +11,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:8080",
+    origin: "http://localhost:3000",
     credentials: true,
   })
 );
@@ -36,9 +36,9 @@ fs.watchFile(__dirname + "/sql.js", (curr, prev) => {
 const apiRouter = require("./routers/api");
 app.use("/api", apiRouter);
 
-app.listen(3000, () => {
+app.listen(3001, () => {
   var dir = __dirname + "/uploads";
   if (!fs.existsSync(dir)) fs.mkdirSync(dir);
 
-  console.log("Server stared. port 3000.");
+  console.log("Server stared. port 3001.");
 });

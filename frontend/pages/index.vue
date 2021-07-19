@@ -258,10 +258,15 @@ export default {
     carousel,
   },
 
+  mounted() {
+    this.getList();
+  },
+
   data() {
     return {
       title: "Home",
       // Product Items Data
+      list: [],
       productItems: [
         {
           id: 1,
@@ -473,6 +478,13 @@ export default {
         },
       ],
     };
+  },
+
+  methods: {
+    async getList() {
+      this.list = await this.$api("api/products", "get", {});
+      console.log(this.list);
+    },
   },
 
   // Page head() Title, description for SEO

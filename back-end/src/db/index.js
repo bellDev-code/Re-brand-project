@@ -18,7 +18,7 @@ db.getConnection((err, conn) => {
         manufacture_name  VARCHAR(45)    NULL        COMMENT '제조사 이름', 
         manufacture_adr   VARCHAR(45)    NULL        COMMENT '제조사 주소', 
         CONSTRAINT PK_TB_manufacture PRIMARY KEY (manufacture_id)
-    );
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
     `,
     (err, results, fields) => {
       if (err) throw err;
@@ -36,7 +36,7 @@ db.getConnection((err, conn) => {
           CONSTRAINT PK_TB_Info PRIMARY KEY (info_id),
           CONSTRAINT FK_TB_Manufacture_manufacture_id_TB_Info_manufacture_id FOREIGN KEY(manufacture_id)
           REFERENCES TB_Manufacture(manufacture_id)
-      );
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
     `,
     (err, results, fields) => {
       if (err) throw err;
@@ -53,7 +53,7 @@ db.getConnection((err, conn) => {
         number_stock  INT            NULL        COMMENT '재고수', 
         number_rent   INT            NULL        COMMENT '렌트수', 
         CONSTRAINT PK_TB_ProductGroup PRIMARY KEY (group_id)
-    );
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
     `,
     (err, results, fields) => {
       if (err) throw err;
@@ -69,7 +69,7 @@ db.getConnection((err, conn) => {
         responsible   VARCHAR(45)    NULL        COMMENT '책임자', 
         code          VARCHAR(45)    NULL        COMMENT '일련번호', 
         CONSTRAINT PK_TB_certification PRIMARY KEY (certificate_id)
-    );
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
     `,
     (err, results, fields) => {
       if (err) throw err;
@@ -96,7 +96,7 @@ db.getConnection((err, conn) => {
           REFERENCES TB_ProductGroup(group_id),
           CONSTRAINT FK_TB_Certification_certificate_id_TB_Products_certificate_id FOREIGN KEY (certificate_id)
           REFERENCES TB_Certification(certificate_id)
-      )
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
     `,
     (err, results, fields) => {
       if (err) throw err;
@@ -116,7 +116,7 @@ db.getConnection((err, conn) => {
         CONSTRAINT PK_TB_Payment PRIMARY KEY (payment_id),
         CONSTRAINT FK_TB_Products_product_id_TB_Payment_product_id FOREIGN KEY(product_id)
         REFERENCES TB_Products(product_id)
-    );
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
     `,
     (err, results, fields) => {
       if (err) throw err;
@@ -132,7 +132,7 @@ db.getConnection((err, conn) => {
         CONSTRAINT PK_TB_Basket PRIMARY KEY (basket_id),
         CONSTRAINT FK_TB_Products_product_id_TB_Basket_product_id FOREIGN KEY(product_id)
         REFERENCES TB_Products(product_id)
-    );
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
     `,
     (err, results, fields) => {
       if (err) throw err;
@@ -150,7 +150,7 @@ db.getConnection((err, conn) => {
         CONSTRAINT PK_TB_Record PRIMARY KEY (record_id),
         CONSTRAINT FK_TB_Products_product_id_TB_Record_product_id FOREIGN KEY(product_id)
         REFERENCES TB_Products(product_id)
-    );
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
     `,
     (err, results, fields) => {
       if (err) throw err;
@@ -168,7 +168,7 @@ db.getConnection((err, conn) => {
         CONSTRAINT PK_TB_Image PRIMARY KEY (image_id),
         CONSTRAINT FK_TB_Products_product_id_TB_Image_product_id FOREIGN KEY(product_id)
         REFERENCES TB_Products(product_id)
-    );
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
     `,
     (err, results, fields) => {
       if (err) throw err;
@@ -183,7 +183,7 @@ db.getConnection((err, conn) => {
         post_main  VARCHAR(45)    NULL        COMMENT '파일명', 
         post_type  ENUM('WEEKLY', 'BEST')          NULL        COMMENT '포스터 유형', 
         CONSTRAINT PK_TB_Post PRIMARY KEY (post_id)
-    );
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
     `,
     (err, results, fields) => {
       if (err) throw err;
