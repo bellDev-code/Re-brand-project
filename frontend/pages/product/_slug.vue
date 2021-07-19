@@ -72,10 +72,9 @@
           <div class="col-lg-8">
             <div class="product_details_right_one">
               <div class="modal_product_content_one">
-                <h3 v-if="this.$route.params.slug">
-                  {{ this.$route.params.slug }}
+                <h3 v-if="product.id">
+                  {{ product.productTitle }}
                 </h3>
-                <h3 v-else>Black fashion handbag JI9023</h3>
 
                 <div>
                   <b-button
@@ -100,11 +99,9 @@
                   <i class="fas fa-star"></i>
                   <span>(2 Customer Review)</span>
                 </div>
-                <h4>$317.76 <del>$456.43</del></h4>
+                <h4>${{ product.productPrice }}</h4>
                 <p>
-                  Standard dummy text ever since the 1500s, standard dummy text
-                  ever since the 1500s, when an unknown printer took a galley of
-                  type and scrambled it to make a type specimen.
+                  {{ product.productDescription }}
                 </p>
                 <div class="customs_selects">
                   <select name="product" class="customs_sel_box">
@@ -468,7 +465,7 @@ export default {
   },
   data() {
     return {
-      title: this.$route.params.slug,
+      productId: 0,
       // Product details Popup slider
       swiperOption: {
         slidesPerView: 1,
@@ -545,7 +542,23 @@ export default {
       ],
       // Product Quanity Increment/ Decrement Data
       value: 1,
+      product: {},
     };
+  },
+  created() {
+    this.productId = this.$route.params.slug;
+    console.log(this.productId);
+    this.product = this.productItems.filter((p) => p.id == this.productId)[0];
+
+    console.log(this.product);
+
+    //this.getDetail()
+  },
+  methods: {
+    async getDetail() {
+      //axios.
+      //this.product = (await $api('/api/productDetail', 'post', {param: [this.productId]}))[0];
+    },
   },
   // Page head() Title, description for SEO
   head() {

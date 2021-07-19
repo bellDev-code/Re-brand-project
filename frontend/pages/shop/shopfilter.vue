@@ -41,6 +41,7 @@
                 small
               >
                 <ProductBox
+                  :productId="productItem.id"
                   :productImg1="productItem.productImg1"
                   :productImg2="productItem.productImg2"
                   :productTagClass="productItem.productTagClass"

@@ -2,7 +2,7 @@
   <div>
     <div class="product_wrappers_one">
       <div class="thumb">
-        <nuxt-link :to="'/product/' + productTitle" class="image">
+        <nuxt-link :to="'/product/' + productId" class="image">
           <img :src="productImg1" alt="Product" />
           <img class="hover-image" :src="productImg2" alt="Product" />
         </nuxt-link>
@@ -235,6 +235,7 @@
 export default {
   name: "ProductBox",
   props: {
+    productId: Number,
     productImg1: String,
     productImg2: String,
     productTagClass: String,
