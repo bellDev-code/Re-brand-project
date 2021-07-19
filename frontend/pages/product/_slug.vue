@@ -80,7 +80,7 @@
                 <h3 v-else>Black fashion handbag JI9023</h3>
 
  <div>
-  <b-button size="sm" v-b-modal.modal-sm variant="primary">현재 재고 확인</b-button>
+  <b-button class="stock" size="sm" v-b-modal.modal-sm variant="primary">현재 재고 확인</b-button>
 
   <b-modal id="modal-sm" size="sm" title="현재 재고">
     <p class="my-4">대여 가능한 상품:</p>
@@ -204,31 +204,25 @@
                  <tr>
                    <th>상품번호</th>
                    <td></td>
-                   <td></td>
                  </tr>
                  <tr>
                    <th>브랜드</th>
-                   <td></td>
                    <td></td>
                  </tr>
                    <tr>
                    <th>모델명</th>
                    <td></td>
-                   <td></td>
                  </tr>
                    <tr>
                    <th>제조사</th>
-                   <td></td>
                    <td></td>
                  </tr>
                    <tr>
                    <th>성별</th>
                    <td></td>
-                   <td></td>
                  </tr>
                     <tr>
                    <th>소재</th>
-                   <td></td>
                    <td></td>
                  </tr>
                  </table>
@@ -550,5 +544,17 @@ export default {
 </script>
 
 <style>
+th {
+  width:300px;
+}
 
+th, td {
+  text-align: center;
+}
+
+.stock {
+  background-color: rgb(28, 112, 25);
+  border: none;
+  border-radius: 1px;
+}
 </style>
