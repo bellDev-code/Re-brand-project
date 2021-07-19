@@ -43,6 +43,16 @@ router.get("/products", (req, res, next) => {
   });
 });
 
+// 상품 디테일 페이지
+
+// 장바구니 페이지
+
+// 결제창 페이지
+
+// 인증서 페이지
+
+// 대여기록 페이지
+
 router.post("/products", (req, res, next) => {
   db.getConnection((err, conn) => {
     if (err) return res.status(403);
