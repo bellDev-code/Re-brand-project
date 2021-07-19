@@ -39,11 +39,6 @@
                         <!-- Sub Menu -->
                         <ul class="sub-menu">
                           <li>
-                            <nuxt-link to="/shop/shoplist"
-                              >상품 리스트</nuxt-link
-                            >
-                          </li>
-                          <li>
                             <nuxt-link to="/shop/shopfilter"
                               >상품 검색</nuxt-link
                             >
@@ -121,16 +116,16 @@
                   class="header-action-link action-color--black action-hover-color--golden"
                 >
                   <li>
-                    <a v-b-toggle.offcanvas-wishlish class="offcanvas-toggle">
+                    <nuxt-link to="/my-account/wishlist">
                       <i class="far fa-heart"></i>
                       <span class="item-count">{{ productItems.length }}</span>
-                    </a>
+                    </nuxt-link>
                   </li>
                   <li>
-                    <a v-b-toggle.offcanvas-add-cart class="offcanvas-toggle">
+                    <nuxt-link to="/cart/cart">
                       <i class="fas fa-shopping-bag"></i>
                       <span class="item-count">{{ productItems.length }}</span>
-                    </a>
+                    </nuxt-link>
                   </li>
                   <li>
                     <a
@@ -167,10 +162,10 @@
       <!-- Start contact Info -->
       <div class="mobile-contact-info">
         <address class="address">
-          <img :src="require('@/assets/img/logo-white.png')" alt="logo" />
-          <span>Address: Your address goes here.</span>
+          <img :src="require('@/assets/img/logoYellow.png')" alt="logo" />
+          <span>Address: 서울특별시 영등포구 양평동3가 15-1 </span>
           <span>Call Us: 0123456789, 0123456789</span>
-          <span>Email: demo@example.com</span>
+          <span>Email: rebrand07@gmail.com</span>
         </address>
 
         <ul class="social-link">
@@ -178,178 +173,13 @@
             <a href="#"><i class="fab fa-facebook-f"></i></a>
           </li>
           <li>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-          </li>
-          <li>
             <a href="#"><i class="fab fa-instagram"></i></a>
           </li>
-          <li>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-          </li>
-        </ul>
-
-        <ul class="user-link">
-          <li><nuxt-link to="/my-account/wishlist">Wishlist</nuxt-link></li>
-          <li><nuxt-link to="/cart/">Cart</nuxt-link></li>
-          <li><nuxt-link to="/my-account/checkout">Checkout</nuxt-link></li>
         </ul>
       </div>
       <!-- End contact Info -->
     </b-sidebar>
     <!-- ...:::: End Offcanvas Menu Section:::... -->
-
-    <!-- Start Offcanvas Addcart Section -->
-    <b-sidebar
-      id="offcanvas-add-cart"
-      class="offcanvas-add-cart-section"
-      backdrop
-      right
-    >
-      <div class="offcanvas-add-cart-wrapper">
-        <h4 class="offcanvas-title">Shopping Cart</h4>
-        <div v-if="productItems.length > 0">
-          <ul class="offcanvas-cart">
-            <li
-              class="offcanvas-cart-item-single"
-              v-for="productItem in productItems.slice(0, 4)"
-              :key="productItem.id"
-            >
-              <div class="offcanvas-cart-item-block">
-                <nuxt-link to="/product" class="offcanvas-cart-item-image-link">
-                  <img
-                    :src="productItem.productImg1"
-                    alt="img"
-                    class="offcanvas-cart-image"
-                  />
-                </nuxt-link>
-                <div class="offcanvas-cart-item-content">
-                  <nuxt-link to="/product" class="offcanvas-cart-item-link">{{
-                    productItem.productTitle
-                  }}</nuxt-link>
-                  <div class="offcanvas-cart-item-details">
-                    <span class="offcanvas-cart-item-details-quantity"
-                      >{{ productItem.quantity }} x
-                    </span>
-                    <span class="offcanvas-cart-item-details-price"
-                      >${{ productItem.productPrice }}</span
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="offcanvas-cart-item-delete text-right">
-                <button
-                  @click="removeProductItem(index)"
-                  class="offcanvas-cart-item-delete bg-transparent remove-btn"
-                >
-                  <i class="far fa-trash-alt"></i>
-                </button>
-              </div>
-            </li>
-          </ul>
-
-          <div class="offcanvas-cart-total-price">
-            <span class="offcanvas-cart-total-price-text">Subtotal:</span>
-            <span class="offcanvas-cart-total-price-value"
-              >${{ CartTotal }}</span
-            >
-          </div>
-
-          <ul class="offcanvas-cart-action-button">
-            <li>
-              <nuxt-link
-                to="/cart"
-                class="theme-btn-one btn-black-overlay btn_md"
-                >View Cart</nuxt-link
-              >
-            </li>
-            <li>
-              <nuxt-link
-                to="/my-account/checkout"
-                class="theme-btn-one btn-black-overlay btn_md"
-                >Checkout</nuxt-link
-              >
-            </li>
-          </ul>
-        </div>
-
-        <ul v-else class="offcanvas-cart">
-          <li>Your cart is empty!</li>
-        </ul>
-      </div>
-    </b-sidebar>
-    <!-- End  Offcanvas Addcart Section -->
-
-    <!-- Start Offcanvas Wishlist Sidebar Section -->
-    <b-sidebar
-      id="offcanvas-wishlish"
-      class="offcanvas-add-cart-section"
-      backdrop
-      right
-    >
-      <div class="offcanvas-wishlist-wrapper">
-        <h4 class="offcanvas-title">Wishlist</h4>
-
-        <div v-if="productItems.length > 0">
-          <ul class="offcanvas-wishlist">
-            <li
-              class="offcanvas-wishlist-item-single"
-              v-for="productItem in productItems.slice(0, 3)"
-              :key="productItem.id"
-            >
-              <div class="offcanvas-wishlist-item-block">
-                <nuxt-link
-                  to="/product"
-                  class="offcanvas-wishlist-item-image-link"
-                >
-                  <img
-                    :src="productItem.productImg1"
-                    alt="img"
-                    class="offcanvas-wishlist-image"
-                  />
-                </nuxt-link>
-                <div class="offcanvas-wishlist-item-content">
-                  <nuxt-link
-                    to="/product"
-                    class="offcanvas-wishlist-item-link"
-                    >{{ productItem.productTitle }}</nuxt-link
-                  >
-                  <div class="offcanvas-wishlist-item-details">
-                    <span class="offcanvas-wishlist-item-details-quantity"
-                      >{{ productItem.quantity }} x</span
-                    >
-                    <span class="offcanvas-wishlist-item-details-price"
-                      >${{ productItem.productPrice }}</span
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="offcanvas-wishlist-item-delete text-right">
-                <button
-                  @click="removeProductItem(index)"
-                  class="offcanvas-wishlist-item-delete bg-transparent remove-btn"
-                >
-                  <i class="far fa-trash-alt"></i>
-                </button>
-              </div>
-            </li>
-          </ul>
-          <ul class="offcanvas-wishlist-action-button">
-            <li>
-              <nuxt-link
-                to="/my-account/wishlist"
-                class="theme-btn-one btn-black-overlay btn_md"
-                >View wishlist</nuxt-link
-              >
-            </li>
-          </ul>
-        </div>
-
-        <ul v-else class="offcanvas-wishlist">
-          <li>No Item in your wishlist!</li>
-        </ul>
-      </div>
-    </b-sidebar>
-    <!-- End Offcanvas Wishlist Sidebar Section -->
 
     <!-- Start Offcanvas Search Bar Section -->
     <b-sidebar id="search_sidebar" class="" backdrop>
@@ -410,15 +240,6 @@ export default {
                 {
                   href: "/my-account/wishlist",
                   title: "Wishlist",
-                },
-              ],
-            },
-            {
-              title: "Product Single",
-              child: [
-                {
-                  href: "/product/product-single-2",
-                  title: "Product Single Two",
                 },
               ],
             },
