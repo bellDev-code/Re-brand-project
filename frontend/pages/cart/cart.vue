@@ -131,7 +131,7 @@
                     >Back to Main</nuxt-link
                   >
                   <nuxt-link
-                    to="/my-account/checkout"
+                    to="/my-account/checkout-cart"
                     class="theme-btn-one btn-black-overlay btn_sm"
                     >Proceed to Checkout</nuxt-link
                   >
@@ -297,10 +297,11 @@ export default {
   },
   computed: {
     sumTotalPrice() {
-      this.sumtotal =
-        parseFloat(this.productItems[0].productPrice) +
-        parseFloat(this.productItems[1].productPrice);
-      console.log(this.sumtotal);
+      for (var product of this.productItems) {
+        this.sumtotal += parseFloat(product.productPrice);
+        console.log(product);
+        console.log(this.sumtotal);
+      }
 
       return this.sumtotal;
     },

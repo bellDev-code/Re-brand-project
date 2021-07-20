@@ -26,7 +26,7 @@
       </div>
       <div class="content">
         <h5 class="title">
-          <nuxt-link :to="'/product/' + productTitle">{{
+          <nuxt-link :to="'/product/' + productId">{{
             productTitle
           }}</nuxt-link>
         </h5>
