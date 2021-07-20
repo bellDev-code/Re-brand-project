@@ -1,14 +1,6 @@
 <template>
   <div class="col-lg-3">
     <div class="shop_sidebar_wrapper">
-      <div class="shop_Search">
-        <form>
-          <input type="text" class="form-control" placeholder="Search..." />
-          <button type="button">
-            <img :src="require('@/assets/img/svg/search.svg')" alt="img" />
-          </button>
-        </form>
-      </div>
       <div class="shop_sidebar_boxed">
         <h4>Categories</h4>
         <form>
@@ -34,66 +26,7 @@
           </label>
         </form>
       </div>
-      <div class="shop_sidebar_boxed">
-        <h4>Color</h4>
-        <div class="product-variable-color">
-          <label for="modal-product-color-red6">
-            <input
-              name="modal-product-color"
-              id="modal-product-color-red6"
-              class="color-select"
-              type="radio"
-              checked=""
-            />
-            <span class="product-color-red"></span>
-          </label>
-          <label for="modal-product-color-tomato1">
-            <input
-              name="modal-product-color"
-              id="modal-product-color-tomato1"
-              class="color-select"
-              type="radio"
-            />
-            <span class="product-color-tomato"></span>
-          </label>
-          <label for="modal-product-color-green2">
-            <input
-              name="modal-product-color"
-              id="modal-product-color-green2"
-              class="color-select"
-              type="radio"
-            />
-            <span class="product-color-green"></span>
-          </label>
-          <label for="modal-product-color-light-green3">
-            <input
-              name="modal-product-color"
-              id="modal-product-color-light-green3"
-              class="color-select"
-              type="radio"
-            />
-            <span class="product-color-light-green"></span>
-          </label>
-          <label for="modal-product-color-blue4">
-            <input
-              name="modal-product-color"
-              id="modal-product-color-blue4"
-              class="color-select"
-              type="radio"
-            />
-            <span class="product-color-blue"></span>
-          </label>
-          <label for="modal-product-color-light-blue5">
-            <input
-              name="modal-product-color"
-              id="modal-product-color-light-blue5"
-              class="color-select"
-              type="radio"
-            />
-            <span class="product-color-light-blue"></span>
-          </label>
-        </div>
-      </div>
+
       <div class="shop_sidebar_boxed">
         <h4>Brand</h4>
         <form>
@@ -160,5 +93,6 @@ export default {
       max: 5000,
     };
   },
+  method: {},
 };
 </script>
