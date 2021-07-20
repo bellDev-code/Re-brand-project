@@ -116,6 +116,7 @@
               :key="productItem.id"
             >
               <ProductBox
+                :productId="productItem.id"
                 :productImg1="productItem.productImg1"
                 :productImg2="productItem.productImg2"
                 :productTagClass="productItem.productTagClass"
@@ -134,6 +135,7 @@
               :key="productItem.id"
             >
               <ProductBox
+                :productId="productItem.id"
                 :productImg1="productItem.productImg1"
                 :productImg2="productItem.productImg2"
                 :productTagClass="productItem.productTagClass"
@@ -152,6 +154,7 @@
               :key="productItem.id"
             >
               <ProductBox
+                :productId="productItem.id"
                 :productImg1="productItem.productImg1"
                 :productImg2="productItem.productImg2"
                 :productTagClass="productItem.productTagClass"
@@ -170,6 +173,7 @@
               :key="productItem.id"
             >
               <ProductBox
+                :productId="productItem.id"
                 :productImg1="productItem.productImg1"
                 :productImg2="productItem.productImg2"
                 :productTagClass="productItem.productTagClass"
@@ -214,6 +218,7 @@
               <ProductBox
                 v-for="productItem in productItems"
                 :key="productItem.id"
+                :productId="productItem.id"
                 :productImg1="productItem.productImg1"
                 :productImg2="productItem.productImg2"
                 :productTagClass="productItem.productTagClass"
