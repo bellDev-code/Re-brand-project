@@ -209,6 +209,7 @@ export default {
   data() {
     return {
       title: "Cart",
+      list: [],
 
       // Product Items Data
       productItems: [

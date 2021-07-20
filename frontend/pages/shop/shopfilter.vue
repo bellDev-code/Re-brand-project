@@ -87,6 +87,7 @@ export default {
   },
   data() {
     return {
+      list: [],
       perPage: 5,
       currentPage: 1,
       title: "Shop",
@@ -122,8 +123,13 @@ export default {
   },
   mounted() {
     this.getPageData();
+    this.getProductList();
   },
   methods: {
+    async getProductList() {
+      this.list = await this.$api("api/products", "get", {});
+      console.log(this.list);
+    },
     initPage() {
       //총 제품 등록수 - 23
       //

@@ -465,6 +465,7 @@ export default {
   },
   data() {
     return {
+      list: [],
       productId: 0,
       // Product details Popup slider
       swiperOption: {
@@ -609,10 +610,13 @@ export default {
 
     //this.getDetail()
   },
+  mounted() {
+    this.getDetail();
+  },
   methods: {
     async getDetail() {
-      //axios.
-      //this.product = (await $api('/api/productDetail', 'post', {param: [this.productId]}))[0];
+      this.list = await this.$api("api/detail", "get", {});
+      console.log(this.list);
     },
   },
   // Page head() Title, description for SEO
