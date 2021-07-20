@@ -90,14 +90,26 @@
                 <p>
                   {{ product.productDescription }}
                 </p>
-                <div class="customs_selects">
+
+                <div class="product-variable-color">
+                  <label for="modal-product-color-bisque">
+                    <input
+                      name="modal-product-color"
+                      id="modal-product-color-bisque"
+                      class="color-select"
+                    />
+                    <span class="product-color-bisque"></span>
+                  </label>
+                </div>
+
+                <!-- <div class="customs_selects">
                   <select name="product" class="customs_sel_box">
                     <option value="color">Colors</option>
                     <option value="white">White</option>
                     <option value="beige">Beige</option>
                     <option value="black">Black</option>
                   </select>
-                </div>
+                </div> -->
 
                 <div class="links_Product_areas">
                   <ul>
@@ -233,7 +245,7 @@
                     <h5>이용 및 배송안내</h5>
                     <b-card no-body>
                       <b-tabs pills card vertical>
-                        <b-tab title="이용안내" active>
+                        <b-tab title="이용안내" active class="button">
                           <b-card-text>
                             <ul>
                               <li>상품 사용기간은 최소 7일~최대 14일입니다.</li>
@@ -244,7 +256,7 @@
                             </ul>
                           </b-card-text></b-tab
                         >
-                        <b-tab title="배송안내">
+                        <b-tab title="배송안내" class="button">
                           <b-card-text>
                             <ul>
                               <li>
@@ -519,4 +531,8 @@ td {
   border: none;
   border-radius: 1px;
 }
+
+/* .button {
+  background-color: lightsteelblue;
+} */
 </style>

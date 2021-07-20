@@ -186,17 +186,20 @@ ul li {
   text-transform: uppercase;
   letter-spacing: 2px;
   display: inline-block;
-  border-radius: 0;
+  border-radius: 1.5px;
+  box-shadow: 1.5px 1.5px 1.5px lightgrey;
 }
 
 .theme-btn-two {
   font-size: 16px;
   font-weight: 500;
+  color: green;
   text-transform: uppercase;
   font-style: normal;
   letter-spacing: 2px;
   display: inline-block;
   border-radius: 4px;
+  box-shadow: 3.5px 3.5px 3.5px lightgrey;
 }
 
 .btn_md {
@@ -3472,6 +3475,10 @@ th {
 /*****************************
 * Components - Table
 *****************************/
+
+.info_table {
+  text-align: center;
+}
 
 table {
   width: 100%;
