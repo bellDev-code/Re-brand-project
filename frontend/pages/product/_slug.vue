@@ -90,7 +90,10 @@
                 <p>
                   {{ product.productDescription }}
                 </p>
-
+                <br />
+                <div class="variable-single-item">
+                  <span>Color</span>
+                </div>
                 <div class="product-variable-color">
                   <label for="modal-product-color-bisque">
                     <input
@@ -207,6 +210,7 @@
                     <!-- <div> -->
                     <div>
                       <h5>제품 정보 및 설명</h5>
+                      <br />
                       <div>
                         <b-table :items="items" class="info_table"></b-table>
                       </div>
@@ -243,9 +247,10 @@
                   <br /><br /><br /><br />
                   <div>
                     <h5>이용 및 배송안내</h5>
+                    <br />
                     <b-card no-body>
                       <b-tabs pills card vertical>
-                        <b-tab title="이용안내" active class="button">
+                        <b-tab title="이용안내" active>
                           <b-card-text>
                             <ul>
                               <li>상품 사용기간은 최소 7일~최대 14일입니다.</li>
@@ -256,7 +261,7 @@
                             </ul>
                           </b-card-text></b-tab
                         >
-                        <b-tab title="배송안내" class="button">
+                        <b-tab title="배송안내">
                           <b-card-text>
                             <ul>
                               <li>
@@ -292,7 +297,7 @@
     </section>
 
     <!-- Related Product -->
-    <section id="related_product" class="pb-100">
+    <!-- <section id="related_product" class="pb-100">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
@@ -319,10 +324,10 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Instagram Arae -->
-    <InstagramArea />
+    <!-- <InstagramArea /> -->
   </div>
 </template>
 
@@ -481,7 +486,7 @@ export default {
           모델명: "Twist PM",
           제조사: "Louis Vuitton Malletier",
           성별: "Women",
-          소재: "Printed&tufted Taurillon leather",
+          소재: "tufted Taurillon leather",
         },
       ],
     };
@@ -521,13 +526,8 @@ export default {
 </script>
 
 <style>
-th {
-  width: 300px;
-}
-
-th,
-td {
-  text-align: center;
+.info_table {
+  border: 1.5px solid black;
 }
 
 .stock {
