@@ -1566,26 +1566,8 @@ button {
 }
 
 .modal-dialog {
-  max-width: calc(100% - 20px) !important;
+  max-width: 400px !important;
   margin: 0 auto !important;
-}
-
-@media (min-width: 768px) {
-  .modal-dialog {
-    max-width: 730px !important;
-  }
-}
-
-@media (min-width: 992px) {
-  .modal-dialog {
-    max-width: 870px !important;
-  }
-}
-
-@media (min-width: 1200px) {
-  .modal-dialog {
-    min-width: 825px !important;
-  }
 }
 
 .modal-body {
