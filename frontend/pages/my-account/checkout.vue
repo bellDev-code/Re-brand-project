@@ -61,21 +61,33 @@
               <div class="row align-items-center mt-3">
                 <div class="col">
                   <span class="mr-3">From</span>
-                  <input
+                  <b-form-datepicker
+                    id="start-datepicker"
+                    v-model="period_start"
+                    class="mb-2"
+                    @input="startDate"
+                  ></b-form-datepicker>
+                  <!-- <input
                     type="date"
                     name=""
                     v-model="period_start"
                     @change="startDate"
-                  />
+                  /> -->
                 </div>
                 <div class="col">
                   <span class="mr-3">To</span>
-                  <input
+                  <b-form-datepicker
+                    id="end-datepicker"
+                    v-model="period_end"
+                    class="mb-2"
+                    @input="endDate"
+                  ></b-form-datepicker>
+                  <!-- <input
                     type="date"
                     name=""
                     v-model="period_end"
                     @change="endDate"
-                  />
+                  /> -->
                 </div>
               </div>
 
@@ -225,13 +237,25 @@
 
               <div class="container">
                 <div class="row">
-                  <input type="text" class="col text-center" v-model="startD" />
+                  <input
+                    type="text"
+                    class="col text-center"
+                    v-model="period_start"
+                    placeholder="시작일"
+                    readonly
+                  />
 
                   <div class="col text-center">
-                    ~
+                    -
                   </div>
 
-                  <input type="text" class="col text-center" v-model="endD" />
+                  <input
+                    type="text"
+                    class="col text-center"
+                    v-model="period_end"
+                    placeholder="반납일"
+                    readonly
+                  />
                 </div>
               </div>
               <div class="table-responsive order_table mt-3">
@@ -257,6 +281,11 @@
                   </tbody>
                   <tfoot>
                     <tr>
+                      <th>배송비</th>
+                      <td></td>
+                      <td>Free</td>
+                    </tr>
+                    <tr>
                       <th>합계</th>
                       <td></td>
                       <td class="product-subtotal">${{ sumTotalPrice }}</td>
@@ -273,11 +302,7 @@
                         ${{ sumTotalPrice * dateDiff }}
                       </td>
                     </tr>
-                    <tr>
-                      <th>배송비</th>
-                      <td></td>
-                      <td>Free</td>
-                    </tr>
+
                     <tr>
                       <th>쿠폰 할인</th>
                       <td></td>
@@ -422,6 +447,8 @@ export default {
 
   data() {
     return {
+      period_start: "",
+      period_end: "",
       i: 0,
       sumtotal: 0,
       sdt: 0,
@@ -478,8 +505,6 @@ export default {
   // Page head() Title, description for SEO
   head() {
     return {
-      period_start: "",
-      period_end: "",
       title: this.title,
       meta: [
         {
@@ -514,7 +539,7 @@ export default {
         (edt.getTime() - sdt.getTime()) / (1000 * 3600 * 24)
       );
       console.log(dateDiff);
-      this.dateDiff = dateDiff;
+      this.dateDiff = dateDiff + 1;
       return this.dateDiff;
     },
     applyCoupon() {
