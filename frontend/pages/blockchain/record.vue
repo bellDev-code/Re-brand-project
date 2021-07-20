@@ -88,12 +88,12 @@
                   <td>2021/06/26</td>
                   <td>2021/06/30</td>
                 </tr>
-                <tr>
-                  <td>30 Montaigne Chain</td>
-                  <td>ND1AZjmsDgAR4iQ</td>
-                  <td>대여중</td>
-                  <td>2021/06/15</td>
-                  <td>2021/06/23</td>
+          <!--       <tr :key="list.certi_id" v-for="list in list">
+                  <td>{{ list.product_name }}</td>
+                  <td>{{ list.certi_id }}</td>
+                  <td>{{ list.rent_state }}</td>
+                  <td>{{ list.start_rent }}</td>
+                  <td>{{ list.end_rent }}</td> -->
                 </tr>
               </tbody>
             </table>
@@ -130,15 +130,22 @@ export default {
       ],
     };
   },
+
   mounted() {
     this.getRecord();
+    this.getRecord2();
   },
   methods: {
     async getRecord() {
       this.list = await this.$api("api/record", "get", {});
       console.log(this.list);
     },
+    async getRecord2() {
+      this.list = await this.$api("api/record", "get", {});
+      console.log(this.list2);
+    },
   },
+
   // Page head() Title, description for SEO
   head() {
     return {
