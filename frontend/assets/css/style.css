@@ -1573,21 +1573,21 @@ button {
   margin: 0 auto !important;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 400px) {
   .modal-dialog {
-    max-width: 730px !important;
+    max-width: 400px !important;
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 400px) {
   .modal-dialog {
-    max-width: 870px !important;
+    max-width: 400px !important;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 400px) {
   .modal-dialog {
-    min-width: 825px !important;
+    min-width: 400px !important;
   }
 }
 
