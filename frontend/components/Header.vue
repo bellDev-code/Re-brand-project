@@ -118,13 +118,13 @@
                   <li>
                     <nuxt-link to="/my-account/wishlist">
                       <i class="far fa-heart"></i>
-                      <span class="item-count">{{ productItems.length }}</span>
+                      <span class="item-count">{{ wishlistItems.length }}</span>
                     </nuxt-link>
                   </li>
                   <li>
                     <nuxt-link to="/cart/cart">
                       <i class="fas fa-shopping-bag"></i>
-                      <span class="item-count">{{ productItems.length }}</span>
+                      <span class="item-count">{{ cartItems.length }}</span>
                     </nuxt-link>
                   </li>
                   <li>
@@ -266,58 +266,24 @@ export default {
       ],
 
       // Product Items Data
-      productItems: [
+      // 위시리스트랑 장바구니 DB 에 담긴 배열 정보를 담아야 위에서 카운트해서 표시
+      wishlistItems: [
         {
           id: 1,
-          productImg1: require("assets/img/product-image/product1.png"),
-          productImg2: require("assets/img/product-image/product2.png"),
-          productTagClass: "",
-          productTag: "",
-          productTitle: "Black T-Shirt For Woman",
-          productDescription:
-            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
-          productPrice: 38.5,
-          totalPrice: 180.0,
-          quantity: 1,
         },
         {
           id: 2,
-          productImg1: require("assets/img/product-image/product2.png"),
-          productImg2: require("assets/img/product-image/product4.png"),
-          productTagClass: "new",
-          productTag: "new",
-          productTitle: "T-Shirt Form Girls",
-          productDescription:
-            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
-          productPrice: 738.5,
-          totalPrice: 130.0,
-          quantity: 1,
         },
         {
           id: 3,
-          productImg1: require("assets/img/product-image/product4.png"),
-          productImg2: require("assets/img/product-image/product6.png"),
-          productTagClass: "hot",
-          productTag: "hot",
-          productTitle: "White Black Line Dress",
-          productDescription:
-            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
-          productPrice: 50.5,
-          totalPrice: 160.0,
-          quantity: 1,
+        },
+      ],
+      cartItems: [
+        {
+          id: 1,
         },
         {
-          id: 4,
-          productImg1: require("assets/img/product-image/product7.png"),
-          productImg2: require("assets/img/product-image/product8.png"),
-          productTagClass: "",
-          productTag: "",
-          productTitle: "Blue Dress For Woman",
-          productDescription:
-            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
-          productPrice: 738.5,
-          totalPrice: 320.0,
-          quantity: 1,
+          id: 2,
         },
       ],
     };
