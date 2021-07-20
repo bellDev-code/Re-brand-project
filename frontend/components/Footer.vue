@@ -10,26 +10,18 @@
                 ><img :src="require('@/assets/img/logoRe.png')" alt="logo"
               /></nuxt-link>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Obcaecati culpa assumenda voluptas placeat amet consectetur
-                adipisicing elit. Obcaecati culpa assumenda voluptas placeat.
+                No. 1 luxury rental platform in Korea.
+                <br />We will accompany you until the day when everyone can be
+                happy.
               </p>
               <div class="footer_left_side_icon">
                 <ul>
                   <li>
                     <a href="#!"><i class="fab fa-facebook-f"></i></a>
                   </li>
-                  <li>
-                    <a href="#!"><i class="fab fa-twitter"></i></a>
-                  </li>
-                  <li>
-                    <a href="#!"><i class="fab fa-linkedin"></i></a>
-                  </li>
+
                   <li>
                     <a href="#!"><i class="fab fa-instagram"></i></a>
-                  </li>
-                  <li>
-                    <a href="#!"><i class="fab fa-google-plus-g"></i></a>
                   </li>
                 </ul>
               </div>
@@ -44,7 +36,7 @@
                 <li>
                   <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link>
                 </li>
-                <li><nuxt-link to="/faq">Frequently Questions</nuxt-link></li>
+                <li><nuxt-link to="/faq">Frequent Questions</nuxt-link></li>
               </ul>
             </div>
           </div>
@@ -101,7 +93,7 @@
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-6 col-12">
             <div class="copyright_left">
-              <h6>© CopyRight 2021 <span>AndShop</span></h6>
+              <h6>© CopyRight 2021 <span>Rebrand</span></h6>
             </div>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-6 col-12">
