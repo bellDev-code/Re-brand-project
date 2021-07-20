@@ -54,12 +54,12 @@
                       </td>
 
                       <td class="product_thumb">
-                        <nuxt-link to="/product">
+                        <nuxt-link to="/shop/shopfilter">
                           <img :src="productItem.productImg1" alt="img" />
                         </nuxt-link>
                       </td>
                       <td class="product_name">
-                        <nuxt-link to="/product">{{
+                        <nuxt-link to="/shop/shopfilter">{{
                           productItem.productTitle
                         }}</nuxt-link>
                       </td>

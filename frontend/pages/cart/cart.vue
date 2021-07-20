@@ -44,12 +44,12 @@
                       :key="productItem.id"
                     >
                       <td class="product_thumb">
-                        <nuxt-link to="/product">
+                        <nuxt-link to="/shop/shopfilter">
                           <img :src="productItem.productImg1" alt="img" />
                         </nuxt-link>
                       </td>
                       <td class="product_name">
-                        <nuxt-link to="/product">{{
+                        <nuxt-link to="/shop/shopfilter">{{
                           productItem.productTitle
                         }}</nuxt-link>
                       </td>
@@ -160,6 +160,7 @@
             :key="productItem.id"
           >
             <ProductBox
+              :productId="productItem.id"
               :productImg1="productItem.productImg1"
               :productImg2="productItem.productImg2"
               :productTagClass="productItem.productTagClass"
@@ -177,8 +178,12 @@
 </template>
 
 <script>
+import ProductBox from "~/components/product-box/ProductBox";
 export default {
   name: "cart",
+  components: {
+    ProductBox,
+  },
 
   data() {
     return {
