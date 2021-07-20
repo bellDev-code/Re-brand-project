@@ -113,9 +113,9 @@
 <script>
 export default {
   name: "record",
-
   data() {
     return {
+      list: [],
       title: "Record",
 
       // Breadcrumb Items Data
@@ -130,7 +130,15 @@ export default {
       ],
     };
   },
-
+  mounted() {
+    this.getRecord();
+  },
+  methods: {
+    async getRecord() {
+      this.list = await this.$api("api/record", "get", {});
+      console.log(this.list);
+    },
+  },
   // Page head() Title, description for SEO
   head() {
     return {
