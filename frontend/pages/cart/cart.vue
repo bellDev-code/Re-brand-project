@@ -185,7 +185,7 @@ export default {
       title: "Cart",
       i: 0,
       sumtotal: 0,
-
+      list: [],
       // Product Items Data
       productItems: [
         {
@@ -289,10 +289,17 @@ export default {
       quantity: 1,
     };
   },
-
+  mounted() {
+    this.getBasket();
+  },
   methods: {
     removeProductItem: function(index) {
       this.productItems.splice(index, 1);
+    },
+
+    async getBasket() {
+      this.list = await this.$api("api/basket", "get", {});
+      console.log(this.list);
     },
   },
   computed: {

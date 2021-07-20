@@ -2150,6 +2150,9 @@ button {
 .product_wrappers_one .thumb .badges span.sale {
   background-color: #ff7004;
 }
+.product_wrappers_one .thumb .badges span.best {
+  background-color: #0095f8;
+}
 
 .product_wrappers_one .thumb .actions {
   position: absolute;

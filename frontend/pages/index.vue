@@ -270,7 +270,7 @@ export default {
   },
 
   mounted() {
-    this.getList();
+    this.getProductList();
   },
 
   data() {
@@ -492,7 +492,7 @@ export default {
   },
 
   methods: {
-    async getList() {
+    async getProductList() {
       this.list = await this.$api("api/products", "get", {});
       console.log(this.list);
     },

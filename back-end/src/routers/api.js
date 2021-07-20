@@ -3,15 +3,8 @@ const db = require("../db");
 
 const router = express.Router();
 
-// 쿼리문 구조
-// 제품 리스트 페이지에서 보여질 "/products"
-// 상품 디테일 페이지(TB_Products - TB_Info - TB_Manufacture) 표현 어떻게?
-// 결제창 (TB_Payment)
-// 인증서 및 대여기록(rent_date, rent_state)은 지금 상황에서 데이터 보여주는것만
-// TB_Payment에서 start_rent, end_rent 등 데이터 받는 방법
-// TB_Record에서 rent_date에서 데이터 어떻게 받는지,
-// rent_state data type('렌트가능', '렌트중')이 맞는지
 router.get("/products", (req, res, next) => {
+  // const pageNo = req.body.param[0];
   db.getConnection((err, conn) => {
     if (err) return res.status(403);
     conn.query(
@@ -36,22 +29,89 @@ router.get("/products", (req, res, next) => {
       (err, results) => {
         console.log(err);
         if (err) return res.status(403);
-        console.log(results);
         res.send(results);
       }
     );
   });
 });
 
-// 상품 디테일 페이지
+router.get("/detail", (req, res, next) => {
+  //
+  db.getConnection((err, conn) => {
+    if (err) return res.status(403);
+    conn.query(
+      `
+      SELECT T1.product_id, T1.product_brand, T1.rent_price, T1.product_color, T2.product_name, T2.number_stock, T3.info_gender, T3.info_material, T4.manufacture_name, T4.manufacture_adr, T5.image_main, T5.image_type
+      FROM TB_Products T1, TB_ProductGroup T2, TB_Info T3, TB_Manufacture T4, TB_Image T5
+      WHERE T1.group_id = T2.group_id AND T1.info_id = T3.info_id AND T3.manufacture_id = T4.manufacture_id AND T1.product_id = T5.product_id
+      `,
+      (err, results) => {
+        if (err) return res.status(403);
+        res.send(results);
+      }
+    );
+  });
+});
 
-// 장바구니 페이지
+router.get("/basket", (req, res, next) => {
+  //
+  db.getConnection((err, conn) => {
+    if (err) return res.status(403);
+    conn.query(
+      `
+      select T1.product_id, T1.product_brand, T1.rent_price, T1.product_color,T2.product_name, T3.basket_id, T4.image_main 
+      from TB_Products T1, TB_ProductGroup T2, TB_Basket T3, TB_Image T4
+      where T1.group_id = T2.group_id and T1.product_id = T3.product_id and T4.product_id = T1.product_id 
+      `,
+      (err, results) => {
+        if (err) return res.status(403);
+        res.send(results);
+      }
+    );
+  });
+});
 
 // 결제창 페이지
+// TB_Products - TB_Payment - TB_ProductGroup
+// TB_Products - product_id, product_color, rent_price
+// TB_ProductGroup - product_name, number_stock
+// TB_Payment - start_rent, end_rent
+// start_rent, end_rent 같은 형태는 이용자가 선택하는데 어떻게 받아와야할지
 
-// 인증서 페이지
+router.get("/certificate", (req, res, next) => {
+  //
+  db.getConnection((err, conn) => {
+    if (err) return res.status(403);
+    conn.query(
+      `
+      select T1.product_id, T1.product_brand, T1.product_state, T2.product_name, T3.responsible, T3.code, T3.number_times 
+      from TB_Products T1, TB_ProductGroup T2, TB_Certification T3
+      where T1.group_id = T2.group_id and T1.certificate_id = T3.certificate_id 
+      `,
+      (err, results) => {
+        if (err) return res.status(403);
+        res.send(results);
+      }
+    );
+  });
+});
 
-// 대여기록 페이지
+router.get("/record", (req, res, next) => {
+  db.getConnection((err, conn) => {
+    if (err) return res.status(403);
+    conn.query(
+      `
+      select T1.product_id, T1.product_brand, T1.product_state, T2.product_name, T3.record_id, T3.rent_date, T3.rent_state 
+      from TB_Products T1, TB_ProductGroup T2, TB_Record T3
+      where T1.group_id = T2.group_id and T1.product_id = T3.product_id
+      `,
+      (err, results) => {
+        if (err) return res.status(403);
+        res.send(results);
+      }
+    );
+  });
+});
 
 router.post("/products", (req, res, next) => {
   db.getConnection((err, conn) => {
