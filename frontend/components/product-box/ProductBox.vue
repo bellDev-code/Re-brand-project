@@ -9,7 +9,8 @@
         <span class="badges">
           <span :class="productTagClass">{{ productTag }}</span>
         </span>
-        <div class="actions">
+        <!-- 원본 부분 -->
+        <!-- <div class="actions">
           <nuxt-link
             to="/my-account/wishlist"
             class="action wishlist"
@@ -23,7 +24,28 @@
           title="Add To Cart"
           >Add To Cart</a
         >
+      </div> -->
+        <!-- 원본부분 -->
+        <!-- 두가지 속성 다delay 속성 사용하던지, timeout 설정해야함-->
+        <div class="actions">
+          <b-button
+            class="action wishlist"
+            title="Wishlist"
+            v-b-popover.leftbottom="'위시리스트에 추가되었습니다!'"
+            ><i class="far fa-heart"></i
+          ></b-button>
+        </div>
+
+        <b-button
+          v-b-popover.top="'장바구니에 추가되었습니다!'"
+          class="add-to-cart offcanvas-toggle"
+          title="Product Added"
+          delay
+        >
+          Add To Cart
+        </b-button>
       </div>
+      <!-- 두가지 속성 다 delay 속성 사용하던지, timeout 설정해야함-->
       <div class="content">
         <h5 class="title">
           <nuxt-link :to="'/product/' + productId">{{
