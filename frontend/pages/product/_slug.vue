@@ -45,18 +45,6 @@
                     alt="img"
                   />
                 </swiper-slide>
-                <swiper-slide>
-                  <img
-                    :src="require('@/assets/img/product-image/product4.png')"
-                    alt="img"
-                  />
-                </swiper-slide>
-                <swiper-slide>
-                  <img
-                    :src="require('@/assets/img/product-image/product5.png')"
-                    alt="img"
-                  />
-                </swiper-slide>
 
                 <div
                   class="swiper-button-prev swiper-button-white"
@@ -75,30 +63,29 @@
                 <h3 v-if="product.id">
                   {{ product.productTitle }}
                 </h3>
-
                 <div>
-                  <b-button
-                    class="stock"
-                    size="sm"
-                    v-b-modal.modal-sm
-                    variant="primary"
-                    >현재 재고 확인</b-button
-                  >
-
+                  <div>
+                    <b-button
+                      class="stock"
+                      size="sm"
+                      v-b-modal.modal-sm
+                      variant="primary"
+                      >현재 재고 확인</b-button
+                    >
+                  </div>
                   <b-modal id="modal-sm" size="sm" title="현재 재고">
                     <p class="my-4">대여 가능한 상품:</p>
-                    <p class="my-4">대여 중인 상품:</p>
                   </b-modal>
                 </div>
 
-                <div class="reviews_rating">
+                <!-- <div class="reviews_rating">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <span>(2 Customer Review)</span>
-                </div>
+                </div> -->
                 <h4>${{ product.productPrice }}</h4>
                 <p>
                   {{ product.productDescription }}
@@ -172,7 +159,7 @@
                       Curabitur arcu erat, accumsan id imperdiet et, porttitor
                       at sem.
                     </p>
-                    <ul>
+                    <!-- <ul>
                       <li>Vivamus magna justo, lacinia eget consectetur sed</li>
                       <li>Curabitur aliquet quam id dui posuere blandit</li>
                       <li>
@@ -190,7 +177,7 @@
                       dolor sit amet, consectetur adipiscing elit. porttitor at
                       sem. Quisque velit nisi, pretium ut lacinia in, elementum
                       id enim.
-                    </p>
+                    </p> -->
                     <!-- <div class="differences"> 
                       <strong>Re:brand만의 차별점!</strong>
                     블록체인 NFT를 통해 정품 인증과 대여 기록을 
@@ -205,9 +192,15 @@
 
                 <b-tab title="Additional Information" id="additional">
                   <div class="product_additional">
+                    <!-- <div> -->
                     <div>
                       <h5>제품 정보 및 설명</h5>
-                      <table class="info_table">
+                      <div>
+                        <b-table :items="items" class="info_table"></b-table>
+                      </div>
+                    </div>
+
+                    <!-- <table class="info_table">
                         <tr>
                           <th>상품번호</th>
                           <td></td>
@@ -233,7 +226,7 @@
                           <td></td>
                         </tr>
                       </table>
-                    </div>
+                    </div> -->
                   </div>
                   <br /><br /><br /><br />
                   <div>
@@ -277,139 +270,6 @@
                         >
                       </b-tabs>
                     </b-card>
-                  </div>
-                </b-tab>
-
-                <b-tab title="Reviews" id="review">
-                  <div class="product_reviews">
-                    <ul>
-                      <li class="media">
-                        <!-- <div class="media-img">
-                          <img
-                            :src="require('@/assets/img/user/user1.png')"
-                            alt="img"
-                          />
-                        </div> -->
-                        <div class="media-body">
-                          <div class="media-header">
-                            <div class="media-name">
-                              <h4>Sara Anela</h4>
-                              <p>5 days ago</p>
-                            </div>
-                            <div class="post-share">
-                              <a href="#!" class="replay">댓글</a>
-                            </div>
-                          </div>
-                          <div class="media-pragraph">
-                            <div class="product_review_strat">
-                              <span
-                                ><a href="#!"><i class="fas fa-star"></i></a
-                              ></span>
-                              <span
-                                ><a href="#!"><i class="fas fa-star"></i></a
-                              ></span>
-                              <span
-                                ><a href="#!"><i class="fas fa-star"></i></a
-                              ></span>
-                              <span
-                                ><a href="#!"><i class="fas fa-star"></i></a
-                              ></span>
-                              <span
-                                ><a href="#!"><i class="fas fa-star"></i></a
-                              ></span>
-                            </div>
-                            <p>
-                              Cras sit amet nibh libero, in gravida nulla. Nulla
-                              vel metus scelerisque Praesent sapien massa,
-                              convallis a pellentesque nec, egestas non nisi.
-                              Cras ultricies ligula sed magna dictum porta.
-                              Vestibulum ac diam sit amet quam vehicula
-                              elementum sed sit amet dui. Vivamus magna justo.
-                            </p>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="media">
-                        <div class="media-body">
-                          <div class="media-header">
-                            <div class="media-name">
-                              <h4>Sara Anela</h4>
-                              <p>5 days ago</p>
-                            </div>
-                            <div class="post-share">
-                              <a href="#!" class="replay">댓글</a>
-                            </div>
-                          </div>
-                          <div class="media-pragraph">
-                            <div class="product_review_strat">
-                              <span
-                                ><a href="#!"><i class="fas fa-star"></i></a
-                              ></span>
-                              <span
-                                ><a href="#!"><i class="fas fa-star"></i></a
-                              ></span>
-                              <span
-                                ><a href="#!"><i class="fas fa-star"></i></a
-                              ></span>
-                              <span
-                                ><a href="#!"><i class="fas fa-star"></i></a
-                              ></span>
-                              <span
-                                ><a href="#!"><i class="fas fa-star"></i></a
-                              ></span>
-                            </div>
-                            <p>
-                              Cras sit amet nibh libero, in gravida nulla. Nulla
-                              vel metus scelerisque Praesent sapien massa,
-                              convallis a pellentesque nec, egestas non nisi.
-                              Cras ultricies ligula sed magna dictum porta.
-                              Vestibulum ac diam sit amet quam vehicula
-                              elementum sed sit amet dui. Vivamus magna justo.
-                            </p>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="media">
-                        <div class="media-body">
-                          <div class="media-header">
-                            <div class="media-name">
-                              <h4>Sara Anela</h4>
-                              <p>5 days ago</p>
-                            </div>
-                            <div class="post-share">
-                              <a href="#!" class="replay">댓글</a>
-                            </div>
-                          </div>
-                          <div class="media-pragraph">
-                            <div class="product_review_strat">
-                              <span
-                                ><a href="#!"><i class="fas fa-star"></i></a
-                              ></span>
-                              <span
-                                ><a href="#!"><i class="fas fa-star"></i></a
-                              ></span>
-                              <span
-                                ><a href="#!"><i class="fas fa-star"></i></a
-                              ></span>
-                              <span
-                                ><a href="#!"><i class="fas fa-star"></i></a
-                              ></span>
-                              <span
-                                ><a href="#!"><i class="fas fa-star"></i></a
-                              ></span>
-                            </div>
-                            <p>
-                              Cras sit amet nibh libero, in gravida nulla. Nulla
-                              vel metus scelerisque Praesent sapien massa,
-                              convallis a pellentesque nec, egestas non nisi.
-                              Cras ultricies ligula sed magna dictum porta.
-                              Vestibulum ac diam sit amet quam vehicula
-                              elementum sed sit amet dui. Vivamus magna justo.
-                            </p>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
                   </div>
                 </b-tab>
               </b-tabs>
@@ -584,6 +444,7 @@ export default {
           productPrice: 300,
         },
       ],
+
       // Breadcrumb Items Data
       breadcrumbItems: [
         {
@@ -595,9 +456,21 @@ export default {
           to: "/product",
         },
       ],
+
       // Product Quanity Increment/ Decrement Data
       value: 1,
       product: {},
+
+      items: [
+        {
+          상품번호: "M58569",
+          브랜드: "Louis Vuitton",
+          모델명: "Twist PM",
+          제조사: "Louis Vuitton Malletier",
+          성별: "Women",
+          소재: "Printed&tufted Taurillon leather",
+        },
+      ],
     };
   },
   created() {
@@ -642,7 +515,7 @@ td {
 }
 
 .stock {
-  background-color: rgb(28, 112, 25);
+  background-color: green;
   border: none;
   border-radius: 1px;
 }
