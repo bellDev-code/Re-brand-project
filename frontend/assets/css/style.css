@@ -1569,7 +1569,7 @@ button {
 }
 
 .modal-dialog {
-  max-width: calc(100% - 20px) !important;
+  max-width: 400px !important;
   margin: 0 auto !important;
 }
 

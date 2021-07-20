@@ -65,11 +65,7 @@
                 </h3>
                 <div>
                   <div>
-                    <b-button
-                      class="stock"
-                      size="sm"
-                      v-b-modal.modal-sm
-                      variant="primary"
+                    <b-button class="stock" v-b-modal.modal-sm variant="primary"
                       >현재 재고 확인</b-button
                     >
                   </div>
@@ -313,6 +309,7 @@
             :key="productItem.id"
           >
             <ProductBox
+              :productId="productItem.id"
               :productImg1="productItem.productImg1"
               :productImg2="productItem.productImg2"
               :productTagClass="productItem.productTagClass"
@@ -360,6 +357,7 @@ export default {
         },
         autoplay: true,
       },
+      boxTwo: "",
       // Product Items Data
       productItems: [
         {
