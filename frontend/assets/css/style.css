@@ -2660,6 +2660,16 @@ th {
 .product-variable-color label .product-color-light-blue {
   background: #add8e6;
 }
+.product-variable-color label .product-color-black {
+  background: black;
+}
+.product-variable-color label .product-color-white {
+  background: white;
+  border: 1px solid gray;
+}
+.product-variable-color label .product-color-bisque {
+  background: bisque;
+}
 
 .product-variable-color label span::after {
   position: absolute;
