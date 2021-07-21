@@ -441,6 +441,8 @@ export default {
 
   data() {
     return {
+      list: [],
+      saveList: [],
       period_start: "",
       period_end: "",
       i: 0,
@@ -496,6 +498,11 @@ export default {
     };
   },
 
+  mounted() {
+    this.getPayment();
+    this.savePayment();
+  },
+
   // Page head() Title, description for SEO
   head() {
     return {
@@ -521,6 +528,15 @@ export default {
     },
   },
   methods: {
+    async getPayment() {
+      this.list = await this.$api("api/payments", "get", {});
+      console.log(this.list);
+    },
+
+    async savePayment() {
+      this.saveList = await this.$api("api/payments", "post", {});
+      console.log(this.list);
+    },
     // 날짜 업데이트
     startDate() {
       this.startD = this.period_start;
