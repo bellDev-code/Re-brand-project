@@ -109,58 +109,21 @@
         </div>
 
         <b-tabs class="hot-product-area-tabs">
-          <b-tab title="New Arrival" class="row">
-            <div
-              class="col-lg-3 col-md-4 col-sm-6 col-12"
-              v-for="productItem in productItems.slice(0, 4)"
-              :key="productItem.id"
-            >
-              <ProductBox
-                :productId="productItem.id"
-                :productImg1="productItem.productImg1"
-                :productImg2="productItem.productImg2"
-                :productTagClass="productItem.productTagClass"
-                :productTag="productItem.productTag"
-                :productTitle="productItem.productTitle"
-                :productPrice="productItem.productPrice"
-                :productDescription="productItem.productDescription"
-              />
-            </div>
-          </b-tab>
-
-          <b-tab title="Weekly Best" class="row">
-            <div
-              class="col-lg-3 col-md-4 col-sm-6 col-12"
-              v-for="productItem in productItems.slice(0, 4)"
-              :key="productItem.id"
-            >
-              <ProductBox
-                :productId="productItem.id"
-                :productImg1="productItem.productImg1"
-                :productImg2="productItem.productImg2"
-                :productTagClass="productItem.productTagClass"
-                :productTag="productItem.productTag"
-                :productTitle="productItem.productTitle"
-                :productPrice="productItem.productPrice"
-                :productDescription="productItem.productDescription"
-              />
-            </div>
-          </b-tab>
-
           <b-tab title="Bags" class="row">
             <div
               class="col-lg-3 col-md-4 col-sm-6 col-12"
-              v-for="productItem in productItems.slice(0, 4)"
-              :key="productItem.id"
+              v-for="productItem in list.slice(0, 4)"
+              :key="productItem.product_id"
             >
               <ProductBox
+                :key="productItem.id"
                 :productId="productItem.id"
-                :productImg1="productItem.productImg1"
-                :productImg2="productItem.productImg2"
+                :productImg1="productItem.image_main"
+                :productImg2="productItem.image_main"
                 :productTagClass="productItem.productTagClass"
                 :productTag="productItem.productTag"
-                :productTitle="productItem.productTitle"
-                :productPrice="productItem.productPrice"
+                :productTitle="productItem.product_name"
+                :productPrice="productItem.rent_price"
                 :productDescription="productItem.productDescription"
               />
             </div>
@@ -169,17 +132,18 @@
           <b-tab title="Shoes" class="row">
             <div
               class="col-lg-3 col-md-4 col-sm-6 col-12"
-              v-for="productItem in productItems.slice(0, 4)"
-              :key="productItem.id"
+              v-for="productItem in list.slice(5, 9)"
+              :key="productItem.product_id"
             >
               <ProductBox
+                :key="productItem.id"
                 :productId="productItem.id"
-                :productImg1="productItem.productImg1"
-                :productImg2="productItem.productImg2"
+                :productImg1="productItem.image_main"
+                :productImg2="productItem.image_main"
                 :productTagClass="productItem.productTagClass"
                 :productTag="productItem.productTag"
-                :productTitle="productItem.productTitle"
-                :productPrice="productItem.productPrice"
+                :productTitle="productItem.product_name"
+                :productPrice="productItem.rent_price"
                 :productDescription="productItem.productDescription"
               />
             </div>

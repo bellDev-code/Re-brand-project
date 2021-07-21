@@ -491,10 +491,10 @@ export default {
   },
   created() {
     this.productId = this.$route.params.slug;
-    console.log(this.productId);
-    this.product = this.productItems.filter((p) => p.id == this.productId)[0];
 
-    console.log(this.product);
+    // this.product = this.productItems.filter((p) => p.id == this.productId)[0];
+
+    // console.log(this.product);
 
     //this.getDetail()
   },
@@ -503,8 +503,10 @@ export default {
   },
   methods: {
     async getDetail() {
-      this.list = await this.$api("api/detail", "get", {});
-      console.log(this.list);
+      this.product = (
+        await this.$api("api/detail?product_id=" + this.productId, "get", {})
+      )[0];
+      console.log("productDetail", this.product);
     },
   },
   // Page head() Title, description for SEO
