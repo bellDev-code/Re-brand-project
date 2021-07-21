@@ -5,7 +5,11 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <div class="banner_text_one"></div>
+            <div class="banner_text_one">
+              <h1>Live For <span>Fashion</span></h1>
+              <h3>Save Up To 50%</h3>
+              <!-- <nuxt-link to="/shop/shop-3" class="theme-btn-one bg-black btn_md">Shop Now</nuxt-link> -->
+            </div>
           </div>
         </div>
       </div>
