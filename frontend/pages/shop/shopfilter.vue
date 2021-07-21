@@ -135,19 +135,22 @@ export default {
   },
   watch: {
     currentPage() {
-      this.getPageData();
+      this.getProductList();
     },
   },
   created() {
     this.initPage();
   },
   mounted() {
-    this.getPageData();
     this.getProductList();
   },
   methods: {
     async getProductList() {
-      this.list = await this.$api("api/products", "get", {});
+      this.list = await this.$api(
+        `api/products?pageNo=${this.currentPage}`,
+        "get",
+        {}
+      );
       console.log(this.list);
     },
     searchResult() {
@@ -160,15 +163,6 @@ export default {
       this.totalPage = 12;
       // this.totalPage = Math.ceil(totalCount / this.perPage);
       console.log(this.totalPage);
-    },
-    getPageData() {
-      //axios 서버에 요청.  currentPage
-
-      if (this.currentPage == 1) {
-        this.list = this.list.slice(0, 6);
-      } else if (this.currentPage == 2) {
-        this.productItems = this.list = this.list.slice(7, 12);
-      }
     },
   },
   computed: {

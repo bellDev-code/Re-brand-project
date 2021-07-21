@@ -87,7 +87,7 @@
                     @click="goToPayment(product.product_id)"
                     class="theme-btn-one btn-orange-overlay btn_sm"
                   >
-                    구매하기
+                    대여하기
                   </button>
                   <br />
                   <nuxt-link
