@@ -37,7 +37,6 @@ router.get("/products", (req, res, next) => {
 
 router.get("/detail", (req, res, next) => {
   const productId = req.query.product_id;
-  console.log("productId", productId);
   db.getConnection((err, conn) => {
     if (err) return res.status(403);
     conn.query(
