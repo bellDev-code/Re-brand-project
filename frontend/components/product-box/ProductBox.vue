@@ -38,11 +38,11 @@
 
         <b-button
           v-b-popover.top="'장바구니에 추가되었습니다!'"
-          class="add-to-cart offcanvas-toggle"
+          class="add-to-cart offcanvas-toggle "
           title="Product Added"
           delay
         >
-          Add To Cart
+          <p>Add To Cart</p>
         </b-button>
       </div>
       <!-- 두가지 속성 다 delay 속성 사용하던지, timeout 설정해야함-->

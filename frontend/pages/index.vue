@@ -191,8 +191,8 @@
                 :productId="productItem.product_id"
                 :productImg1="productItem.image_main"
                 :productImg2="productItem.image_main"
-                productTagClass="new"
-                productTag="new"
+                productTagClass=""
+                productTag=""
                 :productTitle="productItem.product_name"
                 :productPrice="productItem.rent_price"
                 productDescription=""
@@ -224,8 +224,7 @@
               <h5>TRENDING</h5>
               <h2>New Fashion</h2>
               <p>
-                Consectetur adipisicing elit. Dolores nisi distinctio magni,
-                iure deserunt doloribus optio
+                Experience the world's Finest fashion Trend
               </p>
               <nuxt-link to="/shop" class="theme-btn-one bg-whites btn_md"
                 >Shop Now</nuxt-link

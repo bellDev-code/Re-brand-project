@@ -78,18 +78,9 @@
                   {{ product.info_material }}
                 </p>
                 <br />
+
                 <div class="variable-single-item">
-                  <span>Color</span>
-                </div>
-                <div class="product-variable-color">
-                  <label for="modal-product-color-bisque">
-                    <input
-                      name="modal-product-color"
-                      id="modal-product-color-bisque"
-                      class="color-select"
-                    />
-                    <span class="product-color-bisque"></span>
-                  </label>
+                  <span>Color : {{ product.product_color }}</span>
                 </div>
 
                 <!-- <div class="customs_selects">
@@ -102,16 +93,6 @@
                 </div> -->
 
                 <div class="links_Product_areas">
-                  <ul>
-                    <li>
-                      <nuxt-link
-                        to="/my-account/wishlist"
-                        class="action wishlist"
-                        title="Wishlist"
-                        ><i class="far fa-heart"></i>위시리스트</nuxt-link
-                      >
-                    </li>
-                  </ul>
                   <nuxt-link
                     to="/my-account/checkout"
                     class="theme-btn-one btn-orange-overlay btn_sm"
@@ -138,12 +119,6 @@
                     블록체인 NFT를 통해 정품 인증과 대여 기록을 한 번에 확인할
                     수 있습니다.
 
-                    <nuxt-link
-                      to="/blockchain/guarantee"
-                      class="theme-btn-two btn-green-overlay btn_sm"
-                      >정품 인증서 보기</nuxt-link
-                    >
-
                     <button
                       class="theme-btn-two btn-green-overlay btn_sm"
                       @click="goToGuarantee(product.product_id)"
@@ -151,11 +126,12 @@
                       정품 인증서 보기
                     </button>
 
-                    <nuxt-link
-                      to="/blockchain/record"
+                    <button
                       class="theme-btn-two btn-green-overlay btn_sm"
-                      >대여기록</nuxt-link
+                      @click="goToRecord(product.product_id)"
                     >
+                      대여 기록
+                    </button>
                   </div>
                   <div class="product_description">
                     <p>
@@ -207,7 +183,36 @@
                       <h5>제품 정보 및 설명</h5>
                       <br />
                       <div>
-                        <b-table :items="items" class="info_table"></b-table>
+                        <table class="table align-middle text-center">
+                          <thead>
+                            <th>상품번호</th>
+                            <th>브랜드</th>
+                            <th>모델명</th>
+                            <th>제조사</th>
+                            <th>성별</th>
+                            <th>소재</th>
+                          </thead>
+                          <tbody>
+                            <td>
+                              {{ product.product_id }}
+                            </td>
+                            <td>
+                              {{ product.product_brand }}
+                            </td>
+                            <td>
+                              {{ product.product_name }}
+                            </td>
+                            <td>
+                              {{ product.manufacture_name }}
+                            </td>
+                            <td>
+                              {{ product.info_gender }}
+                            </td>
+                            <td>
+                              {{ product.info_material }}
+                            </td>
+                          </tbody>
+                        </table>
                       </div>
                     </div>
 
@@ -358,107 +363,7 @@ export default {
       },
       boxTwo: "",
       // Product Items Data
-      productItems: [
-        {
-          id: 1,
-          productImg1: require("assets/img/product-image/product1.png"),
-          productImg2: require("assets/img/product-image/product2.png"),
-          productTagClass: "",
-          productTag: "",
-          productTitle: "Black T-Shirt For Woman",
-          productDescription:
-            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
-          productPrice: 38.5,
-        },
-        {
-          id: 2,
-          productImg1: require("assets/img/product-image/product3.png"),
-          productImg2: require("assets/img/product-image/product4.png"),
-          productTagClass: "new",
-          productTag: "new",
-          productTitle: "T-Shirt Form Girls",
-          productDescription:
-            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
-          productPrice: 738.5,
-        },
-        {
-          id: 3,
-          productImg1: require("assets/img/product-image/product5.png"),
-          productImg2: require("assets/img/product-image/product6.png"),
-          productTagClass: "hot",
-          productTag: "hot",
-          productTitle: "White Black Line Dress",
-          productDescription:
-            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
-          productPrice: 50.5,
-        },
-        {
-          id: 4,
-          productImg1: require("assets/img/product-image/product7.png"),
-          productImg2: require("assets/img/product-image/product8.png"),
-          productTagClass: "",
-          productTag: "",
-          productTitle: "Blue Dress For Woman",
-          productDescription:
-            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
-          productPrice: 738.5,
-        },
-        {
-          id: 5,
-          productImg1: require("assets/img/product-image/product9.png"),
-          productImg2: require("assets/img/product-image/product10.png"),
-          productTagClass: "new",
-          productTag: "new",
-          productTitle: "Black T-Shirt For Woman",
-          productDescription:
-            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
-          productPrice: 99.5,
-        },
-        {
-          id: 6,
-          productImg1: require("assets/img/product-image/product11.png"),
-          productImg2: require("assets/img/product-image/product12.png"),
-          productTagClass: "hot",
-          productTag: "hot",
-          productTitle: "Blue Dress For Woman",
-          productDescription:
-            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
-          productPrice: 738.5,
-        },
-        {
-          id: 7,
-          productImg1: require("assets/img/product-image/product13.png"),
-          productImg2: require("assets/img/product-image/product14.png"),
-          productTagClass: "new",
-          productTag: "new",
-          productTitle: "T-Shirt Form Girls",
-          productDescription:
-            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
-          productPrice: 48.5,
-        },
-        {
-          id: 8,
-          productImg1: require("assets/img/product-image/product15.png"),
-          productImg2: require("assets/img/product-image/product1.png"),
-          productTagClass: "",
-          productTag: "",
-          productTitle: "T-Shirt Form Girls",
-          productDescription:
-            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
-          productPrice: 738.5,
-        },
-        {
-          id: 9,
-          productImg1: require("assets/img/product-image/product2.png"),
-          productImg2: require("assets/img/product-image/product3.png"),
-          productTagClass: "new",
-          productTag: "new",
-          productTitle: "Blue Dress For Woman",
-          productDescription:
-            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
-          productPrice: 300,
-        },
-      ],
+      productItems: [],
 
       // Breadcrumb Items Data
       breadcrumbItems: [
@@ -475,20 +380,10 @@ export default {
       // Product Quanity Increment/ Decrement Data
       value: 1,
       product: {},
-
-      items: [
-        {
-          상품번호: "M58569",
-          브랜드: "Louis Vuitton",
-          모델명: "Twist PM",
-          제조사: "Louis Vuitton Malletier",
-          성별: "Women",
-          소재: "tufted Taurillon leather",
-        },
-      ],
     };
   },
   created() {
+    console.log(this.$route.params);
     this.productId = this.$route.params.slug;
 
     // this.product = this.productItems.filter((p) => p.id == this.productId)[0];
@@ -510,6 +405,13 @@ export default {
     goToGuarantee(product_id) {
       this.$router.push({
         path: "/blockchain/guarantee",
+        query: { product_id: product_id },
+      });
+      console.log(product_id);
+    },
+    goToRecord(product_id) {
+      this.$router.push({
+        path: "/blockchain/record",
         query: { product_id: product_id },
       });
       console.log(product_id);

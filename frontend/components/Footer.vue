@@ -42,7 +42,7 @@
           </div>
           <div class="col-lg-2 col-md-6 col-sm-12 col-12">
             <div class="footer_one_widget">
-              <h3>Your Account</h3>
+              <!-- <h3>Your Account</h3>
               <ul>
                 <li><nuxt-link to="/cart/cart">Cart View</nuxt-link></li>
                 <li><nuxt-link to="/cart/empty-cart">Empty Cart</nuxt-link></li>
@@ -52,7 +52,7 @@
                 <li>
                   <nuxt-link to="/my-account/wishlist">Wishlist</nuxt-link>
                 </li>
-              </ul>
+              </ul> -->
             </div>
           </div>
           <div class="col-lg-3 col-md-12 col-sm-12 col-12">
