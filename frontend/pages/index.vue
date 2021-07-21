@@ -117,7 +117,7 @@
             >
               <ProductBox
                 :key="productItem.id"
-                :productId="productItem.id"
+                :productId="productItem.product_id"
                 :productImg1="productItem.image_main"
                 :productImg2="productItem.image_main"
                 :productTagClass="productItem.productTagClass"
@@ -137,7 +137,7 @@
             >
               <ProductBox
                 :key="productItem.id"
-                :productId="productItem.id"
+                :productId="productItem.product_id"
                 :productImg1="productItem.image_main"
                 :productImg2="productItem.image_main"
                 :productTagClass="productItem.productTagClass"
