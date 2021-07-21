@@ -83,11 +83,12 @@
                 </div>
 
                 <div class="links_Product_areas">
-                  <nuxt-link
-                    to="/my-account/checkout"
+                  <button
+                    @click="goToPayment(product.product_id)"
                     class="theme-btn-one btn-orange-overlay btn_sm"
-                    >구매하기</nuxt-link
                   >
+                    구매하기
+                  </button>
                   <br />
                   <nuxt-link
                     to="/cart/cart"
@@ -340,6 +341,13 @@ export default {
     goToRecord(product_id) {
       this.$router.push({
         path: "/blockchain/record",
+        query: { product_id: product_id },
+      });
+      console.log(product_id);
+    },
+    goToPayment(product_id) {
+      this.$router.push({
+        path: "/my-account/checkout",
         query: { product_id: product_id },
       });
       console.log(product_id);

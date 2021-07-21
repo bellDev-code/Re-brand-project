@@ -267,15 +267,12 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr
-                      :key="productItem.id"
-                      v-for="productItem in productItems"
-                    >
+                    <tr>
                       <td>
-                        {{ productItem.productTitle }}
+                        {{ selProduct.product_name }}
                       </td>
-                      <td>{{ productItem.productColor }}</td>
-                      <td>{{ productItem.productPrice }} 원</td>
+                      <td>{{ selProduct.product_color }}</td>
+                      <td>{{ selProduct.rent_price }} 원</td>
                     </tr>
                     <!-- 데이터 들어오면 바꿀부분 -->
                     <!-- <tr
@@ -459,7 +456,7 @@ export default {
 
   data() {
     return {
-      list: [],
+      selProduct: [],
       saveList: [],
       period_start: "",
       period_end: "",
@@ -483,41 +480,46 @@ export default {
           to: "/my-account/checkout",
         },
       ],
-      productItems: [
-        {
-          id: 1,
-          productImg1: require("assets/img/product-image/product1.png"),
-          productImg2: require("assets/img/product-image/product2.png"),
-          productTagClass: "",
-          productTag: "",
-          productTitle: "Black T-Shirt For Woman",
-          productColor: "Black",
-          productDescription:
-            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
-          productPrice: 38.5,
-          totalPrice: 180.0,
-          quantity: 1,
-        },
-        {
-          id: 2,
-          productImg1: require("assets/img/product-image/product2.png"),
-          productImg2: require("assets/img/product-image/product4.png"),
-          productTagClass: "new",
-          productTag: "new",
-          productTitle: "T-Shirt Form Girls",
-          productColor: "White",
-          productDescription:
-            "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
-          productPrice: 738.5,
-          totalPrice: 130.0,
-          quantity: 1,
-        },
-      ],
+      // productItems: [
+      //   {
+      //     id: 1,
+      //     productImg1: require("assets/img/product-image/product1.png"),
+      //     productImg2: require("assets/img/product-image/product2.png"),
+      //     productTagClass: "",
+      //     productTag: "",
+      //     productTitle: "Black T-Shirt For Woman",
+      //     productColor: "Black",
+      //     productDescription:
+      //       "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
+      //     productPrice: 38.5,
+      //     totalPrice: 180.0,
+      //     quantity: 1,
+      //   },
+      //   {
+      //     id: 2,
+      //     productImg1: require("assets/img/product-image/product2.png"),
+      //     productImg2: require("assets/img/product-image/product4.png"),
+      //     productTagClass: "new",
+      //     productTag: "new",
+      //     productTitle: "T-Shirt Form Girls",
+      //     productColor: "White",
+      //     productDescription:
+      //       "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
+      //     productPrice: 738.5,
+      //     totalPrice: 130.0,
+      //     quantity: 1,
+      //   },
+      // ],
     };
+  },
+  created() {
+    this.productId = this.$route.query.product_id;
+    console.log(this.productId);
   },
 
   mounted() {
-    this.getPayment();
+    // this.getPayment();
+    this.getPaymentid();
     this.savePayment();
   },
 
@@ -536,8 +538,9 @@ export default {
   },
   computed: {
     sumTotalPrice() {
-      for (var product of this.productItems) {
-        this.sumtotal += parseFloat(product.productPrice);
+      // for (var product of this.selProduct)
+      {
+        this.sumtotal = this.selProduct.rent_price;
         // console.log(product);
         console.log(this.sumtotal);
       }
@@ -548,12 +551,12 @@ export default {
   methods: {
     // 아이디 별로 받아지는거
 
-    // async getPaymentid() {
-    //   this.list = (
-    //     await this.$api("api/payments?product_id=" + this.productId, "get", {})
-    //   )[0];
-    //   console.log("payment DB", this.product);
-    // },
+    async getPaymentid() {
+      this.selProduct = (
+        await this.$api("api/detail?product_id=" + this.productId, "get", {})
+      )[0];
+      console.log(this.selProduct);
+    },
 
     // 12개 다 받는거
 
