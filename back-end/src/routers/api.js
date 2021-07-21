@@ -4,7 +4,6 @@ const db = require("../db");
 const router = express.Router();
 
 router.get("/products", (req, res, next) => {
-  const pageNo = req.body.param[0];
   db.getConnection((err, conn) => {
     if (err) return res.status(403);
     conn.query(
@@ -25,7 +24,6 @@ router.get("/products", (req, res, next) => {
         FROM TB_Products AS product
         LEFT JOIN TB_Image AS image ON product.product_id = image.product_id
         LEFT JOIN TB_ProductGroup AS productGroup ON product.group_id = productGroup.group_id
-        limit ${(pageNo - 1) * 6}, 6
       `,
       (err, results) => {
         console.log(err);
