@@ -60,8 +60,15 @@
                       >현재 재고 확인</b-button
                     >
                   </div>
-                  <b-modal id="modal-sm" size="sm" title="현재 재고">
-                    <p class="my-4">대여 가능한 상품:</p>
+                  <b-modal
+                    id="modal-sm"
+                    size="sm"
+                    title="현재 재고"
+                    class="mt-5"
+                  >
+                    <p class="my-4">
+                      현재 대여 가능한 상품: {{ product.number_stock }} 개
+                    </p>
                   </b-modal>
                 </div>
 
@@ -117,7 +124,7 @@
                     </button>
                   </div>
                   <div class="product_description">
-                    <p>
+                    <!-- <p>
                       Curabitur arcu erat, accumsan id imperdiet et, porttitor
                       at sem. Vestibulum ac diam sit amet quam vehicula
                       elementum sed sit amet dui. Sed porttitor lectus nibh.
@@ -127,7 +134,7 @@
                       lacinia eget consectetur sed, convallis at tellus.
                       Curabitur arcu erat, accumsan id imperdiet et, porttitor
                       at sem.
-                    </p>
+                    </p> -->
                   </div>
                 </b-tab>
 

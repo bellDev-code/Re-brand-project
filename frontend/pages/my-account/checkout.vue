@@ -538,7 +538,7 @@ export default {
     sumTotalPrice() {
       for (var product of this.productItems) {
         this.sumtotal += parseFloat(product.productPrice);
-        console.log(product);
+        // console.log(product);
         console.log(this.sumtotal);
       }
 
@@ -546,8 +546,19 @@ export default {
     },
   },
   methods: {
+    // 아이디 별로 받아지는거
+
+    // async getPaymentid() {
+    //   this.list = (
+    //     await this.$api("api/payments?product_id=" + this.productId, "get", {})
+    //   )[0];
+    //   console.log("payment DB", this.product);
+    // },
+
+    // 12개 다 받는거
+
     async getPayment() {
-      this.list = await this.$api("api/payments", "get", {});
+      this.list = await this.$api("api/products", "get", {});
       console.log(this.list);
     },
 
