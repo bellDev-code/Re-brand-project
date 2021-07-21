@@ -245,8 +245,6 @@
             </div>
         </section> 
 
-        <!-- Instagram Arae -->
-        <InstagramArea class="pt-100" />
 </div>
 </template>
 
