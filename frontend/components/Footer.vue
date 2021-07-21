@@ -36,7 +36,7 @@
                 <li>
                   <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link>
                 </li>
-                <li><nuxt-link to="/faq">Frequent Questions</nuxt-link></li>
+                <li><nuxt-link to="/faq">FAQ</nuxt-link></li>
               </ul>
             </div>
           </div>
