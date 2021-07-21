@@ -129,7 +129,7 @@
             </div>
           </b-tab>
 
-          <b-tab title="Shoes" class="row">
+          <b-tab title="Watches" class="row">
             <div
               class="col-lg-3 col-md-4 col-sm-6 col-12"
               v-for="productItem in list.slice(5, 9)"
@@ -163,7 +163,8 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-12">
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <!-- <div class="col-lg-3 col-md-4 col-sm-6 col-12"> -->
             <carousel
               class="todays_slider"
               :autoplay="true"
@@ -179,6 +180,18 @@
                 1200: { items: 4 },
               }"
             >
+              <!-- <ProductBox
+                v-for="productItem in list"
+                :key="productItem.id"
+                :productId="productItem.product_id"
+                :productImg1="productItem.image_main"
+                :productImg2="productItem.image_main"
+                :productTagClass="productItem.productTagClass"
+                :productTag="productItem.productTag"
+                :productTitle="productItem.product_name"
+                :productPrice="productItem.rent_price"
+                :productDescription="productItem.productDescription"
+              /> -->
               <ProductBox
                 v-for="productItem in productItems"
                 :key="productItem.id"

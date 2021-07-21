@@ -43,11 +43,11 @@
                               >상품 검색</nuxt-link
                             >
                           </li>
-                          <li>
+                          <!-- <li>
                             <nuxt-link to="/product/_slug.vue"
                               >상품 상세</nuxt-link
                             >
-                          </li>
+                          </li> -->
                           <li>
                             <nuxt-link to="/blockchain/record"
                               >대여 기록</nuxt-link
@@ -65,11 +65,11 @@
                           <li>
                             <nuxt-link to="/cart/cart">장바구니 </nuxt-link>
                           </li>
-                          <li>
+                          <!-- <li>
                             <nuxt-link to="/cart/empty-cart"
                               >Empty Cart</nuxt-link
                             >
-                          </li>
+                          </li> -->
                           <li>
                             <nuxt-link to="/my-account/checkout"
                               >결제</nuxt-link

@@ -1,7 +1,7 @@
 <template>
   <div class="col-lg-3">
     <div class="shop_sidebar_wrapper">
-      <div class="shop_sidebar_boxed">
+      <!-- <div class="shop_sidebar_boxed">
         <h4>Categories</h4>
         <form>
           <label class="custom_boxed"
@@ -25,7 +25,7 @@
             <span class="checkmark"></span>
           </label>
         </form>
-      </div>
+      </div> -->
 
       <div class="shop_sidebar_boxed">
         <h4>Brand</h4>
