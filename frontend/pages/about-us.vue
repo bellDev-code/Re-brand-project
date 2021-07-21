@@ -1,11 +1,14 @@
 <template>
   <div>
         <!-- Banner Area -->
-        <section id="banner_one">
-            <div class="container">
+        <section id="common_banner_one">
+            <div class="container ">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="banner_text_one"></div>
+                        <div class="common_banner_text">
+                            <h2>{{this.title}}</h2>
+                            <b-breadcrumb :items="breadcrumbItems" class="bg-transparent"></b-breadcrumb>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -244,7 +247,6 @@
                 </div>
             </div>
         </section> 
-
 </div>
 </template>
 

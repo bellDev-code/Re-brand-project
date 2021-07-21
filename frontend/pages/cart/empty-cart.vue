@@ -1,14 +1,18 @@
 <template>
   <div>
-    <section id="banner_one">
-            <div class="container">
+    <!-- Banner Area -->
+    <section id="common_banner_one">
+            <div class="container ">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="banner_text_one"></div>
+                        <div class="common_banner_text">
+                            <h2>{{this.title}}</h2>
+                            <b-breadcrumb :items="breadcrumbItems" class="bg-transparent"></b-breadcrumb>
+                        </div>
                     </div>
                 </div>
             </div>
-    </section>
+        </section>
 
     <!--Empty Cart-Area -->
     <section id="empty_cart_area" class="ptb-100">
@@ -19,7 +23,7 @@
           >
             <div class="empaty_cart_area">
               <img
-                :src="require('@/assets/img/common/empty-cart.png')"
+                :src="require('@/assets/img/common/empty-cart1.png')"
                 alt="img"
               />
               <h2>장바구니가 비어있습니다</h2>
