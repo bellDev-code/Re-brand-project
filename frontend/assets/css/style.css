@@ -232,7 +232,7 @@ ul li {
 }
 
 #common_banner_one {
-  background-image: url("../img/common/common_bg.png");
+  background-image: url("../img/common/mainBanner1.jpg");
   padding: 90px 0;
   background-repeat: no-repeat;
 }
@@ -1876,7 +1876,7 @@ button {
 ---------------------------*/
 
 #banner_one {
-  background-image: url("../img/common/mainBanner.png");
+  background-image: url("../img/common/RealMainBanner.jpg");
   padding: 200px 0;
   display: flex;
   align-items: center;
@@ -2324,7 +2324,7 @@ button {
 ---------------------------*/
 
 #special_offer_one {
-  background-image: url("../img/common/offer-banner.png");
+  background-image: url("../img/common/mainBanner1.jpg");
   background-size: cover;
   background-position: center;
   padding: 115px 0;
