@@ -21,7 +21,9 @@
                   </li>
 
                   <li>
-                    <a href="#!"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/rebrand_seoul/"
+                      ><i class="fab fa-instagram"></i
+                    ></a>
                   </li>
                 </ul>
               </div>

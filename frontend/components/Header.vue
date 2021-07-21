@@ -173,7 +173,9 @@
             <a href="#"><i class="fab fa-facebook-f"></i></a>
           </li>
           <li>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/rebrand_seoul/"
+              ><i class="fab fa-instagram"></i
+            ></a>
           </li>
         </ul>
       </div>
@@ -251,7 +253,7 @@ export default {
           child: [
             {
               href: "/faq",
-              title: "Frequently Questions",
+              title: "FAQ",
             },
             {
               href: "/privacy-policy",
