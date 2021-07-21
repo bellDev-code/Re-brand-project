@@ -51,7 +51,7 @@
           <div class="col-lg-8">
             <div class="product_details_right_one">
               <div class="modal_product_content_one">
-                <h3 v-if="product.id">
+                <h3 class="mb-3" style="font-weight:bold;">
                   {{ product.product_name }}
                 </h3>
                 <div>
@@ -143,6 +143,14 @@
                       class="theme-btn-two btn-green-overlay btn_sm"
                       >정품 인증서 보기</nuxt-link
                     >
+
+                    <button
+                      class="theme-btn-two btn-green-overlay btn_sm"
+                      @click="goToGuarantee(product.product_id)"
+                    >
+                      정품 인증서 보기
+                    </button>
+
                     <nuxt-link
                       to="/blockchain/record"
                       class="theme-btn-two btn-green-overlay btn_sm"
@@ -498,6 +506,13 @@ export default {
         await this.$api("api/detail?product_id=" + this.productId, "get", {})
       )[0];
       console.log("productDetail", this.product);
+    },
+    goToGuarantee(product_id) {
+      this.$router.push({
+        path: "/blockchain/guarantee",
+        query: { product_id: product_id },
+      });
+      console.log(product_id);
     },
   },
   // Page head() Title, description for SEO
