@@ -119,25 +119,19 @@
                     블록체인 NFT를 통해 정품 인증과 대여 기록을 한 번에 확인할
                     수 있습니다.
 
-                    <button
-                      class="theme-btn-two btn-green-overlay btn_sm"
-                      @click="goToGuarantee(product.product_id)"
-                    >
-                      정품 인증서 보기
-                    </button>
-
-                    <button
-                    <nuxt-link
-                      to="/blockchain/guarantee"
-                      class="theme-btn-two btn-green-overlay btn_sm"
-                      >정품 인증서 보기</nuxt-link
-                    >
-                    <nuxt-link
-                      to="/blockchain/record"
-                      class="theme-btn-two btn-green-overlay btn_sm"
-                      @click="goToRecord(product.product_id)"
-                    >
-                      대여 기록
+                    <button>
+                      <nuxt-link
+                        to="/blockchain/guarantee"
+                        class="theme-btn-two btn-green-overlay btn_sm"
+                        >정품 인증서 보기</nuxt-link
+                      >
+                      <nuxt-link
+                        to="/blockchain/record"
+                        class="theme-btn-two btn-green-overlay btn_sm"
+                        @click="goToRecord(product.product_id)"
+                      >
+                        대여 기록
+                      </nuxt-link>
                     </button>
                   </div>
                   <div class="product_description">
