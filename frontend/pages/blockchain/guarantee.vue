@@ -38,27 +38,27 @@
               <tbody>
                 <tr>
                   <th>브랜드(Brand)</th>
-                  <td>{{ product_brand }}</td>
+                  <td>{{ guarantee.product_brand }}</td>
                   <th>제품번호</th>
                   <td>qwrwd1fw1f34g</td>
                 </tr>
                 <tr>
                   <th>모델 명(Model Name)</th>
-                  <td>{{ product_name }}</td>
+                  <td>{{ guarantee.product_name }}</td>
                   <th>대여횟수</th>
-                  <td>55회</td>
+                  <td>4회</td>
                 </tr>
                 <tr>
                   <th>일련번호(Serial Number)</th>
                   <td>ND1AZjmsDgAR4iQ</td>
                   <th>제품상태</th>
-                  <td>{{ product_state }}</td>
+                  <td>최상</td>
                 </tr>
                 <tr>
                   <th>A/S 책임자 및 수입자</th>
-                  <td>{{ responsible }}</td>
+                  <td>리브랜드 코리아</td>
                   <th>대여여부</th>
-                  <td>대여중</td>
+                  <td>반납완료</td>
                 </tr>
               </tbody>
             </table>
@@ -139,11 +139,7 @@ export default {
     },
     async getGuarantee() {
       this.guarantee = (
-        await this.$api(
-          "api/certificate?product_id=" + this.productId,
-          "get",
-          {}
-        )
+        await this.$api("api/detail?product_id=" + this.productId, "get", {})
       )[0];
     },
   },

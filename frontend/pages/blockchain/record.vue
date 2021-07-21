@@ -27,7 +27,7 @@
               <table class="numberOfRent col-2">
                 <tr>
                   <th class="numberOfRent-th">대여 횟수</th>
-                  <td class="numberOfRent-td"></td>
+                  <td class="numberOfRent-td" style="text-align:center">3회</td>
                 </tr>
               </table>
             </div>
@@ -68,27 +68,27 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>30 Montaigne Chain</td>
+                  <td>{{ record.product_name }}</td>
                   <td>ND1AZjmsDgAR4iQ</td>
-                  <td>대여중</td>
-                  <td>2021/07/16</td>
-                  <td>2021/07/23</td>
+                  <td>반납완료</td>
+                  <td>2021/06/26</td>
+                  <td>2021/06/30</td>
                 </tr>
                 <tr>
-                  <td>30 Montaigne Chain</td>
+                  <td>{{ record.product_name }}</td>
                   <td>ND1AZjmsDgAR4iQ</td>
-                  <td>대여중</td>
+                  <td>반납완료</td>
                   <td>2021/07/05</td>
                   <td>2021/07/10</td>
                 </tr>
                 <tr>
-                  <td>30 Montaigne Chain</td>
+                  <td>{{ record.product_name }}</td>
                   <td>ND1AZjmsDgAR4iQ</td>
-                  <td>대여중</td>
-                  <td>2021/06/26</td>
-                  <td>2021/06/30</td>
+                  <td>반납완료</td>
+                  <td>2021/07/16</td>
+                  <td>2021/07/23</td>
                 </tr>
-                <tr :key="list.certi_id" v-for="list in list">
+                <tr v-if="record.payment_id">
                   <td>{{ record.product_name }}</td>
                   <td>{{ record.certi_id }}</td>
                   <td>{{ record.rent_state }}</td>
@@ -125,10 +125,10 @@ export default {
           to: "/",
         },
         {
-          text: "Recordy",
+          text: "Record",
         },
       ],
-      reocrd: [],
+      record: [],
       productId: 0,
     };
   },
@@ -143,7 +143,7 @@ export default {
   methods: {
     async getRecord() {
       this.record = (
-        await this.$api("api/record?product_id=" + this.productId, "get", {})
+        await this.$api("api/detail?product_id=" + this.productId, "get", {})
       )[0];
     },
   },
