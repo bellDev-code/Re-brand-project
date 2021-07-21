@@ -11,8 +11,8 @@
               /></nuxt-link>
               <p>
                 No. 1 luxury rental platform in Korea.
-                <br />We will accompany you until the day when everyone can be
-                happy.
+                <br />We will accompany you until the day <br />when everyone
+                can be happy.
               </p>
               <div class="footer_left_side_icon">
                 <ul>
