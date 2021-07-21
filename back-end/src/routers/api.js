@@ -36,14 +36,14 @@ router.get("/products", (req, res, next) => {
 });
 
 router.get("/detail", (req, res, next) => {
-  //
+  const productId = req.query.product_id;
   db.getConnection((err, conn) => {
     if (err) return res.status(403);
     conn.query(
       `
       SELECT T1.product_id, T1.product_brand, T1.rent_price, T1.product_color, T2.product_name, T2.number_stock, T3.info_gender, T3.info_material, T4.manufacture_name, T4.manufacture_adr, T5.image_main, T5.image_type
       FROM TB_Products T1, TB_ProductGroup T2, TB_Info T3, TB_Manufacture T4, TB_Image T5
-      WHERE T1.group_id = T2.group_id AND T1.info_id = T3.info_id AND T3.manufacture_id = T4.manufacture_id AND T1.product_id = T5.product_id
+      WHERE T1.product_id = ${productId} and T1.group_id = T2.group_id AND T1.info_id = T3.info_id AND T3.manufacture_id = T4.manufacture_id AND T1.product_id = T5.product_id
       `,
       (err, results) => {
         if (err) return res.status(403);
@@ -54,7 +54,6 @@ router.get("/detail", (req, res, next) => {
 });
 
 router.get("/basket", (req, res, next) => {
-  //
   db.getConnection((err, conn) => {
     if (err) return res.status(403);
     conn.query(
@@ -72,11 +71,41 @@ router.get("/basket", (req, res, next) => {
 });
 
 // 결제창 페이지
-// TB_Products - TB_Payment - TB_ProductGroup
-// TB_Products - product_id, product_color, rent_price
-// TB_ProductGroup - product_name, number_stock
-// TB_Payment - start_rent, end_rent
-// start_rent, end_rent 같은 형태는 이용자가 선택하는데 어떻게 받아와야할지
+// start_rent, end_rent post 받는 방법
+
+router.get("/payment", (req, res, next) => {
+  db.getConnection((err, conn) => {
+    conn.query(
+      `
+      select T1.product_id, T1.rent_price, T1.product_color,T2.product_name, T3.payment_id, T3.start_rent, T3.end_rent 
+      from TB_Products T1, TB_ProductGroup T2, TB_Payment T3
+      where T1.group_id = T2.group_id and T1.product_id = T3.product_id
+      `,
+      (err, results) => {
+        if (err) return res.status(403);
+        res.send(results);
+      }
+    );
+  });
+  if (err) return res.status(403);
+});
+
+// router.post("/payment", (req, res, next) => {
+//   db.getConnection((err, conn) => {
+//     if (err) return res.status(403);
+//     conn.query(
+//       `
+//       INSERT INTO TB_Payment(payment_id, start_rent, end_rent) VALUES(?, ?, ?)
+//     `,
+//       [req.body.start_rent, req.body.end_rent],
+//       (err, results) => {
+//         if (err) throw err;
+//         console.log(results);
+//       }
+//     );
+//   });
+//   res.status(200).send("hi");
+// });
 
 router.get("/certificate", (req, res, next) => {
   //

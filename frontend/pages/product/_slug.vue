@@ -1,20 +1,14 @@
 <template>
   <div>
     <!-- Banner Area -->
-    <section id="common_banner_one">
-      <div class="container ">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="common_banner_text">
-              <h2>Shop</h2>
-              <b-breadcrumb
-                :items="breadcrumbItems"
-                class="bg-transparent"
-              ></b-breadcrumb>
+    <section id="banner_one">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="banner_text_one"></div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Product Single Area -->
@@ -28,22 +22,13 @@
                 :options="swiperOption"
               >
                 <swiper-slide>
-                  <img
-                    :src="require('@/assets/img/product-image/product1.png')"
-                    alt="img"
-                  />
+                  <img :src="product.image_main" alt="img" />
                 </swiper-slide>
                 <swiper-slide>
-                  <img
-                    :src="require('@/assets/img/product-image/product2.png')"
-                    alt="img"
-                  />
+                  <img :src="product.image_main" alt="img" />
                 </swiper-slide>
                 <swiper-slide>
-                  <img
-                    :src="require('@/assets/img/product-image/product3.png')"
-                    alt="img"
-                  />
+                  <img :src="product.image_main" alt="img" />
                 </swiper-slide>
 
                 <div
@@ -61,7 +46,7 @@
             <div class="product_details_right_one">
               <div class="modal_product_content_one">
                 <h3 v-if="product.id">
-                  {{ product.productTitle }}
+                  {{ product.product_name }}
                 </h3>
                 <div>
                   <div>
@@ -82,9 +67,9 @@
                   <i class="fas fa-star"></i>
                   <span>(2 Customer Review)</span>
                 </div> -->
-                <h4>${{ product.productPrice }}</h4>
+                <h4>${{ product.rent_price }}</h4>
                 <p>
-                  {{ product.productDescription }}
+                  {{ product.info_material }}
                 </p>
                 <br />
                 <div class="variable-single-item">
@@ -491,10 +476,10 @@ export default {
   },
   created() {
     this.productId = this.$route.params.slug;
-    console.log(this.productId);
-    this.product = this.productItems.filter((p) => p.id == this.productId)[0];
 
-    console.log(this.product);
+    // this.product = this.productItems.filter((p) => p.id == this.productId)[0];
+
+    // console.log(this.product);
 
     //this.getDetail()
   },
@@ -503,8 +488,10 @@ export default {
   },
   methods: {
     async getDetail() {
-      this.list = await this.$api("api/detail", "get", {});
-      console.log(this.list);
+      this.product = (
+        await this.$api("api/detail?product_id=" + this.productId, "get", {})
+      )[0];
+      console.log("productDetail", this.product);
     },
   },
   // Page head() Title, description for SEO
