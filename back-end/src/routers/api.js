@@ -71,12 +71,13 @@ router.get("/basket", (req, res, next) => {
 });
 
 router.get("/payments", (req, res, next) => {
+  const productId = req.query.product_id;
   db.getConnection((err, conn) => {
     conn.query(
       `
       select T1.product_id, T1.rent_price, T1.product_color,T2.product_name, T3.payment_id, T3.start_rent, T3.end_rent 
       from TB_Products T1, TB_ProductGroup T2, TB_Payment T3
-      where T1.group_id = T2.group_id and T1.product_id = T3.product_id
+      where T1.product_id = ${productId} and T1.group_id = T2.group_id and T1.product_id = T3.product_id
       `,
       (err, results) => {
         if (err) return res.status(403);
@@ -124,13 +125,14 @@ router.post("/payments", (req, res, next) => {
 });
 
 router.get("/certificate", (req, res, next) => {
+  const productId = req.query.product_id;
   db.getConnection((err, conn) => {
     if (err) return res.status(403);
     conn.query(
       `
         select T1.product_id, T1.product_brand, T1.product_state, T2.product_name, T3.responsible, T3.code, T3.number_times 
         from TB_Products T1, TB_ProductGroup T2, TB_Certification T3
-        where T1.group_id = T2.group_id and T1.certificate_id = T3.certificate_id 
+        where T1.product_id = ${productId} and T1.group_id = T2.group_id and T1.certificate_id = T3.certificate_id 
       `,
       (err, results) => {
         if (err) return res.status(403);
@@ -141,13 +143,14 @@ router.get("/certificate", (req, res, next) => {
 });
 
 router.get("/record", (req, res, next) => {
+  const productId = req.query.product_id;
   db.getConnection((err, conn) => {
     if (err) return res.status(403);
     conn.query(
       `
         select T1.product_id, T1.product_brand, T1.product_state, T2.product_name, T3.record_id, T3.rent_date, T3.rent_state 
         from TB_Products T1, TB_ProductGroup T2, TB_Record T3
-        where T1.group_id = T2.group_id and T1.product_id = T3.product_id
+        where T1.product_id = ${productId} and T1.group_id = T2.group_id and T1.product_id = T3.product_id
       `,
       (err, results) => {
         if (err) return res.status(403);

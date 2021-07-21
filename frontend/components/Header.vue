@@ -48,11 +48,11 @@
                               >상품 상세</nuxt-link
                             >
                           </li> -->
-                          <li>
+                          <!-- <li>
                             <nuxt-link to="/blockchain/record"
                               >대여 기록</nuxt-link
                             >
-                          </li>
+                          </li> -->
                         </ul>
                       </li>
 
