@@ -2,17 +2,20 @@
   <div>
     <!-- Banner Area -->
     <section id="common_banner_one">
-            <div class="container ">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="common_banner_text">
-                            <h2>{{this.title}}</h2>
-                            <b-breadcrumb :items="breadcrumbItems" class="bg-transparent"></b-breadcrumb>
-                        </div>
-                    </div>
-                </div>
+      <div class="container ">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="common_banner_text">
+              <h2>{{ this.title }}</h2>
+              <b-breadcrumb
+                :items="breadcrumbItems"
+                class="bg-transparent"
+              ></b-breadcrumb>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Product Single Area -->
     <section id="product_single_one" class="ptb-100">
@@ -25,22 +28,13 @@
                 :options="swiperOption"
               >
                 <swiper-slide>
-                  <img
-                    :src="require('@/assets/img/product-image/product1.png')"
-                    alt="img"
-                  />
+                  <img :src="product.image_main" alt="img" />
                 </swiper-slide>
                 <swiper-slide>
-                  <img
-                    :src="require('@/assets/img/product-image/product2.png')"
-                    alt="img"
-                  />
+                  <img :src="product.image_main" alt="img" />
                 </swiper-slide>
                 <swiper-slide>
-                  <img
-                    :src="require('@/assets/img/product-image/product3.png')"
-                    alt="img"
-                  />
+                  <img :src="product.image_main" alt="img" />
                 </swiper-slide>
 
                 <div
@@ -58,7 +52,7 @@
             <div class="product_details_right_one">
               <div class="modal_product_content_one">
                 <h3 v-if="product.id">
-                  {{ product.productTitle }}
+                  {{ product.product_name }}
                 </h3>
                 <div>
                   <div>
@@ -79,9 +73,9 @@
                   <i class="fas fa-star"></i>
                   <span>(2 Customer Review)</span>
                 </div> -->
-                <h4>${{ product.productPrice }}</h4>
+                <h4>{{ product.rent_price }} 원</h4>
                 <p>
-                  {{ product.productDescription }}
+                  {{ product.info_material }}
                 </p>
                 <br />
                 <div class="variable-single-item">
@@ -514,7 +508,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: "Shop page - RE:BRAND ",
+          content: "Shop page - AndShop Ecommerce Vue js, Nuxt js Template",
         },
       ],
     };

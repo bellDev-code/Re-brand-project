@@ -2,17 +2,20 @@
   <div>
     <!-- Banner Area -->
     <section id="common_banner_one">
-            <div class="container ">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="common_banner_text">
-                            <h2>{{this.title}}</h2>
-                            <b-breadcrumb :items="breadcrumbItems" class="bg-transparent"></b-breadcrumb>
-                        </div>
-                    </div>
-                </div>
+      <div class="container ">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="common_banner_text">
+              <h2>{{ this.title }}</h2>
+              <b-breadcrumb
+                :items="breadcrumbItems"
+                class="bg-transparent"
+              ></b-breadcrumb>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Cart-Area -->
     <section id="cart_area_two" class="ptb-100">
@@ -36,18 +39,19 @@
                   <!-- End Cart Table Head -->
                   <tbody v-if="productItems.length > 0">
                     <!-- Start Cart Single Item-->
+
                     <tr
-                      v-for="productItem in productItems"
-                      :key="productItem.id"
+                      v-for="productItem in list"
+                      :key="productItem.basket_id"
                     >
                       <td class="product_thumb">
                         <nuxt-link to="/product">
-                          <img :src="productItem.productImg1" alt="img" />
+                          <img :src="productItem.image_main" alt="img" />
                         </nuxt-link>
                       </td>
                       <td class="product_name">
                         <nuxt-link to="/product">{{
-                          productItem.productTitle
+                          productItem.product_name
                         }}</nuxt-link>
                       </td>
                       <!-- <td class="product-price">
@@ -55,11 +59,11 @@
                       </td> -->
                       <td class="product_quantity">
                         <div>
-                          {{ productItem.productColor }}
+                          {{ productItem.product_color }}
                         </div>
                       </td>
                       <td class="product_total">
-                        ${{ productItem.productPrice }}
+                        {{ productItem.rent_price }} 원
                       </td>
 
                       <td class="product_remove">
@@ -110,7 +114,7 @@
               <div class="coupon_inner">
                 <div class="cart_subtotal">
                   <p>합계</p>
-                  <p class="cart_amount">${{ sumTotalPrice }}</p>
+                  <p class="cart_amount">{{ sumTotalPrice }} 원</p>
                 </div>
                 <div class="cart_subtotal ">
                   <p>배송비</p>
@@ -119,7 +123,7 @@
 
                 <div class="cart_subtotal">
                   <p>총계</p>
-                  <p class="cart_amount">${{ sumTotalPrice }}</p>
+                  <p class="cart_amount">{{ sumTotalPrice }} 원</p>
                 </div>
                 <div class="checkout_btn">
                   <nuxt-link
@@ -153,17 +157,18 @@
         <div class="row">
           <div
             class="col-lg-3 col-md-4 col-sm-6 col-12"
-            v-for="productItem in relatedItems"
+            v-for="productItem in list.slice(0, 4)"
             :key="productItem.id"
           >
             <ProductBox
-              :productId="productItem.id"
-              :productImg1="productItem.productImg1"
-              :productImg2="productItem.productImg2"
+              :key="productItem.id"
+              :productId="productItem.product_id"
+              :productImg1="productItem.image_main"
+              :productImg2="productItem.image_main"
               :productTagClass="productItem.productTagClass"
               :productTag="productItem.productTag"
-              :productTitle="productItem.productTitle"
-              :productPrice="productItem.productPrice"
+              :productTitle="productItem.product_name"
+              :productPrice="productItem.rent_price"
               :productDescription="productItem.productDescription"
             />
           </div>
@@ -292,7 +297,7 @@ export default {
   },
   methods: {
     removeProductItem: function(index) {
-      this.productItems.splice(index, 1);
+      this.list.splice(index, 1);
     },
 
     async getBasket() {
@@ -302,8 +307,8 @@ export default {
   },
   computed: {
     sumTotalPrice() {
-      for (var product of this.productItems) {
-        this.sumtotal += parseFloat(product.productPrice);
+      for (var product of this.list) {
+        this.sumtotal += parseFloat(product.rent_price);
         console.log(product);
         console.log(this.sumtotal);
       }
