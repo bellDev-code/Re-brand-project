@@ -127,6 +127,13 @@
                     </button>
 
                     <button
+                    <nuxt-link
+                      to="/blockchain/guarantee"
+                      class="theme-btn-two btn-green-overlay btn_sm"
+                      >정품 인증서 보기</nuxt-link
+                    >
+                    <nuxt-link
+                      to="/blockchain/record"
                       class="theme-btn-two btn-green-overlay btn_sm"
                       @click="goToRecord(product.product_id)"
                     >
