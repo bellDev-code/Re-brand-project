@@ -21,13 +21,79 @@
     <section id="shop_main_area" class="ptb-100">
       <div class="container">
         <div class="row">
-          <ShopSidebar />
+          <div class="shop_sidebar_boxed">
+            <h4>Brand</h4>
+            <form>
+              <label class="custom_boxed"
+                >Hermes
+                <input
+                  type="radio"
+                  name="radio"
+                  v-model="brand"
+                  value="에르메스"
+                  @change="brandFilter"
+                />
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom_boxed"
+                >Louis Vuitton
+                <input
+                  type="radio"
+                  name="radio"
+                  v-model="brand"
+                  value="루이비통"
+                  @change="brandFilter"
+                />
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom_boxed"
+                >TAG Heuer
+                <input
+                  type="radio"
+                  name="radio"
+                  v-model="brand"
+                  value="태그호이어"
+                  @change="brandFilter"
+                />
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom_boxed"
+                >Chanel
+                <input type="radio" name="radio" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom_boxed"
+                >SAINT LAURENT
+                <input type="radio" name="radio" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom_boxed"
+                >Dior
+                <input type="radio" name="radio" />
+                <span class="checkmark"></span>
+              </label>
+              <div class="clear_button">
+                <button
+                  type="reset"
+                  class="theme-btn-one btn_sm btn-black-overlay"
+                >
+                  Clear Filter
+                </button>
+              </div>
+            </form>
+          </div>
 
           <div class="col-lg-9 text-center">
             <div class="btn-group" role="group" aria-label="...">
-              <button type="button" class="btn btn-light">All</button>
-              <button type="button" class="btn btn-light">Bag</button>
-              <button type="button" class="btn btn-light">Watch</button>
+              <button type="button" class="btn btn-light" @click="allFilter">
+                All
+              </button>
+              <button type="button" class="btn btn-light" @click="bagFilter">
+                Bag
+              </button>
+              <button type="button" class="btn btn-light" @click="watchFilter">
+                Watch
+              </button>
             </div>
 
             <div class="shop_Search col-lg-3">
@@ -38,7 +104,7 @@
                   v-model="searchValue"
                   placeholder="Search..."
                 />
-                <button type="button" @click="searchResult">
+                <button type="button" @click="searchFilter">
                   <img
                     :src="require('@/assets/img/svg/search.svg')"
                     alt="img"
@@ -131,6 +197,9 @@ export default {
       currentPage: 1,
       totalPage: 0,
       searchValue: "",
+      brand: "",
+      bag: "BAG",
+      watch: "WATCH",
     };
   },
   watch: {
@@ -150,8 +219,24 @@ export default {
       this.list = await this.$api("api/products", "get", {});
       console.log(this.list);
     },
-    searchResult() {
+    searchFilter() {
       console.log(this.searchValue);
+    },
+
+    brandFilter() {
+      this.list = this.list.filter((u) => u.product_brand == this.brand);
+      console.log(this.brand);
+    },
+
+    allFilter() {
+      this.getProductList();
+    },
+
+    bagFilter() {
+      this.list = this.list.filter((u) => u.product_tag == this.bag);
+    },
+    watchFilter() {
+      this.list = this.list.filter((u) => u.product_tag == this.watch);
     },
 
     initPage() {
