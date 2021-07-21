@@ -2,17 +2,20 @@
   <div>
     <!-- Banner Area -->
     <section id="common_banner_one">
-            <div class="container ">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="common_banner_text">
-                            <h2>{{this.title}}</h2>
-                            <b-breadcrumb :items="breadcrumbItems" class="bg-transparent"></b-breadcrumb>
-                        </div>
-                    </div>
-                </div>
+      <div class="container ">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="common_banner_text">
+              <h2>{{ this.title }}</h2>
+              <b-breadcrumb
+                :items="breadcrumbItems"
+                class="bg-transparent"
+              ></b-breadcrumb>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Record Area -->
     <section id="Record_area" class="ptb-100">
@@ -35,13 +38,13 @@
               <tbody>
                 <tr>
                   <th>브랜드(Brand)</th>
-                  <td>구찌</td>
+                  <td>{{ product_brand }}</td>
                   <th>제품번호</th>
                   <td>qwrwd1fw1f34g</td>
                 </tr>
                 <tr>
                   <th>모델 명(Model Name)</th>
-                  <td>30 Montaigne Chain</td>
+                  <td>{{ product_name }}</td>
                   <th>대여횟수</th>
                   <td>55회</td>
                 </tr>
@@ -49,11 +52,11 @@
                   <th>일련번호(Serial Number)</th>
                   <td>ND1AZjmsDgAR4iQ</td>
                   <th>제품상태</th>
-                  <td>최상</td>
+                  <td>{{ product_state }}</td>
                 </tr>
                 <tr>
                   <th>A/S 책임자 및 수입자</th>
-                  <td>구찌 인터네셔널 02-0000-0000</td>
+                  <td>{{ responsible }}</td>
                   <th>대여여부</th>
                   <td>대여중</td>
                 </tr>
@@ -102,6 +105,8 @@ export default {
           text: "Guarantee",
         },
       ],
+      productId: 0,
+      guarantee: [],
     };
   },
   // Page head() Title, description for SEO
@@ -118,14 +123,28 @@ export default {
     };
   },
 
+  created() {
+    this.productId = this.$route.query.product_id;
+    console.log(this.productId);
+  },
+
   mounted() {
-    this.certification();
+    this.getGuarantee();
   },
 
   methods: {
     async certification() {
       this.list = await this.$api("api/certificate", "get", {});
       console.log(this.list);
+    },
+    async getGuarantee() {
+      this.guarantee = (
+        await this.$api(
+          "api/certificate?product_id=" + this.productId,
+          "get",
+          {}
+        )
+      )[0];
     },
   },
 };

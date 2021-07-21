@@ -2,17 +2,20 @@
   <div>
     <!-- Banner Area -->
     <section id="common_banner_one">
-            <div class="container ">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="common_banner_text">
-                            <h2>{{this.title}}</h2>
-                            <b-breadcrumb :items="breadcrumbItems" class="bg-transparent"></b-breadcrumb>
-                        </div>
-                    </div>
-                </div>
+      <div class="container ">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="common_banner_text">
+              <h2>{{ this.title }}</h2>
+              <b-breadcrumb
+                :items="breadcrumbItems"
+                class="bg-transparent"
+              ></b-breadcrumb>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Record Area -->
     <section id="Record_area" class="ptb-100">
@@ -85,12 +88,12 @@
                   <td>2021/06/26</td>
                   <td>2021/06/30</td>
                 </tr>
-          <!--       <tr :key="list.certi_id" v-for="list in list">
-                  <td>{{ list.product_name }}</td>
-                  <td>{{ list.certi_id }}</td>
-                  <td>{{ list.rent_state }}</td>
-                  <td>{{ list.start_rent }}</td>
-                  <td>{{ list.end_rent }}</td> -->
+                <tr :key="list.certi_id" v-for="list in list">
+                  <td>{{ record.product_name }}</td>
+                  <td>{{ record.certi_id }}</td>
+                  <td>{{ record.rent_state }}</td>
+                  <td>{{ record.start_rent }}</td>
+                  <td>{{ record.end_rent }}</td>
                 </tr>
               </tbody>
             </table>
@@ -125,21 +128,23 @@ export default {
           text: "Recordy",
         },
       ],
+      reocrd: [],
+      productId: 0,
     };
+  },
+
+  created() {
+    this.productId = this.$route.query.product_id;
   },
 
   mounted() {
     this.getRecord();
-    this.getRecord2();
   },
   methods: {
     async getRecord() {
-      this.list = await this.$api("api/record", "get", {});
-      console.log(this.list);
-    },
-    async getRecord2() {
-      this.list = await this.$api("api/record", "get", {});
-      console.log(this.list2);
+      this.record = (
+        await this.$api("api/record?product_id=" + this.productId, "get", {})
+      )[0];
     },
   },
 

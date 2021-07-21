@@ -65,14 +65,6 @@
                   </b-modal>
                 </div>
 
-                <!-- <div class="reviews_rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <span>(2 Customer Review)</span>
-                </div> -->
                 <h4>{{ product.rent_price }} 원</h4>
                 <p>
                   {{ product.info_material }}
@@ -82,15 +74,6 @@
                 <div class="variable-single-item">
                   <span>Color : {{ product.product_color }}</span>
                 </div>
-
-                <!-- <div class="customs_selects">
-                  <select name="product" class="customs_sel_box">
-                    <option value="color">Colors</option>
-                    <option value="white">White</option>
-                    <option value="beige">Beige</option>
-                    <option value="black">Black</option>
-                  </select>
-                </div> -->
 
                 <div class="links_Product_areas">
                   <nuxt-link
@@ -119,19 +102,18 @@
                     블록체인 NFT를 통해 정품 인증과 대여 기록을 한 번에 확인할
                     수 있습니다.
 
-                    <button>
-                      <nuxt-link
-                        to="/blockchain/guarantee"
-                        class="theme-btn-two btn-green-overlay btn_sm"
-                        >정품 인증서 보기</nuxt-link
-                      >
-                      <nuxt-link
-                        to="/blockchain/record"
-                        class="theme-btn-two btn-green-overlay btn_sm"
-                        @click="goToRecord(product.product_id)"
-                      >
-                        대여 기록
-                      </nuxt-link>
+                    <button
+                      class="theme-btn-two btn-green-overlay btn_sm"
+                      @click="goToGuarantee(product.product_id)"
+                    >
+                      정품 인증서 보기
+                    </button>
+
+                    <button
+                      class="theme-btn-two btn-green-overlay btn_sm"
+                      @click="goToRecord(product.product_id)"
+                    >
+                      대여 기록
                     </button>
                   </div>
                   <div class="product_description">
@@ -146,34 +128,6 @@
                       Curabitur arcu erat, accumsan id imperdiet et, porttitor
                       at sem.
                     </p>
-                    <!-- <ul>
-                      <li>Vivamus magna justo, lacinia eget consectetur sed</li>
-                      <li>Curabitur aliquet quam id dui posuere blandit</li>
-                      <li>
-                        Mauris blandit aliquet elit, eget tincidunt nibh
-                        pulvinar
-                      </li>
-                    </ul>
-                    <p>
-                      Donec sollicitudin molestie malesuada. Cras ultricies
-                      ligula sed magna dictum porta. Mauris blandit aliquet
-                      elit, eget tincidunt nibh pulvinar a. Nulla porttitor
-                      accumsan tincidunt. Cras ultricies ligula sed magna dictum
-                      porta. Curabitur arcu erat, accumsan id imperdiet et,
-                      Pellentesque in ipsum id orci porta dapibus. Lorem ipsum
-                      dolor sit amet, consectetur adipiscing elit. porttitor at
-                      sem. Quisque velit nisi, pretium ut lacinia in, elementum
-                      id enim.
-                    </p> -->
-                    <!-- <div class="differences"> 
-                      <strong>Re:brand만의 차별점!</strong>
-                    블록체인 NFT를 통해 정품 인증과 대여 기록을 
-                    한 번에 확인할 수 있습니다.
-                    
-                    <nuxt-link to="/blockchain/guarantee" class="theme-btn-two btn-green-overlay btn_sm">정품 인증서 보기</nuxt-link>
-                    <nuxt-link to="/blockchain/record" class="theme-btn-two btn-green-overlay btn_sm">대여기록</nuxt-link>
-      
-                    </div> -->
                   </div>
                 </b-tab>
 
@@ -296,40 +250,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Related Product -->
-    <!-- <section id="related_product" class="pb-100">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="center_heading">
-              <h2>Recommended products</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div
-            class="col-lg-3 col-md-4 col-sm-6 col-12"
-            v-for="productItem in productItems"
-            :key="productItem.id"
-          >
-            <ProductBox
-              :productId="productItem.id"
-              :productImg1="productItem.productImg1"
-              :productImg2="productItem.productImg2"
-              :productTagClass="productItem.productTagClass"
-              :productTag="productItem.productTag"
-              :productTitle="productItem.productTitle"
-              :productPrice="productItem.productPrice"
-              :productDescription="productItem.productDescription"
-            />
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- Instagram Arae -->
-    <!-- <InstagramArea /> -->
   </div>
 </template>
 
