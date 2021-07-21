@@ -2,17 +2,20 @@
   <div>
     <!-- Banner Area -->
     <section id="common_banner_one">
-            <div class="container ">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="common_banner_text">
-                            <h2>{{this.title}}</h2>
-                            <b-breadcrumb :items="breadcrumbItems" class="bg-transparent"></b-breadcrumb>
-                        </div>
-                    </div>
-                </div>
+      <div class="container ">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="common_banner_text">
+              <h2>{{ this.title }}</h2>
+              <b-breadcrumb
+                :items="breadcrumbItems"
+                class="bg-transparent"
+              ></b-breadcrumb>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Shop Main Area -->
     <section id="shop_main_area" class="ptb-100">
@@ -24,7 +27,7 @@
             <div class="btn-group" role="group" aria-label="...">
               <button type="button" class="btn btn-light">All</button>
               <button type="button" class="btn btn-light">Bag</button>
-              <button type="button" class="btn btn-light">Shoes</button>
+              <button type="button" class="btn btn-light">Watch</button>
             </div>
 
             <div class="shop_Search col-lg-3">
@@ -46,7 +49,7 @@
             <div class="row">
               <div
                 class="col-lg-4 col-md-4 col-sm-6 col-12"
-                v-for="productItem in productItems"
+                v-for="productItem in list"
                 id="my-table"
                 :key="productItem.id"
                 :items="productItems"
@@ -55,13 +58,15 @@
                 small
               >
                 <ProductBox
-                  :productId="productItem.id"
-                  :productImg1="productItem.productImg1"
-                  :productImg2="productItem.productImg2"
+                  :key="productItem.id"
+                  :productId="productItem.product_id"
+                  :productImg1="productItem.image_main"
+                  :productImg2="productItem.image_main"
                   :productTagClass="productItem.productTagClass"
                   :productTag="productItem.productTag"
-                  :productTitle="productItem.productTitle"
-                  :productPrice="productItem.productPrice"
+                  :productTitle="productItem.product_name"
+                  :productPrice="productItem.rent_price"
+                  :productDescription="productItem.productDescription"
                 />
               </div>
 
@@ -102,7 +107,7 @@ export default {
   data() {
     return {
       list: [],
-      perPage: 5,
+      perPage: 6,
       currentPage: 1,
       title: "Shop",
 
@@ -152,7 +157,7 @@ export default {
     initPage() {
       //총 제품 등록수 - 23
       //
-      this.totalPage = 9;
+      this.totalPage = 12;
       // this.totalPage = Math.ceil(totalCount / this.perPage);
       console.log(this.totalPage);
     },
