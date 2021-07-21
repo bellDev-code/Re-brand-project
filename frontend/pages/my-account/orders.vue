@@ -46,21 +46,14 @@
                   <tbody>
                     <tr>
                       <td>1</td>
-                      <td>May 10, 2018</td>
-                      <td><span class="success">배송완료</span></td>
-                      <td>$25.00 for 1 item</td>
+                      <td>2021년7월22일</td>
+                      <td><span class="success">결제완료</span></td>
+                      <td>80000원</td>
                       <td>
-                        <nuxt-link to="/cart/" class="view">보기</nuxt-link>
+                        <nuxt-link to="/#" class="view">보기</nuxt-link>
                       </td>
                     </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>May 10, 2018</td>
-                      <td>배송중</td>
-                      <td>$17.00 for 1 item</td>
-                      <td>
-                        <nuxt-link to="/cart/" class="view">보기</nuxt-link>
-                      </td>
+         
                     </tr>
                   </tbody>
                 </table>
