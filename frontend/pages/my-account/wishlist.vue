@@ -168,7 +168,7 @@ export default {
 
   methods: {
     removeProductItem: function(index) {
-      this.productItems.splice(index, 1);
+      this.list.splice(index, 1);
     },
     async getwishList() {
       this.list = await this.$api("api/products", "get", {});
