@@ -148,13 +148,6 @@
     <section id="related_product" class="pb-100">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12">
-            <div class="center_heading">
-              <h2>Recommended products</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
           <div
             class="col-lg-3 col-md-4 col-sm-6 col-12"
             v-for="productItem in list.slice(0, 4)"
