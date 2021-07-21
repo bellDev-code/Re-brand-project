@@ -1,14 +1,20 @@
 <template>
   <div>
     <!-- Banner Area -->
-    <section id="banner_one">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="banner_text_one"></div>
-                    </div>
-                </div>
+    <section id="common_banner_one">
+      <div class="container ">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="common_banner_text">
+              <h2>{{ this.title }}</h2>
+              <b-breadcrumb
+                :items="breadcrumbItems"
+                class="bg-transparent"
+              ></b-breadcrumb>
             </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Product Single Area -->
@@ -67,7 +73,7 @@
                   <i class="fas fa-star"></i>
                   <span>(2 Customer Review)</span>
                 </div> -->
-                <h4>${{ product.rent_price }}</h4>
+                <h4>{{ product.rent_price }} 원</h4>
                 <p>
                   {{ product.info_material }}
                 </p>

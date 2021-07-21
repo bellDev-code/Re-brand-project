@@ -1,14 +1,20 @@
 <template>
   <div>
     <!-- Banner Area -->
-    <section id="banner_one">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="banner_text_one"></div>
-                    </div>
-                </div>
+    <section id="common_banner_one">
+      <div class="container ">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="common_banner_text">
+              <h2>{{ this.title }}</h2>
+              <b-breadcrumb
+                :items="breadcrumbItems"
+                class="bg-transparent"
+              ></b-breadcrumb>
             </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Checkout-Area -->
@@ -270,8 +276,20 @@
                         {{ productItem.productTitle }}
                       </td>
                       <td>{{ productItem.productColor }}</td>
-                      <td>${{ productItem.productPrice }}</td>
+                      <td>{{ productItem.productPrice }} 원</td>
                     </tr>
+                    <!-- 데이터 들어오면 바꿀부분 -->
+                    <!-- <tr
+                      v-for="productItem in list"
+                      :key="productItem.product_id"
+                    >
+                      <td>
+                        {{ productItem.product_name }}
+                      </td>
+                      <td>{{ productItem.product_color }}</td>
+                      <td>{{ productItem.rent_price }} 원</td>
+                    </tr> -->
+                    <!-- 데이터 들어오면 바꿀부분 -->
                   </tbody>
                   <tfoot>
                     <tr>
@@ -282,7 +300,7 @@
                     <tr>
                       <th>합계</th>
                       <td></td>
-                      <td class="product-subtotal">${{ sumTotalPrice }}</td>
+                      <td class="product-subtotal">{{ sumTotalPrice }} 원</td>
                     </tr>
                     <tr>
                       <th>대여기간</th>
@@ -293,7 +311,7 @@
                       <th>총 금액</th>
                       <td></td>
                       <td class="product-subtotal">
-                        ${{ sumTotalPrice * dateDiff }}
+                        {{ sumTotalPrice * dateDiff }} 원
                       </td>
                     </tr>
 
@@ -306,7 +324,8 @@
                       <th>결제 금액</th>
                       <td></td>
                       <td class="product-subtotal">
-                        ${{ parseInt(sumTotalPrice * dateDiff * Coupon_rate) }}
+                        {{ parseInt(sumTotalPrice * dateDiff * Coupon_rate) }}
+                        원
                       </td>
                     </tr>
                   </tfoot>

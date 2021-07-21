@@ -4,8 +4,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'AndShop',
-    titleTemplate: '%s - AndShop Ecommerce Vue js Template',
+    title: 'Re:Brand',
+    titleTemplate: '%s - 품격을 재정의 하다 - Re:Brand  ',
     htmlAttrs: {
       lang: 'en'
     },
