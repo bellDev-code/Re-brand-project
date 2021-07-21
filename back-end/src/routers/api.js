@@ -36,14 +36,15 @@ router.get("/products", (req, res, next) => {
 });
 
 router.get("/detail", (req, res, next) => {
-  //
+  const productId = req.query.product_id;
+  console.log("productId", productId);
   db.getConnection((err, conn) => {
     if (err) return res.status(403);
     conn.query(
       `
       SELECT T1.product_id, T1.product_brand, T1.rent_price, T1.product_color, T2.product_name, T2.number_stock, T3.info_gender, T3.info_material, T4.manufacture_name, T4.manufacture_adr, T5.image_main, T5.image_type
       FROM TB_Products T1, TB_ProductGroup T2, TB_Info T3, TB_Manufacture T4, TB_Image T5
-      WHERE T1.group_id = T2.group_id AND T1.info_id = T3.info_id AND T3.manufacture_id = T4.manufacture_id AND T1.product_id = T5.product_id
+      WHERE T1.product_id = ${productId} and T1.group_id = T2.group_id AND T1.info_id = T3.info_id AND T3.manufacture_id = T4.manufacture_id AND T1.product_id = T5.product_id
       `,
       (err, results) => {
         if (err) return res.status(403);
