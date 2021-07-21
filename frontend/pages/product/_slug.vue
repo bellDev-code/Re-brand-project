@@ -143,14 +143,6 @@
                       class="theme-btn-two btn-green-overlay btn_sm"
                       >정품 인증서 보기</nuxt-link
                     >
-
-                    <button
-                      class="theme-btn-two btn-green-overlay btn_sm"
-                      @click="goToGuarantee(product.product_id)"
-                    >
-                      정품 인증서 보기
-                    </button>
-
                     <nuxt-link
                       to="/blockchain/record"
                       class="theme-btn-two btn-green-overlay btn_sm"
