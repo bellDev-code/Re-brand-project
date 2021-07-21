@@ -44,7 +44,7 @@
             <div class="footer_one_widget">
               <h3>Your Account</h3>
               <ul>
-                <li><nuxt-link to="/cart/cart">Cart View</nuxt-link></li>
+                <li><nuxt-link to="/cart/cart">Cart</nuxt-link></li>
                 <li><nuxt-link to="/cart/empty-cart">Empty Cart</nuxt-link></li>
                 <li>
                   <nuxt-link to="/my-account/checkout">Checkout</nuxt-link>

@@ -7,7 +7,9 @@
           <div class="center_heading">
             <h2>Follow Us Instagram</h2>
             <p>
-              <a href="#!"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.instagram.com/rebrand_seoul/"
+                ><i class="fab fa-instagram"></i
+              ></a>
               rebrand_seoul
             </p>
           </div>
