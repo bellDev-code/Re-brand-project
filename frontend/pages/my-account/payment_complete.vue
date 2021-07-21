@@ -1,17 +1,11 @@
 <template>
   <div>
     <!-- Banner Area -->
-    <section id="common_banner_one">
-      <div class="container ">
+    <section id="banner_one">
+      <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <div class="common_banner_text">
-              <h2>{{ this.title }}</h2>
-              <b-breadcrumb
-                :items="breadcrumbItems"
-                class="bg-transparent"
-              ></b-breadcrumb>
-            </div>
+            <div class="banner_text_one"></div>
           </div>
         </div>
       </div>
@@ -33,7 +27,7 @@
               <h2>결제가 완료되었습니다!</h2>
               <h3>정성을 다해 상품을 준비하겠습니다</h3>
               <nuxt-link to="/" class="btn btn-black-overlay btn_md"
-                >Continue Shopping</nuxt-link
+                >계속 살펴보기</nuxt-link
               >
             </div>
           </div>

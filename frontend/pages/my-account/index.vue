@@ -1,17 +1,11 @@
 <template>
   <div>
     <!-- Banner Area -->
-    <section id="common_banner_one">
-      <div class="container ">
+    <section id="banner_one">
+      <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <div class="common_banner_text">
-              <h2>{{ this.title }}</h2>
-              <b-breadcrumb
-                :items="breadcrumbItems"
-                class="bg-transparent"
-              ></b-breadcrumb>
-            </div>
+            <div class="banner_text_one"></div>
           </div>
         </div>
       </div>
@@ -25,24 +19,23 @@
             <!-- Nav tabs -->
             <div class="dashboard_tab_button">
               <b-navbar-nav>
-                <b-nav-item to="/my-account">Dashboard</b-nav-item>
-                <b-nav-item to="/my-account/orders">Orders</b-nav-item>
-                <b-nav-item to="/my-account/downloads">Downloads</b-nav-item>
-                <b-nav-item to="/my-account/addresses">Addresses</b-nav-item>
+                <b-nav-item to="/my-account">대시보드</b-nav-item>
+                <b-nav-item to="/my-account/orders">주문확인</b-nav-item>
+                <b-nav-item to="/my-account/downloads">다운파일들</b-nav-item>
+                <b-nav-item to="/my-account/addresses">주소지확인</b-nav-item>
               </b-navbar-nav>
             </div>
           </div>
           <div class="col-sm-12 col-md-9 col-lg-9">
             <div class="dashboard_content">
-              <h4>Dashboard</h4>
+              <h4>대시보드</h4>
               <p>
-                From your account dashboard. you can easily check &amp; view
-                your
-                <nuxt-link to="/my-account/orders">recent orders</nuxt-link>,
-                manage your
+                대시보드에서 쉽게 조회하여 관리할 수 있습니다.
+                <nuxt-link to="/my-account/orders">최근 주문들</nuxt-link>,
+                
                 <nuxt-link to="/my-account/addresses"
-                  >shipping and billing addresses</nuxt-link
-                >
+                  >배송 및 청구한 주소</nuxt-link
+                >확인하기
               </p>
             </div>
           </div>
