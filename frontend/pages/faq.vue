@@ -1,17 +1,14 @@
 <template>
   <div>
     <!-- Banner Area -->
-    <section id="common_banner_one">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="common_banner_text">
-                        <h2>{{this.title}}</h2>
-                        <b-breadcrumb :items="breadcrumbItems" class="bg-transparent"></b-breadcrumb>
-                    </div>
-                </div>
-            </div>
+    <section id="banner_one">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="banner_text_one"></div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Faq-Area -->
@@ -92,13 +89,13 @@
                             <div class="card_items_area">
                                 <b-card-header role="tab">
                                     <a block v-b-toggle.accordion-5>
-                                        <h5 class="mb-0">렌트한 상품을 기간 내에 반납 못하면 어떻게 되나요?<i class="fas fa-angle-down rotate-icon"></i></h5>
+                                        <h5 class="mb-0">대여한 상품을 기간 내에 반납 못하면 어떻게 되나요?<i class="fas fa-angle-down rotate-icon"></i></h5>
                                     </a>
                                 </b-card-header>
                                 <b-collapse id="accordion-5" accordion="my-accordion" role="tabpanel">
                                     <b-card-body>
                                     정해진 반납 일자를 초과해 반납할 경우 연체료가 발생합니다. <br>
-                                     '연체일 X 1일 단기 렌트 이용료' 기준으로 연체료가 발생합니다.
+                                     '연체일 X 1일 단기 대여 이용료' 기준으로 연체료가 발생합니다.
                                     </b-card-body>
                                 </b-collapse>
                             </div>
