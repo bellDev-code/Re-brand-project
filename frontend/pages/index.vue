@@ -30,7 +30,7 @@
                 <h2>Hot</h2>
                 <h4>Collection</h4>
                 <nuxt-link
-                  to="/shop/shoplist"
+                  to="/shop/shopfilter"
                   class="theme-btn-one bg-black btn_sm"
                   >Shop Now</nuxt-link
                 >
@@ -45,7 +45,9 @@
                 <h4 class="color_one">Summer</h4>
                 <h2>Hot</h2>
                 <h4>Collection</h4>
-                <nuxt-link to="/shop" class="theme-btn-one bg-black btn_sm"
+                <nuxt-link
+                  to="/shop/shopfilter"
+                  class="theme-btn-one bg-black btn_sm"
                   >Shop Now</nuxt-link
                 >
               </div>
@@ -60,7 +62,7 @@
               <div class="product_var_one_text_center">
                 <h2 class="color_one">10% Offer</h2>
                 <nuxt-link
-                  to="/shop/shoplist"
+                  to="/shop/shopfilter"
                   class="theme-btn-one bg-black btn_sm"
                   >Shop Now</nuxt-link
                 >
@@ -77,7 +79,7 @@
                 <h2>Cool</h2>
                 <h4 class="color_one">Arrivals</h4>
                 <nuxt-link
-                  to="/shop/shoplist"
+                  to="/shop/shopfilter"
                   class="theme-btn-one bg-black btn_sm"
                   >Shop Now</nuxt-link
                 >
@@ -91,7 +93,9 @@
               <div class="product_var_one_text_right">
                 <h2>Cool</h2>
                 <h4 class="color_one">Sale</h4>
-                <nuxt-link to="/shop" class="theme-btn-one bg-black btn_sm"
+                <nuxt-link
+                  to="/shop/shopfilter"
+                  class="theme-btn-one bg-black btn_sm"
                   >Shop Now</nuxt-link
                 >
               </div>
@@ -226,7 +230,9 @@
               <p>
                 Experience the world's Finest fashion Trend
               </p>
-              <nuxt-link to="/shop" class="theme-btn-one bg-whites btn_md"
+              <nuxt-link
+                to="/shop/shopfilter"
+                class="theme-btn-one bg-whites btn_md"
                 >Shop Now</nuxt-link
               >
             </div>

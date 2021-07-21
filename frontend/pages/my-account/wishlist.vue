@@ -2,17 +2,20 @@
   <div>
     <!-- Banner Area -->
     <section id="common_banner_one">
-            <div class="container ">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="common_banner_text">
-                            <h2>{{this.title}}</h2>
-                            <b-breadcrumb :items="breadcrumbItems" class="bg-transparent"></b-breadcrumb>
-                        </div>
-                    </div>
-                </div>
+      <div class="container ">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="common_banner_text">
+              <h2>{{ this.title }}</h2>
+              <b-breadcrumb
+                :items="breadcrumbItems"
+                class="bg-transparent"
+              ></b-breadcrumb>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Checkout-Area -->
     <section id="Wishlist_area" class="ptb-100">
@@ -31,15 +34,15 @@
                       <th class="product-price">색상</th>
                       <th class="product-price">가격</th>
                       <th class="product_stock">재고 수</th>
-                      <th class="product_addcart">장바구니에 담기t</th>
+                      <th class="product_addcart">장바구니에 담기</th>
                     </tr>
                   </thead>
                   <!-- End Cart Table Head -->
                   <tbody v-if="productItems.length > 0">
                     <!-- Start Wishlist Single Item-->
                     <tr
-                      v-for="productItem in productItems"
-                      :key="productItem.id"
+                      v-for="productItem in list"
+                      :key="productItem.product_id"
                     >
                       <td class="product_remove">
                         <button
@@ -52,27 +55,27 @@
 
                       <td class="product_thumb">
                         <nuxt-link to="/product">
-                          <img :src="productItem.productImg1" alt="img" />
+                          <img :src="productItem.image_main" alt="img" />
                         </nuxt-link>
                       </td>
                       <td class="product_name">
                         <nuxt-link to="/product">{{
-                          productItem.productTitle
+                          productItem.product_name
                         }}</nuxt-link>
                       </td>
                       <td class="product-price">
-                        {{ productItem.productColor }}
+                        {{ productItem.product_color }}
                       </td>
                       <td class="product-price">
-                        ${{ productItem.totalPrice }}
+                        ${{ productItem.rent_price }}
                       </td>
-                      <td class="product_stock"><h6>In Stock</h6></td>
+                      <td class="product_stock">
+                        <h6>{{ productItem.number_stock }} 개</h6>
+                      </td>
                       <td class="product_addcart">
-                        <nuxt-link
-                          to="/cart"
-                          class="theme-btn-one btn-black-overlay btn_sm"
-                          >Add To Cart</nuxt-link
-                        >
+                        <button class="theme-btn-one btn-black-overlay btn_sm">
+                          Add To Cart
+                        </button>
                       </td>
                     </tr>
                   </tbody>
@@ -97,6 +100,7 @@ export default {
 
   data() {
     return {
+      list: [],
       title: "Wishlist",
 
       // Product Items Data
@@ -158,10 +162,17 @@ export default {
       ],
     };
   },
+  mounted() {
+    this.getwishList();
+  },
 
   methods: {
     removeProductItem: function(index) {
-      this.productItems.splice(index, 1);
+      this.list.splice(index, 1);
+    },
+    async getwishList() {
+      this.list = await this.$api("api/products", "get", {});
+      console.log(this.list);
     },
   },
 
