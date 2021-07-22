@@ -7,7 +7,9 @@
           <div class="col-lg-4 col-md-12 col-sm-12 col-12">
             <div class="footer_left_side">
               <nuxt-link to="/"
-                ><img :src="require('@/assets/img/logoRe.png')" alt="logo"
+                ><img
+                  :src="require('@/assets/img/logo modification.png')"
+                  alt="logo"
               /></nuxt-link>
               <p>
                 No. 1 luxury rental platform in Korea.
