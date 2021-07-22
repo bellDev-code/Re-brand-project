@@ -268,7 +268,10 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr :key="cartcheck.product_id" v-for="cartcheck in list">
+                    <tr
+                      :key="cartcheck.product_id"
+                      v-for="cartcheck in list.slice(0, 4)"
+                    >
                       <td>
                         {{ cartcheck.product_name }}
                       </td>
@@ -421,11 +424,11 @@
                 </template>
                 <div class="d-block text-center">
                   <h2 class="mt-5 mb-5">결제가 진행중입니다.</h2>
-                  <input
+                  <!-- <input
                     type="image"
                     src="https://media.tenor.com/images/a742721ea2075bc3956a2ff62c9bfeef/tenor.gif"
                     class="mb-5"
-                  />
+                  /> -->
                 </div>
                 <b-button
                   class="mt-5 btn-lg"
@@ -532,7 +535,7 @@ export default {
 
   computed: {
     sumTotalPrice() {
-      for (var product of this.list) {
+      for (var product of this.list.slice(0, 4)) {
         this.sumtotal += parseFloat(product.rent_price);
         console.log(product);
         console.log(this.sumtotal);

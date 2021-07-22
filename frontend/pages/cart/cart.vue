@@ -41,7 +41,7 @@
                     <!-- Start Cart Single Item-->
 
                     <tr
-                      v-for="productItem in list"
+                      v-for="productItem in list.slice(0, 4)"
                       :key="productItem.basket_id"
                     >
                       <td class="product_thumb">
@@ -301,7 +301,7 @@ export default {
   },
   computed: {
     sumTotalPrice() {
-      for (var product of this.list) {
+      for (var product of this.list.slice(0, 4)) {
         this.sumtotal += parseFloat(product.rent_price);
         console.log(product);
         console.log(this.sumtotal);

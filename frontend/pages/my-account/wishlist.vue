@@ -41,7 +41,7 @@
                   <tbody v-if="productItems.length > 0">
                     <!-- Start Wishlist Single Item-->
                     <tr
-                      v-for="productItem in list"
+                      v-for="productItem in list.slice(0, 3)"
                       :key="productItem.product_id"
                     >
                       <td class="product_remove">
