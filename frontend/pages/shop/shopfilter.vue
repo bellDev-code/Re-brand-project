@@ -26,6 +26,17 @@
               <h4>Brand</h4>
               <form>
                 <label class="custom_boxed"
+                  >GUCCI
+                  <input
+                    type="radio"
+                    name="radio"
+                    v-model="brand"
+                    value="구찌"
+                    @change="brandFilter"
+                  />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="custom_boxed"
                   >Hermes
                   <input
                     type="radio"
