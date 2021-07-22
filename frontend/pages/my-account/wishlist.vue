@@ -70,7 +70,7 @@
                         ${{ productItem.rent_price }}
                       </td>
                       <td class="product_stock">
-                        <h6>{{ productItem.number_stock }} 개</h6>
+                        <h6>{{ productItem.product_id }} 개</h6>
                       </td>
                       <td class="product_addcart">
                         <b-button
@@ -175,7 +175,7 @@ export default {
       this.list.splice(index, 1);
     },
     async getwishList() {
-      this.list = await this.$api("api/products", "get", {});
+      this.list = await this.$api("api/basket", "get", {});
       console.log(this.list);
     },
   },
