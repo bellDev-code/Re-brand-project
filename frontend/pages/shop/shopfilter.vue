@@ -86,8 +86,9 @@
                 </label>
                 <div class="clear_button">
                   <button
-                    type="reset"
+                    type="button"
                     class="theme-btn-one btn_sm btn-black-overlay"
+                    @click="clearFilter"
                   >
                     Clear Filter
                   </button>
@@ -189,7 +190,6 @@ export default {
       perPage: 6,
       currentPage: 1,
       title: "Shop",
-
       // Product Items Data
       productItems: [],
 
@@ -229,7 +229,7 @@ export default {
   methods: {
     async getProductList() {
       this.list = await this.$api(
-        `api/products?pageNo=${this.currentPage}`,
+        `api/products?pageNo=${this.currentPage}&productBrand=${this.brand}`,
         "get",
         {}
       );
@@ -240,8 +240,13 @@ export default {
     },
 
     brandFilter() {
-      this.list = this.list.filter((u) => u.product_brand == this.brand);
-      console.log(this.brand);
+      // this.list = this.list.filter((u) => u.product_brand == this.brand);
+      // console.log(this.brand);
+      this.getProductList();
+    },
+    clearFilter() {
+      this.brand = "";
+      this.getProductList();
     },
 
     allFilter() {

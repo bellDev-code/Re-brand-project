@@ -4,35 +4,58 @@ const db = require("../db");
 const router = express.Router();
 
 router.get("/products", (req, res, next) => {
-  const { pageNo } = req.query;
+  const { pageNo, productBrand } = req.query;
+
+  let query = `
+  SELECT 
+    product.product_id, 
+    product.product_brand,
+    product.product_color,
+    product.rent_price,
+    image.image_id,
+    image.image_main,
+    image.image_type,
+    productGroup.group_id,
+    productGroup.product_name,
+    productGroup.product_tag,
+    productGroup.number_stock,
+    productGroup.number_rent
+    FROM TB_Products AS product
+    LEFT JOIN TB_Image AS image ON product.product_id = image.product_id
+    LEFT JOIN TB_ProductGroup AS productGroup ON product.group_id = productGroup.group_id
+    WHERE product.product_brand = "${productBrand}"
+    LIMIT ${((pageNo || 1) - 1) * 6}, 6
+  `;
+
+  if (productBrand == "") {
+    query = `
+    SELECT 
+      product.product_id, 
+      product.product_brand,
+      product.product_color,
+      product.rent_price,
+      image.image_id,
+      image.image_main,
+      image.image_type,
+      productGroup.group_id,
+      productGroup.product_name,
+      productGroup.product_tag,
+      productGroup.number_stock,
+      productGroup.number_rent
+      FROM TB_Products AS product
+      LEFT JOIN TB_Image AS image ON product.product_id = image.product_id
+      LEFT JOIN TB_ProductGroup AS productGroup ON product.group_id = productGroup.group_id
+      LIMIT ${((pageNo || 1) - 1) * 6}, 6
+    `;
+  }
+
   db.getConnection((err, conn) => {
     if (err) return res.status(403);
-    conn.query(
-      `
-      SELECT 
-        product.product_id, 
-        product.product_brand,
-        product.product_color,
-        product.rent_price,
-        image.image_id,
-        image.image_main,
-        image.image_type,
-        productGroup.group_id,
-        productGroup.product_name,
-        productGroup.product_tag,
-        productGroup.number_stock,
-        productGroup.number_rent
-        FROM TB_Products AS product
-        LEFT JOIN TB_Image AS image ON product.product_id = image.product_id
-        LEFT JOIN TB_ProductGroup AS productGroup ON product.group_id = productGroup.group_id
-        LIMIT ${((pageNo || 1) - 1) * 6}, 6
-      `,
-      (err, results) => {
-        console.log(err);
-        if (err) return res.status(403);
-        res.send(results);
-      }
-    );
+    conn.query(query, (err, results) => {
+      console.log(err);
+      if (err) return res.status(403);
+      res.send(results);
+    });
   });
 });
 
