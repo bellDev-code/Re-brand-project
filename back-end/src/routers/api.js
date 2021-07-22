@@ -93,7 +93,6 @@ router.get("/payments", (req, res, next) => {
 });
 
 router.post("/payments", (req, res, next) => {
-  // payment 는 product_id가 있음. productId 를 받아서 생성하면 됨
   db.getConnection((err, conn) => {
     if (err) throw err;
     conn.query(
@@ -104,7 +103,6 @@ router.post("/payments", (req, res, next) => {
       (err, results) => {
         if (err) return res.status(404).send("존재하지 않는 상품입니다.");
 
-        // 결과가 배열이 아니거나 길이가 1보다 작으면 데이터 없는거니까 404(Not found error) 보내줌
         if (!Array.isArray(results) || results.length < 1) {
           return res.status(404).send("존재하지 않는 상품입니다.");
         }

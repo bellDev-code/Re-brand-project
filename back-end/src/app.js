@@ -23,14 +23,6 @@ app.use(
 
 app.use("/static", express.static(__dirname + "/uploads"));
 
-let sql = require("./sql.js");
-
-fs.watchFile(__dirname + "/sql.js", (curr, prev) => {
-  console.log("sql 변경시 재시작 없이 반영되도록 함.");
-  delete require.cache[require.resolve("./sql.js")];
-  sql = require("./sql.js");
-});
-
 // 모든 api로 시작하는 요청은 apiRouter로 간다.
 const apiRouter = require("./routers/api");
 app.use("/api", apiRouter);
