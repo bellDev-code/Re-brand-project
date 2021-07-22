@@ -419,7 +419,9 @@
                   Re:brand Payment Process
                 </template>
                 <div class="d-block text-center">
-                  <h2 class="mt-5 mb-5">추후 결제 api를 통해 연동할 계획입니다.</h2>
+                  <h2 class="mt-5 mb-5">
+                    추후 결제 api를 통해 연동할 계획입니다.
+                  </h2>
                   <!-- <input
                     type="image"
                     src="https://media.tenor.com/images/a742721ea2075bc3956a2ff62c9bfeef/tenor.gif"
@@ -514,7 +516,6 @@ export default {
   },
   created() {
     this.productId = this.$route.query.product_id;
-    console.log(this.productId);
   },
 
   mounted() {
@@ -541,8 +542,6 @@ export default {
       // for (var product of this.selProduct)
       {
         this.sumtotal = this.selProduct.rent_price;
-        // console.log(product);
-        console.log(this.sumtotal);
       }
 
       return this.sumtotal;
@@ -555,19 +554,16 @@ export default {
       this.selProduct = (
         await this.$api("api/detail?product_id=" + this.productId, "get", {})
       )[0];
-      console.log(this.selProduct);
     },
 
     // 12개 다 받는거
 
     async getPayment() {
       this.list = await this.$api("api/products", "get", {});
-      console.log(this.list);
     },
 
     async savePayment() {
       this.saveList = await this.$api("api/payments", "post", {});
-      console.log(this.list);
     },
     // 날짜 업데이트
     startDate() {
@@ -580,7 +576,6 @@ export default {
       var dateDiff = Math.ceil(
         (edt.getTime() - sdt.getTime()) / (1000 * 3600 * 24)
       );
-      console.log(dateDiff);
       this.dateDiff = dateDiff + 1;
       return this.dateDiff;
     },

@@ -176,7 +176,6 @@ export default {
     },
     async getwishList() {
       this.list = await this.$api("api/basket", "get", {});
-      console.log(this.list);
     },
   },
 

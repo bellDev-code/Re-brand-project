@@ -312,14 +312,7 @@ export default {
     };
   },
   created() {
-    console.log(this.$route.params);
     this.productId = this.$route.params.slug;
-
-    // this.product = this.productItems.filter((p) => p.id == this.productId)[0];
-
-    // console.log(this.product);
-
-    //this.getDetail()
   },
   mounted() {
     this.getDetail();
@@ -329,28 +322,24 @@ export default {
       this.product = (
         await this.$api("api/detail?product_id=" + this.productId, "get", {})
       )[0];
-      console.log("productDetail", this.product);
     },
     goToGuarantee(product_id) {
       this.$router.push({
         path: "/blockchain/guarantee",
         query: { product_id: product_id },
       });
-      console.log(product_id);
     },
     goToRecord(product_id) {
       this.$router.push({
         path: "/blockchain/record",
         query: { product_id: product_id },
       });
-      console.log(product_id);
     },
     goToPayment(product_id) {
       this.$router.push({
         path: "/my-account/checkout",
         query: { product_id: product_id },
       });
-      console.log(product_id);
     },
   },
   // Page head() Title, description for SEO

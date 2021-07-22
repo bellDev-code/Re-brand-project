@@ -233,15 +233,10 @@ export default {
         "get",
         {}
       );
-      console.log(this.list);
     },
-    searchFilter() {
-      console.log(this.searchValue);
-    },
+    searchFilter() {},
 
     brandFilter() {
-      // this.list = this.list.filter((u) => u.product_brand == this.brand);
-      // console.log(this.brand);
       this.getProductList();
     },
     clearFilter() {
@@ -265,7 +260,6 @@ export default {
       //
       this.totalPage = 12;
       // this.totalPage = Math.ceil(totalCount / this.perPage);
-      console.log(this.totalPage);
     },
   },
   computed: {

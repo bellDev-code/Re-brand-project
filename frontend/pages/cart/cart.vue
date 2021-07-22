@@ -296,15 +296,12 @@ export default {
 
     async getBasket() {
       this.list = await this.$api("api/basket", "get", {});
-      console.log(this.list);
     },
   },
   computed: {
     sumTotalPrice() {
       for (var product of this.list.slice(0, 4)) {
         this.sumtotal += parseFloat(product.rent_price);
-        console.log(product);
-        console.log(this.sumtotal);
       }
 
       return this.sumtotal;

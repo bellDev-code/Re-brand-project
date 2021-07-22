@@ -537,8 +537,6 @@ export default {
     sumTotalPrice() {
       for (var product of this.list.slice(0, 4)) {
         this.sumtotal += parseFloat(product.rent_price);
-        console.log(product);
-        console.log(this.sumtotal);
       }
 
       return this.sumtotal;
@@ -547,7 +545,6 @@ export default {
   methods: {
     async getPayment() {
       this.list = await this.$api("api/basket", "get", {});
-      console.log(this.list);
     },
     // 날짜 업데이트
     startDate() {
@@ -560,7 +557,6 @@ export default {
       var dateDiff = Math.ceil(
         (edt.getTime() - sdt.getTime()) / (1000 * 3600 * 24)
       );
-      console.log(dateDiff);
       this.dateDiff = dateDiff + 1;
       return this.dateDiff;
     },

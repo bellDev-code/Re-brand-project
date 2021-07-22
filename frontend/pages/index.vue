@@ -490,7 +490,6 @@ export default {
   methods: {
     async getProductList() {
       this.list = await this.$api("api/basket", "get", {});
-      console.log(this.list);
     },
   },
 

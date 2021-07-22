@@ -125,7 +125,6 @@ export default {
 
   created() {
     this.productId = this.$route.query.product_id;
-    console.log(this.productId);
   },
 
   mounted() {
@@ -135,7 +134,6 @@ export default {
   methods: {
     async certification() {
       this.list = await this.$api("api/certificate", "get", {});
-      console.log(this.list);
     },
     async getGuarantee() {
       this.guarantee = (
