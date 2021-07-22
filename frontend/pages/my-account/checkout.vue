@@ -419,7 +419,7 @@
                   Re:brand Payment Process
                 </template>
                 <div class="d-block text-center">
-                  <h2 class="mt-5 mb-5">결제가 진행중입니다.</h2>
+                  <h2 class="mt-5 mb-5">추후 결제 api를 통해 연동할 계획입니다.</h2>
                   <!-- <input
                     type="image"
                     src="https://media.tenor.com/images/a742721ea2075bc3956a2ff62c9bfeef/tenor.gif"
