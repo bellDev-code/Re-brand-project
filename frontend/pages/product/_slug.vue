@@ -153,7 +153,7 @@
                             <th>모델명</th>
                             <th>제조사</th>
                             <th>성별</th>
-                            <th>소재</th>
+                            <th>설명</th>
                           </thead>
                           <tbody>
                             <td>
