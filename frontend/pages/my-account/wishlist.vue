@@ -73,9 +73,13 @@
                         <h6>{{ productItem.number_stock }} 개</h6>
                       </td>
                       <td class="product_addcart">
-                        <button class="theme-btn-one btn-black-overlay btn_sm">
-                          Add To Cart
-                        </button>
+                        <b-button
+                          v-b-popover.bottom="'장바구니에 추가되었습니다!'"
+                          class="btn btn-light "
+                          title="Product Added"
+                          delay
+                          >Add To Cart</b-button
+                        >
                       </td>
                     </tr>
                   </tbody>
@@ -171,7 +175,7 @@ export default {
       this.list.splice(index, 1);
     },
     async getwishList() {
-      this.list = await this.$api("api/basket", "get", {});
+      this.list = await this.$api("api/products", "get", {});
       console.log(this.list);
     },
   },
