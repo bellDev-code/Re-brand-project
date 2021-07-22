@@ -131,9 +131,12 @@
                     class="theme-btn-one btn-black-overlay btn_sm"
                     >Back to Main</nuxt-link
                   >
-                  <button class="theme-btn-one btn-black-overlay btn_sm">
+                  <nuxt-link
+                    to="/my-account/checkout-cart"
+                    class="theme-btn-one btn-black-overlay btn_sm"
+                  >
                     Proceed to Checkout
-                  </button>
+                  </nuxt-link>
                 </div>
               </div>
             </div>

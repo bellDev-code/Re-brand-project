@@ -268,15 +268,12 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr
-                      :key="productItem.id"
-                      v-for="productItem in productItems"
-                    >
+                    <tr :key="cartcheck.product_id" v-for="cartcheck in list">
                       <td>
-                        {{ productItem.productTitle }}
+                        {{ cartcheck.product_name }}
                       </td>
-                      <td>{{ productItem.productColor }}</td>
-                      <td>{{ productItem.productPrice }} 원</td>
+                      <td>{{ cartcheck.product_color }}</td>
+                      <td width="23%">{{ cartcheck.rent_price }}원</td>
                     </tr>
                     <!-- 데이터 들어오면 바꿀부분 -->
                     <!-- <tr
@@ -460,6 +457,7 @@ export default {
 
   data() {
     return {
+      list: [],
       period_start: "",
       period_end: "",
       i: 0,
@@ -528,10 +526,14 @@ export default {
       ],
     };
   },
+  mounted() {
+    this.getPayment();
+  },
+
   computed: {
     sumTotalPrice() {
-      for (var product of this.productItems) {
-        this.sumtotal += parseFloat(product.productPrice);
+      for (var product of this.list) {
+        this.sumtotal += parseFloat(product.rent_price);
         console.log(product);
         console.log(this.sumtotal);
       }
@@ -540,6 +542,10 @@ export default {
     },
   },
   methods: {
+    async getPayment() {
+      this.list = await this.$api("api/basket", "get", {});
+      console.log(this.list);
+    },
     // 날짜 업데이트
     startDate() {
       this.startD = this.period_start;
