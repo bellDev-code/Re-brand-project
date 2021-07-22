@@ -72,7 +72,7 @@
                   </b-modal>
                 </div>
 
-                <h4>{{ product.rent_price }} 원</h4>
+                <h4>일 {{ product.rent_price }} ₩</h4>
                 <p>
                   {{ product.info_material }}
                 </p>

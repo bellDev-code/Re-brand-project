@@ -53,7 +53,7 @@
           }}</nuxt-link>
         </h5>
         <span class="price">
-          <span class="new">{{ productPrice }} 원</span>
+          <span class="new">일 {{ productPrice }} ₩</span>
         </span>
       </div>
 
