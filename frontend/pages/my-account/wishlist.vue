@@ -171,7 +171,7 @@ export default {
       this.list.splice(index, 1);
     },
     async getwishList() {
-      this.list = await this.$api("api/products", "get", {});
+      this.list = await this.$api("api/basket", "get", {});
       console.log(this.list);
     },
   },

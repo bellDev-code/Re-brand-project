@@ -42,7 +42,7 @@
           title="Product Added"
           delay
         >
-          <p>Add To Cart</p>
+          <p><strong>Add To Cart</strong></p>
         </b-button>
       </div>
       <!-- 두가지 속성 다 delay 속성 사용하던지, timeout 설정해야함-->

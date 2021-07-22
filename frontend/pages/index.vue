@@ -120,7 +120,7 @@
           <b-tab title="Bags" class="row">
             <div
               class="col-lg-3 col-md-4 col-sm-6 col-12"
-              v-for="productItem in list.slice(0, 4)"
+              v-for="productItem in list.slice(4, 8)"
               :key="productItem.product_id"
             >
               <ProductBox
@@ -140,7 +140,7 @@
           <b-tab title="Watches" class="row">
             <div
               class="col-lg-3 col-md-4 col-sm-6 col-12"
-              v-for="productItem in list.slice(5, 9)"
+              v-for="productItem in list.slice(8, 10)"
               :key="productItem.product_id"
             >
               <ProductBox
@@ -489,7 +489,7 @@ export default {
 
   methods: {
     async getProductList() {
-      this.list = await this.$api("api/products", "get", {});
+      this.list = await this.$api("api/basket", "get", {});
       console.log(this.list);
     },
   },
