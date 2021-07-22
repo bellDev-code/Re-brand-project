@@ -21,69 +21,71 @@
     <section id="shop_main_area" class="ptb-100">
       <div class="container">
         <div class="row">
-          <div class="shop_sidebar_boxed">
-            <h4>Brand</h4>
-            <form>
-              <label class="custom_boxed"
-                >Hermes
-                <input
-                  type="radio"
-                  name="radio"
-                  v-model="brand"
-                  value="에르메스"
-                  @change="brandFilter"
-                />
-                <span class="checkmark"></span>
-              </label>
-              <label class="custom_boxed"
-                >Louis Vuitton
-                <input
-                  type="radio"
-                  name="radio"
-                  v-model="brand"
-                  value="루이비통"
-                  @change="brandFilter"
-                />
-                <span class="checkmark"></span>
-              </label>
-              <label class="custom_boxed"
-                >TAG Heuer
-                <input
-                  type="radio"
-                  name="radio"
-                  v-model="brand"
-                  value="태그호이어"
-                  @change="brandFilter"
-                />
-                <span class="checkmark"></span>
-              </label>
-              <label class="custom_boxed"
-                >Chanel
-                <input type="radio" name="radio" />
-                <span class="checkmark"></span>
-              </label>
-              <label class="custom_boxed"
-                >SAINT LAURENT
-                <input type="radio" name="radio" />
-                <span class="checkmark"></span>
-              </label>
-              <label class="custom_boxed"
-                >Dior
-                <input type="radio" name="radio" />
-                <span class="checkmark"></span>
-              </label>
-              <div class="clear_button">
-                <button
-                  type="reset"
-                  class="theme-btn-one btn_sm btn-black-overlay"
-                >
-                  Clear Filter
-                </button>
-              </div>
-            </form>
+          <div class="col-lg-2">
+            <div class="shop_sidebar_boxed">
+              <h4>Brand</h4>
+              <form>
+                <label class="custom_boxed"
+                  >Hermes
+                  <input
+                    type="radio"
+                    name="radio"
+                    v-model="brand"
+                    value="에르메스"
+                    @change="brandFilter"
+                  />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="custom_boxed"
+                  >Louis Vuitton
+                  <input
+                    type="radio"
+                    name="radio"
+                    v-model="brand"
+                    value="루이비통"
+                    @change="brandFilter"
+                  />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="custom_boxed"
+                  >TAG Heuer
+                  <input
+                    type="radio"
+                    name="radio"
+                    v-model="brand"
+                    value="태그호이어"
+                    @change="brandFilter"
+                  />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="custom_boxed"
+                  >Chanel
+                  <input type="radio" name="radio" />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="custom_boxed"
+                  >SAINT LAURENT
+                  <input type="radio" name="radio" />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="custom_boxed"
+                  >Dior
+                  <input type="radio" name="radio" />
+                  <span class="checkmark"></span>
+                </label>
+                <div class="clear_button">
+                  <button
+                    type="reset"
+                    class="theme-btn-one btn_sm btn-black-overlay"
+                  >
+                    Clear Filter
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
 
-          <div class="col-lg-9 text-center">
+          <div class="col-lg-10 text-center">
             <div class="btn-group" role="group" aria-label="...">
               <button type="button" class="btn btn-light" @click="allFilter">
                 All
